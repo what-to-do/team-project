@@ -3,6 +3,7 @@
 // at https://console.developers.google.com/.
 // If you run this code from a server other than http://localhost,
 // you need to register your own client ID.
+//var OAUTH2_CLIENT_ID = "__YOUR_CLIENT_ID__";
 var OAUTH2_CLIENT_ID = '758489283797-q6dhsfjfkodjehg2mnnp08nm6ahgoehf.apps.googleusercontent.com';
 var OAUTH2_SCOPES = [
   'https://www.googleapis.com/auth/youtube'
@@ -14,7 +15,7 @@ var OAUTH2_SCOPES = [
 // Upon loading, the Google APIs JS client automatically invokes this callback.
 googleApiClientReady = function() {
   gapi.auth.init(function() {
-    window.setTimeout(checkAuth, 1);
+    window.setTimeout(checkAuth, 5);
   });
 }
 
@@ -60,3 +61,4 @@ function loadAPIClientInterfaces() {
     handleAPILoaded();
   });
 }
+
