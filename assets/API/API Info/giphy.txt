@@ -1,0 +1,27 @@
+Host: http://api.giphy.com/v1/gifs/search?
+Api beta key: dc6zaTOxFJmzC  
+Example URL:http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC  
+
+
+Parameters if we want to do it based on searches:
+q: search term
+limit: number of results to return. Default is 25. This is optional.
+rating: y, g, pg, pg-13 or r
+
+
+If we want to return a random gifs, limited by a tag or keyword
+
+
+http://api.giphy.com/v1/gifs/random?&api_key=dc6zaTOxFJmzC&tag=zebras
+Tag: gif tag to limit randomness
+Rating: y, g, pg, pg-13 or r
+
+
+I think this is great to use for our website. I tried signing up for a product key, but it asks for screen shots and urls. It looks like a whole process. I say, we use the beta key for now and as we progress, I can apply for the actual key, if we decide we need one.
+
+
+
+
+
+
+

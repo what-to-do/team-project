@@ -1,0 +1,22 @@
+API Documentation 
+
+
+Extremely detailed documentation
+
+
+Doesn’t necessarily return an object but allows us to embed video and will allow us to search via keyword
+
+
+I went ahead and got a key because we will need this for the project
+
+
+Client ID =  758489283797-q6dhsfjfkodjehg2mnnp08nm6ahgoehf.apps.googleusercontent.com
+Client Secret = eZ4ZOEKEb6Ud-Q14Fl4Wg8ee
+Key = AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is
+
+
+Go to the link above to get the code for use
+
+
+   
+

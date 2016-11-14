@@ -1,0 +1,64 @@
+In order to use the Pinterest APi, we have to create an app and submit for review. The it will use OAuth 2.0 to authenticate requests between the app and the user. All requests must be made over https, it will not redirect any requests coming from http.
+
+
+Access code:
+https://api.pinterest.com/oauth/
+Parameters:
+Response_type : value code
+client _id: your app ID
+State: a value we define
+Scope: list of permission scopes you want to ask the user for
+Redirect-uri: the URI should redirect users after they authorize your app.
+
+
+Example: 
+https://api.pinterest.com/oauth/?
+    response_type=code&
+    redirect_uri=https://mywebsite.com/connect/pinterest/&
+    client_id=12345&
+    scope=read_public,write_public&
+    state=768uyFys
+
+
+Getting access token
+After access code, you then have to request an access token. We must make a POST request to https://api.pinterest.com/v1/oauth/token with the following parameters
+
+
+Grant_type: must take the value authorization_code
+Client_id: your app ID
+Client_secret: your app secret (can be gotten from your app page)
+Code: access code you received from redirect URI
+
+
+Example:
+https://api.pinterest.com/v1/oauth/token?
+    grant_type=authorization_code&
+    client_id=12345&
+    client_secret=6789abcd&
+    code=xyz1010
+
+
+How to return pin information:
+Use GET
+v1/pins/<pins> ←This is a changing variable depending on the kind of pins we are looking for
+
+
+https://api.pinterest.com/v1/pins/zebra/?access_token=&fields=id%2Clink%2Cnote%2Curl
+
+
+https://developers.pinterest.com/tools/api-explorer/? ← Provides examples to how a url can be constructed.
+
+
+Rates and Limits:
+Eash app allows 1000 calls per endpoint per hour. If 1000 calls are made, there will be an hour wait time for get more requests. The API gives you an update about your rate limit. 
+
+
+X-Ratelimit-Limit: 1000
+X-Ratelimit-Remaining: 890
+
+
+Fetch requestions return the first 25 items. “Limit” can be used to change how many requests you want to see.
+
+
+Final thoughts: This API looks interesting, but I don’t think it really benefits our website. Looking at all the examples, it seems like this is mainly used for businesses and small web shops. We can talk more about it in class. 
+

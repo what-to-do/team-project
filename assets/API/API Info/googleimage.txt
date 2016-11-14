@@ -1,0 +1,49 @@
+Google Images API
+
+
+https://developers.google.com/image-search/v1/devguide
+
+
+Instead of using a key, appears to use the userip parameter which indicates the IP address of the requesting user
+
+
+Sample object:
+{
+  "responseData" : {
+    "results" : [],
+    "cursor" : {}
+  },
+  "responseDetails" : null | string-on-error,
+  "responseStatus" : 200 | error-code
+}
+Supports CORS
+
+
+
+
+Query is:
+https://ajax.googleapis.com/ajax/services/search/images
+Required URL arguments
+The following table lists the required URL arguments.
+Argument
+Example
+Description
+q
+q=fuzzy%20monkey
+This argument supplies the query, or search expression, that is passed into the searcher.
+v
+v=1.0
+This argument supplies protocol version number. The only valid value at this point in time is 1.0.
+
+
+Can be used to request a number of images on a certain topic for display on our page based on the search results
+
+
+Pros
+Google APIs are well documented
+
+
+Cons 
+Maximum number of search results is 64 images on 8 pages
+Google Image API is deprecated.  Number of results is limited.  However, for our purposes these limits may be adequate
+

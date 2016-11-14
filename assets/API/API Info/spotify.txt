@@ -1,0 +1,60 @@
+Spotify API
+Very well written and easy to use.  I don’t believe we will be able to use this with the concept of our web app.  The web API allows you to show search results for artists, tracks, etc. but doesn’t allow you to interact with those tracks on your site (play/pause/listen).  
+
+
+You can easily add a Spotify widget with an artist or playlist set to it but that is all HTML not what we are looking for.  If we had a concept allowing users to log into their account and organize their music in an efficient way or select a playlist they created to pull videos associated with those acts from the yotube API it would make sense (Morgans group is doing something like that).  But also pointless because I believe Spotify and most other streaming apps now offer videos.
+
+
+Client Secret—the key that you will need to pass in secure calls to the Spotify Accounts and Web API services.
+
+
+Our Client Secret:
+d5ac5896ca8549c2bd1cc4a9226a4055
+
+
+Web API Base URL: https://api.spotify.com
+API Key: d5ac5896ca8549c2bd1cc4a9226a4055
+Search for an artist: /v1/search?type=artist
+Search for a track: /v1/search?type=track
+Method: GET
+
+
+
+
+
+
+Endpoint References:
+https://developer.spotify.com/web-api/endpoint-reference/
+Full list of objects returned by the endpoints of the Spotify Web API:
+
+
+https://developer.spotify.com/web-api/object-model/#album-object-full
+
+
+
+
+//spotify API
+var artistURL = "https://api.spotify.com/v1/search?q=ben+folds+five&limit=20&type=artist";
+var apiKey = "d5ac5896ca8549c2bd1cc4a9226a4055";
+
+
+$.ajax({url: artistURL, method: 'GET'}).done(function(response) {
+ console.log(response);
+ console.log(artistURL);
+});
+
+
+var songURL = "https://api.spotify.com/v1/search?q=brick&limit=20&type=track";
+
+
+$.ajax({url: songURL, method: 'GET'}).done(function(response){
+	console.log(response);
+	console.log(songURL);
+});
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+Wikipedia API
+
+
+https://www.mediawiki.org/wiki/API:Main_page
+
+
+Does not appear to require a key
+
+
+Link to an example json object:
+https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json
+
+
+Allows for use of CORS - https://www.mediawiki.org/wiki/API:Cross-site_requests
+
+
+Search parameters 
+
+
+https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json
+
+
+format=json
+action=query
+titles=Main%20Page
+prop=revisions
+rvprop=content
+titles=Foo|Bar|Main_Page
+
+
+Full query documentation at https://www.mediawiki.org/wiki/API:Query
+
+
+How it will integrate with our website (summary)
+This will return whatever wiki articles we request.  Formats include JSON, XML, and HTML.  We’d probably pull the JSON and use the results to inject into the page.  This API can target specific sections of a wiki article for retrieval.
+
+
+Pros and Cons of the API
+
+
+Does not appear to require a key
+
+
+The big con to this API is that it may require the client to be logged into MediaWiki when making requests.  https://www.mediawiki.org/wiki/API:Login.  The documentation appears to leave these requirements up to each individual wiki to set appropriate parameters.  Requirements are also based on a wiki user’s account privileges (e.g. sysop level).  
+
