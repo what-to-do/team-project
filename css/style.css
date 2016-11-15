@@ -2,22 +2,31 @@ body {
  height: 100vh;
 }
 
+/*category buttons div*/
 #category {
 	background-color: teal;
 	height: 75px;
 }
 
+/*search/synonyms buttons and results div*/
 #side-nav {
 	background-color: grey;
 	height: 100vh;
 }
 
+/*where the api content will show*/
 #main-display {
 	background-color: yellow;
 	height: 100vh;
 }
 
+/*div containing #side-nav and #main-display*/
 #main {
 	height: 100vh;
 	width: 100%;
+}
+
+/*magnifying glass next to search*/
+#mag-glass {
+	color: #fff;
 }
