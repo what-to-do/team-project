@@ -2,22 +2,50 @@
 <html>
   <head>
     <title>Search</title>
+  
+     <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">        
 
     
   </head>
   <body>
-    <div id="buttons">
-      <label> <input id="query" value='cats' type="text"/><button id="search-button" disabled onclick="search()">Search</button></label>
-    </div>
-    <div id="search-container">
-    </div>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Pipeline</a>
+                <form>
+                  <div class="input-field right">
+                    <input id="search" type="search" required>
+                    <label for="search"><i class="material-icons left"></i></label>
+                    <i class="material-icons">close</i>
+                  </div>
+              </form>
+          </div>
+      </nav>
+        
+        <div class="row">   
+            <div class="col s12" id="category">category</div>
+        </div>
+           <!-- Page Layout here -->
+        <div class="row" id="main">
 
+            <div class="col s3" id="search-list">
+            <!-- Grey navigation panel -->
+            search list
+            </div>
 
-    <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-    <script src="auth.js"></script>
-    <script src="search.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+            <div class="col s9" id="main-display">
+            <!-- Teal page content  -->
+            main display
+            </div>
 
-  </body>
+        </div>
+          
+    </body>
 </html>

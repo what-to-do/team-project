@@ -1,0 +1,23 @@
+body {
+ height: 100vh;
+}
+
+#category {
+	background-color: teal;
+	height: 75px;
+}
+
+#search-list {
+	background-color: grey;
+	height: 100vh;
+}
+
+#main-display {
+	background-color: yellow;
+	height: 100vh;
+}
+
+#main {
+	height: 100vh;
+	width: 100%;
+}
