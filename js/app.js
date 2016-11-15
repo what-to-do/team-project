@@ -176,7 +176,6 @@ function search_history() {
 
 	$("#search-list").append("<hr>");
 
-	console.log(response);
 
 	// past searches are saved in search_history_record in local storage
 	// open search_history_record, iterate through items
@@ -186,7 +185,7 @@ function search_history() {
 
 		var btns_search_history = $("<button>");
 
-		btns_search_history.addClass("searching btn btn-outline-success waves-effect");
+		btns_search_history.addClass("past_searches list-group-item");
 
 		btns_search_history.attr({
 			"data-index": search_history_record[i].toLowerCase()
