@@ -41,7 +41,7 @@
 
                 <!--Search form-->
                 <form class="form-inline waves-effect waves-light">
-                    <input class="form-control" type="text" placeholder="Search">
+                    <input class="form-control" type="text" placeholder="Search" id="user-input">
                 </form>
             </div>
             <!--/.Collapse content-->
@@ -56,16 +56,16 @@
 
     <!--Page Layout Here-->
     <div class="row" id="main">
-        <div class="col-sm-3" id="search-list">
-            <!-- Grey navigation panel -->
-
-         </div>
-
-        <div class="col-sm-9" id="main-display">
-            <!-- Teal page content  -->
-            Main Display
+        <!-- Grey navigation panel -->
+        <div class="col-sm-3" id="side-nav">
+            <!--search/synonyms buttons-->
+            <div id="search-list"></div>
+             <!--list group button items, give each a type="button" and class="list-group-item"-->
+            <div class="list-group search-list" ></div>
         </div>
 
+        <!-- Teal page content  -->
+        <div class="col-sm-9" id="main-display">Main Display</div>
     </div>
 
 
