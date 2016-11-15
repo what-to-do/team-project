@@ -205,8 +205,10 @@ function search_history() {
 
 // This will create buttons for each kind of entertainment or educational resource we want
 function category_bar() {
+	//category array. We can add more if we need to.
 	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
 
+	//loops through array and creates buttons, gives them data-names and index
 	for (var i = 0; i < btn_options.length; i++) {
 
 		var options = $("<button>");
@@ -214,6 +216,8 @@ function category_bar() {
 		options.text(btn_options[i]);
 
 		options.attr("data-name", btn_options[i]);
+
+		options.attr ("data-index", btn_options[i]);
 
 		options.addClass("btn btn-info category_buttons")
 
