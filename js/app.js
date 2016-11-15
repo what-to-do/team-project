@@ -26,7 +26,7 @@ for (var i = 0; i < btn_names_related.length; i++) {
 	$("#search-list").append(btns_search);
 	
 
-}
+} // End of For Loop
 
 $("#search-list").append("<hr>");
 
@@ -51,7 +51,7 @@ $(".searching").on("click" , function(){
 
 		search_history();
 		
-	}
+	} // End of If Else
 
 }); // End of searching click event
 
@@ -104,7 +104,7 @@ function synonyms(){
 			$("#search-list").append(btns_search);
 			
 
-		}
+		} // End of For Loop
 
 		$("#search-list").append("<hr>");
 
@@ -132,12 +132,12 @@ function synonyms(){
 			$("#search-list").append(synonyms);
 		
 
-		}
+		} // End of For Loop
 
 
 	}); // End of ajax of synonyms
 
-}
+} // End of synonyms function
 
 function search_history() {
 
@@ -172,7 +172,7 @@ function search_history() {
 		$("#search-list").append(btns_search);
 		
 
-	}
+	} // End of For Loop
 
 	$("#search-list").append("<hr>");
 
@@ -182,7 +182,7 @@ function search_history() {
 	// create buttons for each record in search_history_record
 
 	//  the following line is for testing purposes of search_history only
-		var search_history_record = ["dogs", "zebra", "the thing"];
+	var search_history_record = ["dogs", "zebra", "the thing"];
 
 	for (var j = 0; j < search_history_record.length; j++) {
 
@@ -198,8 +198,8 @@ function search_history() {
 
 		$("#search-list").append(btns_search_history);
 
-	}
+	} // End of For Loop
 
-}
+} // End of search_history function
 
 }); // End of document.ready
