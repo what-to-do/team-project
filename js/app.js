@@ -203,19 +203,27 @@ function search_history() {
 } // End of search_history function
 
 
-btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
-function renderButtons() {
-
+// This will create buttons for each kind of entertainment or educational resource we want
+function category_bar() {
+	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
 
 	for (var i = 0; i < btn_options.length; i++) {
-		var options = $("<button>");
-		options.text(btn_options[i]);
-		options.attr("data-name", btn_options[i]);
-		options.addClass("btn btn-info")
-		$("#category").append(options);
-		}
-	} //end of renderButtons
 
-renderButtons();
+		var options = $("<button>");
+
+		options.text(btn_options[i]);
+
+		options.attr("data-name", btn_options[i]);
+
+		options.addClass("btn btn-info category_buttons")
+
+		$("#category").append(options);
+
+		options.css("float", "right")
+
+		}
+	} //end of category_bar
+
+category_bar();
 
 }); // End of document.ready
