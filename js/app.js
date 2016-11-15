@@ -36,7 +36,38 @@ $.ajax({
 	}
 
 
-});
+}); // End of ajax of synonyms
+
+/**
+ * Names of the buttons inside search-list
+ * @type {Strings}
+ */
+var btn_names_related = ["Past" , "Synonyms"];
+
+/**
+ * Creates button
+ * @param  {btn_names_related size} var i             Will loop through as many button we need 
+ * @return {Appends buttons}     Makes buttons inside the div of search-list
+ */
+for (var i = 0; i < btn_names_related.length; i++) {
+	
+	var btns_search = $("<button>");
+
+	btns_search.addClass("searching btn btn-outline-success waves-effect");
+
+	btns_search.attr({
+		"data-index": btn_names_related[i]
+	});
+
+	btns_search.text(btn_names_related[i]);
+
+	$("#search-list").append(btns_search);
+	
 
 
-});
+}
+
+$("#search-list").append("<hr>");
+
+
+}); // End of document.ready
