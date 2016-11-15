@@ -184,6 +184,17 @@ function search_history() {
 
 	for (var j = 0; j < search_history_record.length; j++) {
 
+		var btns_search_history = $("<button>");
+
+		btns_search_history.addClass("searching btn btn-outline-success waves-effect");
+
+		btns_search_history.attr({
+			"data-index": search_history_record[i].toLowerCase()
+		});
+
+		btns_search_history.text(btns_search_history[i]);
+
+		$("#search-list").append(btns_search_history);
 
 	}
 
