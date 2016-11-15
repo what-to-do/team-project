@@ -49,7 +49,7 @@ $(".searching").on("click" , function(){
 
 	} else {
 
-		// JEFF YOU FUNCTION GOES HERE
+		search_history();
 		
 	}
 
@@ -136,6 +136,10 @@ function synonyms(){
 
 
 	}); // End of ajax of synonyms
+
+}
+
+function search_history() {
 
 }
 
