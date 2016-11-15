@@ -121,7 +121,7 @@ function synonyms(){
 
 			var synonyms = $("<button>");
 
-			synonyms.addClass("synonyms");
+			synonyms.addClass("synonyms list-group-item");
 
 			synonyms.attr({
 				"data-index": response.synonyms[i]
@@ -130,7 +130,7 @@ function synonyms(){
 			synonyms.text(response.synonyms[i]);
 
 			$("#search-list").append(synonyms);
-			$("#search-list").append("<hr>");
+		
 
 		}
 
