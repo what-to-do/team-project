@@ -202,4 +202,20 @@ function search_history() {
 
 } // End of search_history function
 
+
+btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
+function renderButtons() {
+
+
+	for (var i = 0; i < btn_options.length; i++) {
+		var options = $("<button>");
+		options.text(btn_options[i]);
+		options.attr("data-name", btn_options[i]);
+		options.addClass("btn btn-info")
+		$("#category").append(options);
+		}
+	} //end of renderButtons
+
+renderButtons();
+
 }); // End of document.ready
