@@ -141,6 +141,52 @@ function synonyms(){
 
 function search_history() {
 
+	$("#search-list").empty();
+
+	// reusing code from synonyms() in order to create
+	// Past and Synonyms buttons after emptying content of div upon reset
+
+		/**
+	 * Names of the buttons inside search-list
+	 * @type {Strings}
+	 */
+	var btn_names_related = ["Past" , "Synonyms"];
+
+	/**
+	 * Creates button
+	 * @param  {btn_names_related size} var i             Will loop through as many button we need 
+	 * @return {Appends buttons}     Makes buttons inside the div of search-list
+	 */
+	for (var i = 0; i < btn_names_related.length; i++) {
+		
+		var btns_search = $("<button>");
+
+		btns_search.addClass("searching btn btn-outline-success waves-effect");
+
+		btns_search.attr({
+			"data-index": btn_names_related[i].toLowerCase()
+		});
+
+		btns_search.text(btn_names_related[i]);
+
+		$("#search-list").append(btns_search);
+		
+
+	}
+
+	$("#search-list").append("<hr>");
+
+	console.log(response);
+
+	// past searches are saved in search_history_record in local storage
+	// open search_history_record, iterate through items
+	// create buttons for each record in search_history_record
+
+	for (var j = 0; j < search_history_record.length; j++) {
+
+
+	}
+
 }
 
 }); // End of document.ready
