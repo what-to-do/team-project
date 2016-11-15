@@ -181,6 +181,9 @@ function search_history() {
 	// open search_history_record, iterate through items
 	// create buttons for each record in search_history_record
 
+	//  the following line is for testing purposes of search_history only
+		var search_history_record = ["dogs", "zebra", "the thing"];
+
 	for (var j = 0; j < search_history_record.length; j++) {
 
 		var btns_search_history = $("<button>");
@@ -191,7 +194,7 @@ function search_history() {
 			"data-index": search_history_record[i].toLowerCase()
 		});
 
-		btns_search_history.text(btns_search_history[i]);
+		btns_search_history.text(search_history_record[j]);
 
 		$("#search-list").append(btns_search_history);
 
