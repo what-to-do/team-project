@@ -23,13 +23,7 @@ function event_listener(){
 
 	}); // End of searching click event
 
-
-
-
-
 } // End of event_listener function
-
-
 
 function create_sidebar_btn(){
 
@@ -65,7 +59,11 @@ function create_sidebar_btn(){
 
 } // End of create_sidebar_btn function
 
-
+/**
+ * This will display what ever the user clicks on in search-list
+ * @param  {Button} ){	var user_click    Possible pipes
+ * @return {A list of button}         List of buttons based on what the user clicked on
+ */
 function synonyms(){
 
 	var word = "monkey";
@@ -89,13 +87,7 @@ function synonyms(){
 
 		$("#search-list").empty();
 
-		//create_sidebar_btn();
-
-
-
 		for (var i = 0; i < response.synonyms.length; i++) {
-			
-			//console.log(response.synonyms[i]);
 
 			var synonyms = $("<button>");
 
@@ -108,10 +100,8 @@ function synonyms(){
 			synonyms.text(response.synonyms[i]);
 
 			$("#search-list").append(synonyms);
-		
 
 		} // End of For Loop
-
 
 	}); // End of ajax of synonyms
 
@@ -178,11 +168,12 @@ function category_bar() {
 
 		$("#category").append(options);
 
-		options.css("float", "right")
+		options.css("float", "right");
 
-		} // End of For Loop
+	} // End of For Loop
 
-	} //End of category_bar function
+} //End of category_bar function
+
 
 create_sidebar_btn();
 category_bar();
