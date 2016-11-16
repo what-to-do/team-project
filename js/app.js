@@ -47,19 +47,19 @@ function event_listener(){
 		var user_category_click = $(this);
 		var user_category_pick = user_category_click.data("name");
 
-		if (user_category_pick) = "dictionary" {
+		if (user_category_pick == "dictionary") {
 
 			dictionary();
 
-		} else if (user_category_pick) = "wikipedia" {
+		} else if (user_category_pick == "wikipedia") {
 
 			wikipedia();
 
-		} else if (user_category_pick) = "youtube" {
+		} else if (user_category_pick == "youtube") {
 
 			youtube();
 
-		} else if (user_category_pick) = "giphy" {
+		} else if (user_category_pick == "giphy") {
 
 			giphy();
 
