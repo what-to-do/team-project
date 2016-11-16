@@ -82,7 +82,11 @@ function create_sidebar_btn(){
 		btns_search.addClass("searching btn btn-outline-success waves-effect");
 
 		btns_search.attr({
-			"data-index": btn_names_related[i].toLowerCase()
+			"data-index": btn_names_related[i].toLowerCase(),
+			//adds Help ToolTips 
+			"data-toggle": "tooltip",
+			"data-placement": "bottom",
+			"title": "click here for " + btn_names_related[i].toLowerCase()
 		});
 
 		btns_search.text(btn_names_related[i]);
@@ -199,9 +203,12 @@ function category_bar() {
 
 		options.text(btn_options[i]);
 
-		options.attr("data-name", btn_options[i]);
-
-		options.attr ("data-index", btn_options[i]);
+		options.attr({"data-name": btn_options[i],
+					  "data-index": btn_options[i],
+					  //add tooltip help
+					  "data-toggle": "tooltip",
+					  "data-placement": "bottom",
+					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
 		options.addClass("btn btn-info category_buttons")
 
