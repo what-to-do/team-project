@@ -12,7 +12,17 @@ function event_listener(){
 
 	}); // End of mag-glass click event
 
-
+	//if user presses enter on search input
+	$("#user-input").keydown(function(event){
+		
+		if(event.keyCode == 13) {
+			baton = $("#user-input").val().trim();
+			/*user_search.push(user_input);*/
+			console.log("The baton is: " + baton);
+			return false;
+		}
+	}); // End of user-input keydown event
+	
 	$(".searching").on("click" , function(){
 
 		var user_click = $(this);
