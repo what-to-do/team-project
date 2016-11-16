@@ -43,6 +43,30 @@ function event_listener(){
 
 	}); // End of searching click event
 
+	$(".category_buttons").on("click", function() {
+		var user_category_click = $(this);
+		var user_category_pick = user_category_click.data("name");
+
+		if (user_category_pick == "dictionary") {
+
+			dictionary();
+
+		} else if (user_category_pick == "wikipedia") {
+
+			wikipedia();
+
+		} else if (user_category_pick == "youtube") {
+
+			youtube();
+
+		} else if (user_category_pick == "giphy") {
+
+			giphy();
+
+		} // End of If Else
+
+	}); // End of category_buttons click event
+
 } // End of event_listener function
 
 function create_sidebar_btn(){
