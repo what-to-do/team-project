@@ -52,7 +52,65 @@ function event_listener(){
 
 	}); // End of searching click event
 
+ $(".category_buttons").on("click", function() {
+        var user_category_click = $(this);
+        var user_category_pick = user_category_click.data("name");
 
+        if (user_category_pick == "dictionary") {
+
+            dictionary();
+
+        } else if (user_category_pick == "wikipedia") {
+
+            wikipedia();
+
+        } else if (user_category_pick == "youtube") {
+
+            youtube();
+
+        } else if (user_category_pick == "giphy") {
+
+            giphy();
+
+        } // End of If Else
+
+    }); // End of category_buttons click event
+
+    $(".past_searches").on("click", function() {
+
+        var past_searches_click = $(this);
+
+        var past_searches_pick = past_searches_click.data("index");
+
+        console.log(past_searches_pick);
+
+        baton = past_searches_pick;
+
+        console.log('The baton is ' + baton);
+
+        event_listener();
+
+    }); // End of past_searches click event
+
+
+    $(".synonyms").on("click", function() {
+
+        console.log("synonym click");
+
+        var synonym_click = $(this);
+
+        var synonym_pick = synonym_click.data("index");
+
+        console.log("Synonym pick is " + synonym_pick);
+
+        baton = synonym_pick;
+
+        console.log('The baton is ' + baton);
+
+        event_listener();
+
+
+    }); // End of synonyms click event
 
 } // End of event_listener function
 
