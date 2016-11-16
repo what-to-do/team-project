@@ -1,7 +1,17 @@
 $(document).ready(function() {
 
+var baton = "";
 
 function event_listener(){
+
+	$("#mag-glass").on("click" , function(){
+
+		baton = $("#user-input").val().trim();
+
+		console.log("The baton is " + baton);
+
+	}); // End of mag-glass click event
+
 
 	$(".searching").on("click" , function(){
 
@@ -36,7 +46,7 @@ function create_sidebar_btn(){
 	/**
 	 * Creates button
 	 * @param  {btn_names_related size} var i   Will loop through as many button we need 
-	 * @return {Appends buttons}     Makes buttons inside the div of search-list
+	 * @return {Appends buttons}     Makes bugirtttons inside the div of search-list
 	 */
 	for (var i = 0; i < btn_names_related.length; i++) {
 		
