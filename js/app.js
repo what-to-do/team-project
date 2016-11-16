@@ -1,59 +1,70 @@
 $(document).ready(function() {
 
-/**
- * Names of the buttons inside search-list
- * @type {Strings}
- */
-var btn_names_related = ["Past" , "Synonyms"];
 
-/**
- * Creates button
- * @param  {btn_names_related size} var i             Will loop through as many button we need 
- * @return {Appends buttons}     Makes buttons inside the div of search-list
- */
-for (var i = 0; i < btn_names_related.length; i++) {
-	
-	var btns_search = $("<button>");
+function event_listener(){
 
-	btns_search.addClass("searching btn btn-outline-success waves-effect");
+	$(".searching").on("click" , function(){
 
-	btns_search.attr({
-		"data-index": btn_names_related[i].toLowerCase()
-	});
+		var user_click = $(this);
+		var user_pick = user_click.data("index");
 
-	btns_search.text(btn_names_related[i]);
+		console.log("User click is " + user_click);
+		console.log("User pick is " + user_pick);
 
-	$("#search-list").append(btns_search);
-	
+		if (user_pick == "synonyms") {
 
-} // End of For Loop
+			synonyms();
 
-$("#search-list").append("<hr>");
+		}  else if (user_pick == "past") {
 
-/**
- * This will display what ever the user clicks on in search-list
- * @param  {Button} ){	var user_click    Possible pipes
- * @return {A list of button}         List of buttons based on what the user clicked on
- */
-$(".searching").on("click" , function(){
+			search_history();
+			
+		} // End of If Else
 
-	var user_click = $(this);
-	var user_pick = user_click.data("index");
+	}); // End of searching click event
 
-	console.log("User click is " + user_click);
-	console.log("User pick is " + user_pick);
 
-	if (user_pick == "synonyms") {
 
-		synonyms();
 
-	} else {
 
-		search_history();
+} // End of event_listener function
+
+
+
+function create_sidebar_btn(){
+
+	/**
+	 * Names of the buttons inside search-list
+	 * @type {Strings}
+	 */
+	var btn_names_related = ["Past" , "Synonyms"];
+
+	/**
+	 * Creates button
+	 * @param  {btn_names_related size} var i   Will loop through as many button we need 
+	 * @return {Appends buttons}     Makes buttons inside the div of search-list
+	 */
+	for (var i = 0; i < btn_names_related.length; i++) {
 		
-	} // End of If Else
+		var btns_search = $("<button>");
 
-}); // End of searching click event
+		btns_search.addClass("searching btn btn-outline-success waves-effect");
+
+		btns_search.attr({
+			"data-index": btn_names_related[i].toLowerCase()
+		});
+
+		btns_search.text(btn_names_related[i]);
+
+		$(".hey").append(btns_search);
+		
+
+	} // End of For Loop
+
+	$(".hey").append("<hr>");
+
+} // End of create_sidebar_btn function
+
 
 function synonyms(){
 
@@ -78,46 +89,13 @@ function synonyms(){
 
 		$("#search-list").empty();
 
-		/**
-		 * Names of the buttons inside search-list
-		 * @type {Strings}
-		 */
-		var btn_names_related = ["Past" , "Synonyms"];
+		//create_sidebar_btn();
 
-		/**
-		 * Creates button
-		 * @param  {btn_names_related size} var i             Will loop through as many button we need 
-		 * @return {Appends buttons}     Makes buttons inside the div of search-list
-		 */
-		for (var i = 0; i < btn_names_related.length; i++) {
-			
-			var btns_search = $("<button>");
 
-			btns_search.addClass("searching btn btn-outline-success waves-effect");
 
-			btns_search.attr({
-				"data-index": btn_names_related[i].toLowerCase()
-			});
-
-			btns_search.text(btn_names_related[i]);
-
-			$("#search-list").append(btns_search);
-			
-
-		} // End of For Loop
-
-		$("#search-list").append("<hr>");
-
-		console.log(response);
-
-		/**
-		 * Will loop over the aviable synonyms of the searched word
-		 * @param  {Pass in the object and its length} var i             Loops over the object
-		 * @return {Will go to the page in the future}     Allows the user to see the synonyms for their choosen word
-		 */
 		for (var i = 0; i < response.synonyms.length; i++) {
 			
-			console.log(response.synonyms[i]);
+			//console.log(response.synonyms[i]);
 
 			var synonyms = $("<button>");
 
@@ -137,45 +115,20 @@ function synonyms(){
 
 	}); // End of ajax of synonyms
 
+	event_listener();
+
 } // End of synonyms function
 
 function search_history() {
+
+	console.log("hey you");
 
 	$("#search-list").empty();
 
 	// reusing code from synonyms() in order to create
 	// Past and Synonyms buttons after emptying content of div upon reset
 
-		/**
-	 * Names of the buttons inside search-list
-	 * @type {Strings}
-	 */
-	var btn_names_related = ["Past" , "Synonyms"];
-
-	/**
-	 * Creates button
-	 * @param  {btn_names_related size} var i             Will loop through as many button we need 
-	 * @return {Appends buttons}     Makes buttons inside the div of search-list
-	 */
-	for (var i = 0; i < btn_names_related.length; i++) {
-		
-		var btns_search = $("<button>");
-
-		btns_search.addClass("searching btn btn-outline-success waves-effect");
-
-		btns_search.attr({
-			"data-index": btn_names_related[i].toLowerCase()
-		});
-
-		btns_search.text(btn_names_related[i]);
-
-		$("#search-list").append(btns_search);
-		
-
-	} // End of For Loop
-
-	$("#search-list").append("<hr>");
-
+	//create_sidebar_btn();
 
 	// past searches are saved in search_history_record in local storage
 	// open search_history_record, iterate through items
@@ -188,10 +141,10 @@ function search_history() {
 
 		var btns_search_history = $("<button>");
 
-		btns_search_history.addClass("past_searches list-group-item");
+		btns_search_history.addClass("past_searches searching list-group-item");
 
 		btns_search_history.attr({
-			"data-index": search_history_record[i].toLowerCase()
+			"data-index": search_history_record[j].toLowerCase()
 		});
 
 		btns_search_history.text(search_history_record[j]);
@@ -200,12 +153,14 @@ function search_history() {
 
 	} // End of For Loop
 
+	event_listener();
+
 } // End of search_history function
 
 
 // This will create buttons for each kind of entertainment or educational resource we want
 function category_bar() {
-	//category array. We can add more if we need to.
+
 	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
 
 	//loops through array and creates buttons, gives them data-names and index
@@ -225,9 +180,13 @@ function category_bar() {
 
 		options.css("float", "right")
 
-		}
-	} //end of category_bar
+		} // End of For Loop
 
+	} //End of category_bar function
+
+create_sidebar_btn();
 category_bar();
+
+event_listener();
 
 }); // End of document.ready
