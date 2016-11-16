@@ -4,6 +4,13 @@ var baton = "";
 
 function event_listener(){
 
+	//when user clicks on help button
+	$("#help-button").on("click", function(){
+		//if user click =true activate hover function until click false
+		alert("Justin needs help");
+
+	})
+
 	$("#mag-glass").on("click" , function(){
 
 		baton = $("#user-input").val().trim();
@@ -42,6 +49,12 @@ function event_listener(){
 		} // End of If Else
 
 	}); // End of searching click event
+
+	//when user clicks on help button
+	$("#help-button").on("click", function(){
+		console.log("I need help");
+
+	})
 
 } // End of event_listener function
 
