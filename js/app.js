@@ -26,6 +26,8 @@ function event_listener(){
 			baton = $("#user-input").val().trim();
 			/*user_search.push(user_input);*/
 			console.log("The baton is: " + baton);
+
+
 			return false;
 		}
 	}); // End of user-input keydown event
@@ -53,6 +55,12 @@ function event_listener(){
 
 
 } // End of event_listener function
+
+function valid(){
+
+
+
+} // End of Valid Function
 
 function create_sidebar_btn(){
 
@@ -95,7 +103,7 @@ function create_sidebar_btn(){
  */
 function synonyms(){
 
-	var word = "monkey";
+	var word = "ey";
 	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
 
 	// Ajax request to wordsapi 
@@ -113,6 +121,8 @@ function synonyms(){
 
 
 	}).done(function(response){
+
+		console.log(response);
 
 		$("#search-list").empty();
 
