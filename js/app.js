@@ -75,6 +75,8 @@ function event_listener(){
 
 		console.log(past_searches_pick);
 
+		baton = past_searches_pick;
+
 	}); // End of past_searches click event
 
 } // End of event_listener function
