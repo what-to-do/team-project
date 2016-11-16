@@ -4,6 +4,13 @@ var baton = "";
 
 function event_listener(){
 
+	//when user clicks on help button
+	$("#help-button").on("click", function(){
+		//if user click =true activate hover function until click false
+		alert("Justin needs help");
+
+	})
+
 	$("#mag-glass").on("click" , function(){
 
 		baton = $("#user-input").val().trim();
@@ -43,41 +50,11 @@ function event_listener(){
 
 	}); // End of searching click event
 
-	$(".category_buttons").on("click", function() {
-		var user_category_click = $(this);
-		var user_category_pick = user_category_click.data("name");
+	//when user clicks on help button
+	$("#help-button").on("click", function(){
+		console.log("I need help");
 
-		if (user_category_pick == "dictionary") {
-
-			dictionary();
-
-		} else if (user_category_pick == "wikipedia") {
-
-			wikipedia();
-
-		} else if (user_category_pick == "youtube") {
-
-			youtube();
-
-		} else if (user_category_pick == "giphy") {
-
-			giphy();
-
-		} // End of If Else
-
-	}); // End of category_buttons click event
-
-	$(".past_searches").on("click", function() {
-
-		var past_searches_click = $(this);
-
-		var past_searches_pick = past_searches_click.data("index");
-
-		console.log(past_searches_pick);
-
-		baton = past_searches_pick;
-
-	}); // End of past_searches click event
+	})
 
 } // End of event_listener function
 
