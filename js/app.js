@@ -67,6 +67,16 @@ function event_listener(){
 
 	}); // End of category_buttons click event
 
+	$(".past_searches").on("click", function() {
+
+		var past_searches_click = $(this);
+
+		var past_searches_pick = past_searches_click.data("index");
+
+		console.log(past_searches_pick);
+
+	}); // End of past_searches click event
+
 } // End of event_listener function
 
 function create_sidebar_btn(){
