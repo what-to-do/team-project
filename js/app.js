@@ -50,11 +50,7 @@ function event_listener(){
 
 	}); // End of searching click event
 
-	//when user clicks on help button
-	$("#help-button").on("click", function(){
-		console.log("I need help");
 
-	})
 
 } // End of event_listener function
 
@@ -206,6 +202,11 @@ function category_bar() {
 	} // End of For Loop
 
 } //End of category_bar function
+
+// Tooltips Initialization
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 
 create_sidebar_btn();
