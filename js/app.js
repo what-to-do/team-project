@@ -1,82 +1,95 @@
 $(document).ready(function() {
+// /*
+// var baton = "";
 
-var baton = "";
+// function event_listener(){
 
-function event_listener(){
+// 	//when user clicks on help button
+// 	$("#help-button").on("click", function(){
+// 		//if user click =true activate hover function until click false
+// 		alert("Justin needs help");
 
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 	//when user clicks on help button
 	$("#help-button").on("click", function(){
 		//if user click =true activate hover function until click false
 		$(this).data() == true;
 		if(this.data() == false) 
 		alert("Justin needs help");
+=======
+// 	})
+>>>>>>> Made sure that no conflicts happen again
 
-	})
+// 	$("#mag-glass").on("click" , function(){
 
-	$("#mag-glass").on("click" , function(){
+// 		baton = $("#user-input").val().trim();
 
-		baton = $("#user-input").val().trim();
+// 		console.log("The baton is " + baton);
 
-		console.log("The baton is " + baton);
+// 	}); // End of mag-glass click event
 
-	}); // End of mag-glass click event
-
-	//if user presses enter on search input
-	$("#user-input").keydown(function(event){
+// 	//if user presses enter on search input
+// 	$("#user-input").keydown(function(event){
 		
-		if(event.keyCode == 13) {
-			baton = $("#user-input").val().trim();
-			/*user_search.push(user_input);*/
-			console.log("The baton is: " + baton);
+// 		if(event.keyCode == 13) {
+// 			baton = $("#user-input").val().trim();
+// 			/*user_search.push(user_input);*/
+// 			console.log("The baton is: " + baton);
 
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 			return false;
 		}
 	}); // End of user-input keydown event
+=======
+
+// 			return false;
+// 		}
+// 	}); // End of user-input keydown event
+>>>>>>> Made sure that no conflicts happen again
 	
-	$(".searching").on("click" , function(){
+// 	$(".searching").on("click" , function(){
 
-		var user_click = $(this);
-		var user_pick = user_click.data("index");
+// 		var user_click = $(this);
+// 		var user_pick = user_click.data("index");
 
-		console.log("User click is " + user_click);
-		console.log("User pick is " + user_pick);
+// 		console.log("User click is " + user_click);
+// 		console.log("User pick is " + user_pick);
 
-		if (user_pick == "synonyms") {
+// 		if (user_pick == "synonyms") {
 
-			synonyms();
+// 			synonyms();
 
-		}  else if (user_pick == "past") {
+// 		}  else if (user_pick == "past") {
 
-			search_history();
+// 			search_history();
 			
-		} // End of If Else
+// 		} // End of If Else
 
-	}); // End of searching click event
+// 	}); // End of searching click event
 
- $(".category_buttons").on("click", function() {
-        var user_category_click = $(this);
-        var user_category_pick = user_category_click.data("name");
+//  $(".category_buttons").on("click", function() {
+//         var user_category_click = $(this);
+//         var user_category_pick = user_category_click.data("name");
 
-        if (user_category_pick == "dictionary") {
+//         if (user_category_pick == "dictionary") {
 
-            dictionary();
+//             dictionary();
 
-        } else if (user_category_pick == "wikipedia") {
+//         } else if (user_category_pick == "wikipedia") {
 
-            wikipedia();
+//             wikipedia();
 
-        } else if (user_category_pick == "youtube") {
+//         } else if (user_category_pick == "youtube") {
 
-            youtube();
+//             youtube();
 
-        } else if (user_category_pick == "giphy") {
+//         } else if (user_category_pick == "giphy") {
 
-            giphy();
+//             giphy();
 
-        } // End of If Else
+//         } // End of If Else
 
-    }); // End of category_buttons click event
-
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
  	$(".search_items").on("click", function() {
 
  		var search_item_click = $(this);
@@ -94,214 +107,237 @@ function event_listener(){
  	}); // End of search_items click event
 
     $(".past_searches").on("click", function() {
+=======
+//     }); // End of category_buttons click event
+>>>>>>> Made sure that no conflicts happen again
 
-        var past_searches_click = $(this);
+//     $(".past_searches").on("click", function() {
 
-        var past_searches_pick = past_searches_click.data("index");
+//         var past_searches_click = $(this);
 
-        console.log(past_searches_pick);
+//         var past_searches_pick = past_searches_click.data("index");
 
-        baton = past_searches_pick;
+//         console.log(past_searches_pick);
 
-        console.log('The baton is ' + baton);
+//         baton = past_searches_pick;
 
-        event_listener();
+//         console.log('The baton is ' + baton);
 
-    }); // End of past_searches click event
+//         event_listener();
 
-
-    $(".synonyms").on("click", function() {
-
-        console.log("synonym click");
-
-        var synonym_click = $(this);
-
-        var synonym_pick = synonym_click.data("index");
-
-        console.log("Synonym pick is " + synonym_pick);
-
-        baton = synonym_pick;
-
-        console.log('The baton is ' + baton);
-
-        event_listener();
+//     }); // End of past_searches click event
 
 
-    }); // End of synonyms click event
+//     $(".synonyms").on("click", function() {
 
-} // End of event_listener function
+//         console.log("synonym click");
 
-function valid(){
+//         var synonym_click = $(this);
+
+//         var synonym_pick = synonym_click.data("index");
+
+//         console.log("Synonym pick is " + synonym_pick);
+
+//         baton = synonym_pick;
+
+//         console.log('The baton is ' + baton);
+
+//         event_listener();
 
 
+//     }); // End of synonyms click event
 
-} // End of Valid Function
+// } // End of event_listener function
 
-function create_sidebar_btn(){
+// function valid(){
 
-	/**
-	 * Names of the buttons inside search-list
-	 * @type {Strings}
-	 */
-	var btn_names_related = ["Past" , "Synonyms"];
+	
 
-	/**
-	 * Creates button
-	 * @param  {btn_names_related size} var i   Will loop through as many button we need 
-	 * @return {Appends buttons}     Makes bugirtttons inside the div of search-list
-	 */
-	for (var i = 0; i < btn_names_related.length; i++) {
+// } // End of Valid Function
+
+// function create_sidebar_btn(){
+
+// 	/**
+// 	 * Names of the buttons inside search-list
+// 	 * @type {Strings}
+// 	 */
+// 	var btn_names_related = ["Past" , "Synonyms"];
+
+// 	/**
+// 	 * Creates button
+// 	 * @param  {btn_names_related size} var i   Will loop through as many button we need 
+// 	 * @return {Appends buttons}     Makes bugirtttons inside the div of search-list
+// 	 */
+// 	for (var i = 0; i < btn_names_related.length; i++) {
 		
-		var btns_search = $("<button>");
+// 		var btns_search = $("<button>");
 
-		btns_search.addClass("searching btn btn-outline-success waves-effect");
+// 		btns_search.addClass("searching btn btn-outline-success waves-effect");
 
-		btns_search.attr({
-			"data-index": btn_names_related[i].toLowerCase(),
-			//adds Help ToolTips 
-			"data-toggle": "tooltip",
-			"data-placement": "bottom",
-			"title": "click here for " + btn_names_related[i].toLowerCase()
-		});
+// 		btns_search.attr({
+// 			"data-index": btn_names_related[i].toLowerCase(),
+// 			//adds Help ToolTips 
+// 			"data-toggle": "tooltip",
+// 			"data-placement": "bottom",
+// 			"title": "click here for " + btn_names_related[i].toLowerCase()
+// 		});
 
-		btns_search.text(btn_names_related[i]);
+// 		btns_search.text(btn_names_related[i]);
 
-		$(".hey").append(btns_search);
+// 		$(".hey").append(btns_search);
 		
 
-	} // End of For Loop
+// 	} // End of For Loop
 
-	$(".hey").append("<hr>");
+// 	$(".hey").append("<hr>");
 
-} // End of create_sidebar_btn function
+// } // End of create_sidebar_btn function
 
-/**
- * This will display what ever the user clicks on in search-list
- * @param  {Button} ){	var user_click    Possible pipes
- * @return {A list of button}         List of buttons based on what the user clicked on
- */
-function synonyms(){
+// /**
+//  * This will display what ever the user clicks on in search-list
+//  * @param  {Button} ){	var user_click    Possible pipes
+//  * @return {A list of button}         List of buttons based on what the user clicked on
+//  */
+// function synonyms(){
 
-	var word = "ey";
-	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
+// 	var word = "ey";
+// 	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
 
-	// Ajax request to wordsapi 
-	// Will return the synonyms of the searched word
-	$.ajax({
-	    url: synonyms_url, // The URL to the API. You can get this in the API page of the API you intend to consume
-	    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
-	    data: {}, // Additional parameters here
-	    dataType: 'json',
-	    success: function(data) { console.dir((data.source)); console.log(data);},
-	    error: function(err) { alert(err); },
-	    beforeSend: function(xhr) {
-	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
-	    }
+// 	// Ajax request to wordsapi 
+// 	// Will return the synonyms of the searched word
+// 	$.ajax({
+// 	    url: synonyms_url, // The URL to the API. You can get this in the API page of the API you intend to consume
+// 	    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+// 	    data: {}, // Additional parameters here
+// 	    dataType: 'json',
+// 	    success: function(data) { console.dir((data.source)); console.log(data);},
+// 	    error: function(err) { alert(err); },
+// 	    beforeSend: function(xhr) {
+// 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
+// 	    }
 
 
-	}).done(function(response){
+// 	}).done(function(response){
 
-		console.log(response);
+// 		console.log(response);
 
-		$("#search-list").empty();
+// 		$("#search-list").empty();
 
-		for (var i = 0; i < response.synonyms.length; i++) {
+// 		for (var i = 0; i < response.synonyms.length; i++) {
 
-			var synonyms = $("<button>");
+// 			var synonyms = $("<button>");
 
+// 			synonyms.addClass("synonyms list-group-item");
+
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 			synonyms.addClass("synonyms search_items list-group-item");
+=======
+// 			synonyms.attr({
+// 				"data-index": response.synonyms[i]
+// 			});
+>>>>>>> Made sure that no conflicts happen again
 
-			synonyms.attr({
-				"data-index": response.synonyms[i]
-			});
+// 			synonyms.text(response.synonyms[i]);
 
-			synonyms.text(response.synonyms[i]);
+// 			$("#search-list").append(synonyms);
 
-			$("#search-list").append(synonyms);
+// 		} // End of For Loop
 
-		} // End of For Loop
+// 	}); // End of ajax of synonyms
 
-	}); // End of ajax of synonyms
+// 	event_listener();
 
-	event_listener();
+// } // End of synonyms function
 
-} // End of synonyms function
+// function search_history() {
 
-function search_history() {
+// 	console.log("hey you");
 
-	console.log("hey you");
+// 	$("#search-list").empty();
 
-	$("#search-list").empty();
+// 	// reusing code from synonyms() in order to create
+// 	// Past and Synonyms buttons after emptying content of div upon reset
 
-	// reusing code from synonyms() in order to create
-	// Past and Synonyms buttons after emptying content of div upon reset
+// 	//create_sidebar_btn();
 
-	//create_sidebar_btn();
+// 	// past searches are saved in search_history_record in local storage
+// 	// open search_history_record, iterate through items
+// 	// create buttons for each record in search_history_record
 
-	// past searches are saved in search_history_record in local storage
-	// open search_history_record, iterate through items
-	// create buttons for each record in search_history_record
+// 	//  the following line is for testing purposes of search_history only
+// 	var search_history_record = ["dogs", "zebra", "the thing"];
 
-	//  the following line is for testing purposes of search_history only
-	var search_history_record = ["dogs", "zebra", "the thing"];
+// 	for (var j = 0; j < search_history_record.length; j++) {
 
-	for (var j = 0; j < search_history_record.length; j++) {
+// 		var btns_search_history = $("<button>");
 
-		var btns_search_history = $("<button>");
+// 		btns_search_history.addClass("past_searches searching list-group-item");
 
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 		btns_search_history.addClass("past_searches searching search_items list-group-item");
+=======
+// 		btns_search_history.attr({
+// 			"data-index": search_history_record[j].toLowerCase()
+// 		});
+>>>>>>> Made sure that no conflicts happen again
 
-		btns_search_history.attr({
-			"data-index": search_history_record[j].toLowerCase()
-		});
+// 		btns_search_history.text(search_history_record[j]);
 
-		btns_search_history.text(search_history_record[j]);
+// 		$("#search-list").append(btns_search_history);
 
-		$("#search-list").append(btns_search_history);
+// 	} // End of For Loop
 
-	} // End of For Loop
+// 	event_listener();
 
-	event_listener();
-
-} // End of search_history function
+// } // End of search_history function
 
 
+// // This will create buttons for each kind of entertainment or educational resource we want
+// function category_bar() {
+
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 function category_bar() {
 	$("#category").css("text-align", "center");
+=======
+// 	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
+>>>>>>> Made sure that no conflicts happen again
 
-	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
+// 	//loops through array and creates buttons, gives them data-names and index
+// 	for (var i = 0; i < btn_options.length; i++) {
 
-	//loops through array and creates buttons, gives them data-names and index
-	for (var i = 0; i < btn_options.length; i++) {
+// 		var options = $("<button>");
 
-		var options = $("<button>");
+// 		options.text(btn_options[i]);
 
-		options.text(btn_options[i]);
+// 		options.attr({"data-name": btn_options[i],
+// 					  "data-index": btn_options[i],
+// 					  //add tooltip help
+// 					  "data-toggle": "tooltip",
+// 					  "data-placement": "bottom",
+// 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.attr({"data-name": btn_options[i],
-					  "data-index": btn_options[i],
-					  //add tooltip help
-					  "data-toggle": "tooltip",
-					  "data-placement": "bottom",
-					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
+// 		options.addClass("btn btn-info category_buttons")
 
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 		options.addClass("btn btn-info category_buttons style")
+=======
+// 		$("#category").append(options);
+>>>>>>> Made sure that no conflicts happen again
 
-		$("#category").append(options);
+// 		options.css("float", "right");
 
+<<<<<<< e13817777a4ea10f1d80593f6816dadc36707e02
 
 
 
 		
+=======
+// 	} // End of For Loop
+>>>>>>> Made sure that no conflicts happen again
 
-	} // End of For Loop
+// } //End of category_bar function
 
-} //End of category_bar function
 
-// Tooltips Initialization
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
 
 //start of toggle nav bar
 $("#home").on("click", function() {
