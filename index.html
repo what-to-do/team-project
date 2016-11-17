@@ -21,60 +21,60 @@
         
     </head>
     <body>
-        <!-- SideNav slide-out button -->
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa-2x"></i></a>
-<!--/. SideNav slide-out button -->
 
 <!-- Sidebar navigation -->
 
 <ul id="slide-out" class="side-nav fixed default-side-nav light-side-nav">
 
     <!-- Side navigation links -->
-    
-    <ul class="collapsible collapsible-accordion">
-        <li><a class="collapsible-header waves-effect">Click me</a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li><a class="collapsible-header waves-effect">Click me</a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li><a class="collapsible-header waves-effect">Click me</a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-    <!--/. Side navigation links -->
-</ul>
-<!--/. Sidebar navigation -->
-        <!--Navbar-->
-        <nav class="navbar navbar-dark bg-primary">
 
-            <div class="container">
+    <ul class="collapsible collapsible-accordion">
+        <li><a class="collapsible-header waves-effect" id="past">Click me</a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#" class="waves-effect">Link</a>
+                    </li>
+                    <li><a href="#" class="waves-effect">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a class="collapsible-header waves-effect">Click me</a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#" class="waves-effect">Link</a>
+                    </li>
+                    <li><a href="#" class="waves-effect">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a class="collapsible-header waves-effect">Click me</a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#" class="waves-effect">Link</a>
+                    </li>
+                    <li><a href="#" class="waves-effect">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul> <!--/. Side navigation links -->
+</ul> <!--/. Sidebar navigation -->
+
+        <!--Navbar-->
+        <nav class="navbar navbar-dark bg-primary" id="main-nav">
+        
+            <!-- <div class="container"> -->
 
                 <!--Collapse content-->
                 <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+                    <!-- SideNav slide-out button -->
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa" id="side-nav-button"></i></a>
+                    <!--/. SideNav slide-out button -->
+
                     <!--Navbar Brand, included our brand-logo class-->
-                    <a class="navbar-brand brand-logo waves-effect waves-light">Pipeline</a>
+                    <a class="navbar-brand brand-logo waves-effect waves-light" id="logo">Pipeline</a>
                     <!--Links-->
                     <ul class="nav navbar-nav">
                         <li class="nav-item active">
@@ -92,14 +92,22 @@
                     </form> 
                 </div> <!--end of Collapse content-->
                
-            </div> <!--end of container-->
+            <!-- </div> end of container-->
             
         </nav> <!--end of Navbar-->
         
 
         <!--category-->
         <div class="container-fluid" id="category">
-           
+            <!-- Switch -->
+                         <div class="switch">
+                            <label>
+                                Off
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                On
+                            </label>
+                      </div> <!--end of Switch-->   
         </div> <!--end of category-->
         
 

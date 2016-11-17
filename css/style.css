@@ -8,10 +8,33 @@ body {
 	height: 75px;
 }
 
+
 /*search/synonyms buttons and results div*/
 #side-nav {
 	background-color: grey;
 	height: 100vh;
+}
+
+
+#side-nav-button {
+	color: white;
+	margin-top: 10px;
+
+}
+
+.switch {
+	float: right;
+	margin-top: 27px;
+	font-weight: bold;
+	color: white;
+}
+
+.category_buttons {
+	margin-top: 15px;
+}
+
+#logo {
+	margin-left: 70px;
 }
 
 /*where the api content will show*/
