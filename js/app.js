@@ -250,6 +250,7 @@ function search_history() {
 
 
 function category_bar() {
+	$("#category").css("text-align", "center");
 
 	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
 
