@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+	</head>
+	<body>
+		<div id="content"></div>
+		<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script></script>
+
+		<script type="text/javascript">
+
+//			var url = "https://en.wikipedia.org/w/api.php?action=query&titles=Star%20Wars&format=json&prop=revisions&rvprop=content&rvsection=0";
+
+			var url = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=';
+//			var url = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=Star%20Wars";
+//			var url = "http://en.wikipedia.org/w/api.php?action=parse&removeLinks=true&format=json&prop=text&section=0&callback=?&page=";
+			url += "zebra"
+			$.ajax({
+				url: url,
+				method: 'GET',
+				dataType: 'jsonp',
+				contentType: "application/json; charset-utf-8",
+				async: false,
+			}).done(function(result) {
+				var objResult = result;
+				console.log(objResult);
+				var pageId = result.query.pages;
+				console.log(pageId);
+				var pageIdArray = [];
+				pageIdArray = result;
+				console.log(pageIdArray.query.pages);
+				$array[] = 
+				// console.log(url);
+//				var extract = pageId.extract;
+//				console.log(extract);
+				$("#content").html(objResult);
+//				console.log(objResult.query.search[0]);
+			})
+
+		</script>
+	</body>
+</html>
