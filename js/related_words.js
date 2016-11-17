@@ -1,6 +1,6 @@
 function synonyms(){
 
-	var word = "ey";
+	var word = "dance";
 	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
 
 	// Ajax request to wordsapi 
@@ -27,7 +27,7 @@ function synonyms(){
 
 			var synonyms = $("<button>");
 
-			synonyms.addClass("synonyms list-group-item");
+			synonyms.addClass("searching list-group-item");
 
 			synonyms.attr({
 				"data-index": response.synonyms[i]
