@@ -4,7 +4,7 @@ create_sidebar_btn();
 category_bar();
 
 // For testing of valid
-valid();
+// valid();
 
 event_listener();
 
