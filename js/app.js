@@ -7,6 +7,8 @@ function event_listener(){
 	//when user clicks on help button
 	$("#help-button").on("click", function(){
 		//if user click =true activate hover function until click false
+		$(this).data() == true;
+		if(this.data() == false) 
 		alert("Justin needs help");
 
 	})
@@ -26,7 +28,6 @@ function event_listener(){
 			baton = $("#user-input").val().trim();
 			/*user_search.push(user_input);*/
 			console.log("The baton is: " + baton);
-
 
 			return false;
 		}
@@ -282,6 +283,14 @@ function category_bar() {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+//start of toggle nav bar
+$("#home").on("click", function() {
+	$("#side-nav").slideToggle(); 
+
+})
+	
+	
 
 
 create_sidebar_btn();
