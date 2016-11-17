@@ -28,15 +28,24 @@
 				async: false,
 			}).done(function(result) {
 				var objResult = result;
-				console.log(objResult);
+				var string = JSON.stringify(result);
+				console.log(string);
+				//console.log(objResult);
 				var pageId = result.query.pages;
 				console.log(pageId);
 				var pageIdArray = [];
 				pageIdArray = result;
-				console.log(pageIdArray.query.pages);
-				$array[] = 
-				// console.log(url);
-//				var extract = pageId.extract;
+				//console.log(pageIdArray.query.pages);
+				var array = [];
+
+				var theTypeIs = Object.keys(result.query.pages)[0];
+				console.log(theTypeIs);
+/*				for (var i = 0; i < 10; i++) {
+					array.push(result.pages[i]);
+				}
+				console.log(array);
+				console.log(url);
+*///				var extract = pageId.extract;
 //				console.log(extract);
 				$("#content").html(objResult);
 //				console.log(objResult.query.search[0]);
