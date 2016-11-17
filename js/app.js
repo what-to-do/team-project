@@ -249,7 +249,6 @@ function search_history() {
 } // End of search_history function
 
 
-// This will create buttons for each kind of entertainment or educational resource we want
 function category_bar() {
 
 	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
@@ -268,11 +267,14 @@ function category_bar() {
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.addClass("btn btn-info category_buttons")
+		options.addClass("btn btn-info category_buttons style")
 
 		$("#category").append(options);
 
-		options.css("float", "right");
+
+
+
+		
 
 	} // End of For Loop
 
