@@ -23,8 +23,12 @@ function event_listener(){
 	$("#mag-glass").on("click" , function(){
 
 		baton = $("#user-input").val().trim();
-
+		
 		console.log("The baton is " + baton);
+		
+		$("#main-display").append("<br>" + "Mag click " + baton);
+
+		valid()
 
 	}); // End of mag-glass click event
 
@@ -36,6 +40,9 @@ function event_listener(){
 			/*user_search.push(user_input);*/
 			console.log("The baton is: " + baton);
 
+			$("#main-display").append("<br>" + "By enter: " + baton);
+
+			valid();
 
 			return false;
 		}
@@ -97,12 +104,14 @@ function event_listener(){
 
         console.log('The baton is ' + baton);
 
-        event_listener();
+        $("#main-display").append("<br>" + "By past searches: " + baton);
+
+       // event_listener();
 
     }); // End of past_searches click event
 
 
-    $(".synonyms").on("click", function() {
+    $(".related").on("click", function() {
 
         console.log("synonym click");
 
@@ -116,7 +125,9 @@ function event_listener(){
 
         console.log('The baton is ' + baton);
 
-        event_listener();
+        $("#main-display").append("<br>" + "By related: " + baton);
+
+        //event_listener();
 
 
     }); // End of synonyms click event
