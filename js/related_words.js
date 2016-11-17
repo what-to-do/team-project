@@ -1,6 +1,6 @@
 function synonyms(){
-
-	var word = "dance";
+	console.log(baton);
+	var word = baton;
 	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
 
 	// Ajax request to wordsapi 
@@ -16,10 +16,7 @@ function synonyms(){
 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
 	    }
 
-
 	}).done(function(response){
-
-		console.log(response);
 
 		$("#search-list").empty();
 
@@ -27,7 +24,7 @@ function synonyms(){
 
 			var synonyms = $("<button>");
 
-			synonyms.addClass("searching list-group-item");
+			synonyms.addClass("related list-group-item");
 
 			synonyms.attr({
 				"data-index": response.synonyms[i]
@@ -39,8 +36,10 @@ function synonyms(){
 
 		} // End of For Loop
 
+		event_listener();
+
 	}); // End of ajax of synonyms
 
-	event_listener();
+	
 
 } // End of synonyms function

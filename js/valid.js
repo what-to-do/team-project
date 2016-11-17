@@ -1,6 +1,6 @@
 function valid(){
 
-	var word = "lighht";
+	var word = baton;
 	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
 
 	// Ajax request to wordsapi 
@@ -11,7 +11,7 @@ function valid(){
 	    data: {}, // Additional parameters here
 	    dataType: 'json',
 	    success: function(data) { console.dir((data.source)); console.log(data);},
-	    error: function(err) { wrong(word) },
+	    error: function(err) { wrong() },
 	    beforeSend: function(xhr) {
 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
 	    }
@@ -43,13 +43,13 @@ function valid(){
 
 } // End of Valid function
 
-function wrong(word){
+function wrong(){
 
 	 $("#main-display").html("");
 	 $("#main-display").append("Sorry that is not a valid word");
 
 
-	var word = "lighht";
+	var word = baton;
 	var check = "https://montanaflynn-spellcheck.p.mashape.com/check/?text=" + word;
 
 	// Ajax request to wordsapi 
