@@ -76,6 +76,22 @@ function event_listener(){
 
     }); // End of category_buttons click event
 
+ 	$(".search_items").on("click", function() {
+
+ 		var search_item_click = $(this);
+
+ 		var search_item_pick = search_item_click.data('index');
+
+ 		console.log(search_item_pick);
+
+ 		baton = search_item_pick;
+
+ 		console.log('The baton is ' + baton);
+
+ 		event_listener();
+
+ 	}); // End of search_items click event
+
     $(".past_searches").on("click", function() {
 
         var past_searches_click = $(this);
@@ -192,7 +208,7 @@ function synonyms(){
 
 			var synonyms = $("<button>");
 
-			synonyms.addClass("synonyms list-group-item");
+			synonyms.addClass("synonyms search_items list-group-item");
 
 			synonyms.attr({
 				"data-index": response.synonyms[i]
@@ -232,7 +248,7 @@ function search_history() {
 
 		var btns_search_history = $("<button>");
 
-		btns_search_history.addClass("past_searches searching list-group-item");
+		btns_search_history.addClass("past_searches searching search_items list-group-item");
 
 		btns_search_history.attr({
 			"data-index": search_history_record[j].toLowerCase()
