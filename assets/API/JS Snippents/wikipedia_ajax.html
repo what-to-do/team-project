@@ -29,7 +29,7 @@
 			}).done(function(result) {
 				var objResult = result;
 				var string = JSON.stringify(result);
-				console.log(string);
+				//console.log(string);
 				//console.log(objResult);
 				var pageId = result.query.pages;
 				console.log(pageId);
@@ -40,8 +40,22 @@
 
 				var theTypeIs = Object.keys(result.query.pages)[0];
 				console.log(theTypeIs);
+				
+				$.each(result.query.pages, function(c) {
+					var hey = result.query.pages[c].extract;
+					console.log(hey);
+					$("#content").html(hey);
+  					//console.log(result.query.pages[c].extract);
+
+				});
+
+
+				
+
+			/*	var theTypeIs = Object.keys(result.query.pages)[0];
+				console.log(theTypeIs);
 				console.log(result.query.pages);
-				console.log(result.query.pages[theTypeIs].extract);
+				console.log(result.query.pages[theTypeIs].extract);*/
 
 /*				for (var i = 0; i < 10; i++) {
 					array.push(result.pages[i]);
@@ -50,7 +64,7 @@
 				console.log(url);
 *///				var extract = pageId.extract;
 //				console.log(extract);
-				$("#content").html(objResult);
+				
 //				console.log(objResult.query.search[0]);
 			})
 
