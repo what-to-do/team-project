@@ -1,4 +1,6 @@
 function category_bar() {
+	//this ensures buttons are centered to the page when buttons are made
+	$("#category").css("text-align", "center");
 
 	btn_options = ["dictionary", "wikipedia", "youtube", "giphy"];
 
@@ -16,11 +18,9 @@ function category_bar() {
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.addClass("btn btn-info category_buttons")
+		options.addClass("btn btn-info category_buttons style")
 
 		$("#category").append(options);
-
-		options.css("float", "right");
 
 	} // End of For Loop
 
