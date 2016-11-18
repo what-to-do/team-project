@@ -29,6 +29,9 @@ body {
 	color: white;
 }
 
+.category {
+	clear: both;
+}
 .category_buttons {
 	margin-top: 15px;
 }

@@ -20,69 +20,73 @@
         <link href="css/style.css" rel="stylesheet">
         
     </head>
-    <body>
+    <body class="hidden-sn blue-skin">
 
-<!-- Sidebar navigation -->
+        <!--Double navigation-->
+<header>
 
-<ul id="slide-out" class="side-nav fixed default-side-nav light-side-nav">
+    <!-- Sidebar navigation -->
+    <ul id="slide-out" class="side-nav custom-scrollbar">
 
-    <!-- Side navigation links -->
-
-    <ul class="collapsible collapsible-accordion">
-        <li><a class="collapsible-header waves-effect" id="past">Click me</a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                </ul>
+        <!-- Logo -->
+        <li>
+            <div class="logo-wrapper waves-light">
+                <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
             </div>
         </li>
-        <li><a class="collapsible-header waves-effect">Click me</a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                </ul>
-            </div>
+        <!--/. Logo -->
+
+
+
+        <!--Search Form-->
+        <li>
+            <form class="search-form" role="search">
+                <div class="form-group waves-light">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
         </li>
-        <li><a class="collapsible-header waves-effect">Click me</a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Link</a>
-                    </li>
-                </ul>
-            </div>
+        <!--/.Search Form-->
+
+        <!-- Side navigation links -->
+        <li>
+            <ul class="collapsible collapsible-accordion" id="side-nav-add">
+                
+                <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#" class="waves-effect">Introduction</a>
+                            </li>
+                            <li><a href="#" class="waves-effect">Monthly meetings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+            </ul>
         </li>
-    </ul> <!--/. Side navigation links -->
-</ul> <!--/. Sidebar navigation -->
+        <!--/. Side navigation links -->
 
-        <!--Navbar-->
-        <nav class="navbar navbar-dark bg-primary" id="main-nav">
-        
-            <!-- <div class="container"> -->
+    </ul>
+    <!--/. Sidebar navigation -->
 
-                <!--Collapse content-->
-                <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-                    <!-- SideNav slide-out button -->
-                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars fa" id="side-nav-button"></i></a>
-                    <!--/. SideNav slide-out button -->
+    <!--Navbar-->
+    <nav class="navbar scrolling-navbar double-nav">
 
-                    <!--Navbar Brand, included our brand-logo class-->
-                    <a class="navbar-brand brand-logo waves-effect waves-light" id="logo">Pipeline</a>
-                    <!--Links-->
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link waves-effect waves-light" id="home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>  <!--end of links-->
-                   
-                    <!--Search form-->
+        <!-- SideNav slide-out button -->
+        <div class="pull-left">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+        </div>
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn">
+            <p>Pipeline</p>
+        </div>
+
+        <ul class="nav navbar-nav pull-right">
+
+            <li class="nav-item ">
+                <!--Search form-->
                     <form class="form-inline waves-effect waves-light">
                         <!--magnifying glass icon-->
                         <i class="fa fa-search" aria-hidden="true" id="mag-glass"></i>
@@ -90,11 +94,15 @@
                         <input class="form-control" type="text" placeholder="Search" id="user-input">
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" id="help-button" data="false">Help</button>
                     </form> 
-                </div> <!--end of Collapse content-->
-               
-            <!-- </div> end of container-->
-            
-        </nav> <!--end of Navbar-->
+            </li>
+        </ul>
+
+    </nav>
+    <!--/.Navbar-->
+
+</header>
+<!--/Double navigation-->
+
         
 
         <!--category-->
