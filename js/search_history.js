@@ -40,18 +40,4 @@ function search_history() {
 } // End of search_history function
 search_history();
 
-	/*for (var j = 0; j < search_history_record.length; j++) {
-
-		var li = $("<li/>")
-		var btns_search_history = $("<a/>");
-
-		btns_search_history.addClass("waves-effect");
-
-		btns_search_history.attr({
-			"data-index": search_history_record[j].toLowerCase()
-		});
-
-		btns_search_history.text(search_history_record[j]);
-
-		$("#past-ul").append(li);
-		$(li).append(btns_search_history)*/
+	
