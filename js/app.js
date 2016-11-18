@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-create_sidebar_btn();
+//create_sidebar_btn();
 category_bar();
 
 // For testing of valid
