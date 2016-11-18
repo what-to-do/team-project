@@ -1,8 +1,8 @@
 
-// SideNav Options
-$('.button-collapse').sideNav({
-  edge: 'left', // Choose the horizontal origin
-  closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-});
+// SideNav init
+$(".button-collapse").sideNav();
 
+// Custom scrollbar init
+var el = document.querySelector('.custom-scrollbar');
+Ps.initialize(el);
 
