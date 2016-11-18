@@ -38,11 +38,11 @@ function search_history() {
 	event_listener();
 
 } // End of search_history function
-<<<<<<< HEAD
+
 search_history();
 
 	
-=======
+
 
 function search_history_add(baton, search_history_record) {
 	// this function takes the baton,
@@ -79,4 +79,4 @@ function search_history_retrieve(search_history_record) {
 	search_history_record = JSON.parse(localStorage["search_history_record"]);
 
 }
->>>>>>> master
+
