@@ -18,9 +18,34 @@ function search_history() {
 
 	for (var j = 0; j < search_history_record.length; j++) {
 
-		var btns_search_history = $("<button>");
+		var li = $("<li>")
+		var search_result = $("<a>")
 
-		btns_search_history.addClass("past_searches searching list-group-item");
+		li.attr({"id": "result" + [j]})
+		search_result.attr({"href": "#"})
+		search_result.addClass("waves-effect");
+		search_result.text(search_history_record[j]);
+
+		$("#past-ul").append(li);
+		$("#result" + [j]).append(search_result);
+
+
+		
+
+	} // End of For Loop
+
+	
+	event_listener();
+
+} // End of search_history function
+search_history();
+
+	/*for (var j = 0; j < search_history_record.length; j++) {
+
+		var li = $("<li/>")
+		var btns_search_history = $("<a/>");
+
+		btns_search_history.addClass("waves-effect");
 
 		btns_search_history.attr({
 			"data-index": search_history_record[j].toLowerCase()
@@ -28,10 +53,5 @@ function search_history() {
 
 		btns_search_history.text(search_history_record[j]);
 
-		$("#search-list").append(btns_search_history);
-
-	} // End of For Loop
-
-	event_listener();
-
-} // End of search_history function
+		$("#past-ul").append(li);
+		$(li).append(btns_search_history)*/
