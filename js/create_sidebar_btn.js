@@ -6,6 +6,9 @@ function create_sidebar_btn(){
 	 */
 	var btn_names_related = ["Past" , "Synonyms"];
 
+	// initialize the search history record for the entire application
+	var search_history_record = new Array();
+
 	/**
 	 * Creates button
 	 * @param  {btn_names_related size} var i   Will loop through as many button we need 
