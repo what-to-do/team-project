@@ -21,27 +21,35 @@ function valid(){
 
 		console.log(response);
 
-		$("#search-list").empty();
+		$("#synonyms-ul").empty();
 
 		for (var i = 0; i < response.synonyms.length; i++) {
+			var li = $("<li>")
+			var synonyms = $("<a>");
 
-			var synonyms = $("<button>");
-
-			synonyms.addClass("synonyms list-group-item");
+			synonyms.addClass("waves-effect");
 
 			synonyms.attr({
+				"href": "#",
 				"data-index": response.synonyms[i]
 			});
 
 			synonyms.text(response.synonyms[i]);
 
-			$("#search-list").append(synonyms);
+			$("#synonyms-ul").append(li);
+			$(li).append(synonyms);	
 
 		} // End of For Loop
+		
+		if(response.synonyms.length == 0) {
+			//if there are no results it will do this:
+			$("#synonyms-ul").text("no results")
 
+		}//end of if statement
 	}); // End of ajax of synonyms
 
 } // End of Valid function
+
 
 function wrong(){
 

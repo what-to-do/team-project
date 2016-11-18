@@ -21,7 +21,7 @@ function create_sidebar_btn(){
 		
 		icon.addClass("fa fa-angle-down rotate-icon");
 		div.addClass("collapsible-body");
-		div.css("display", "none")
+		/*div.css("display", "none")*/
 		ul.attr({"id": btn_names_related[i].toLowerCase()})
 		ul.text("test")
 		btns_search.addClass("collapsible-header waves-effect arrow-r");
@@ -32,6 +32,7 @@ function create_sidebar_btn(){
 			"data-toggle": "tooltip",
 			"data-placement": "bottom",
 			"title": "click here for " + btn_names_related[i].toLowerCase()*/
+			
 		});
 
 		//adds div and ul at the end of the results to come in

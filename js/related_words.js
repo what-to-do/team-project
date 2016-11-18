@@ -18,13 +18,17 @@ function synonyms(){
 
 	}).done(function(response){
 
-		$("#search-list").empty();
+		$("#synonyms-ul").empty();
 
 		for (var i = 0; i < response.synonyms.length; i++) {
+			var li = $("<li>");
+			var synonyms = $("<a>");
 
-			var synonyms = $("<button>");
 
-			synonyms.addClass("related list-group-item");
+			li.attr({"id": "result" + [i]})
+			synonyms.attr({"href": "#"})
+			synonyms.addClass("waves-effect");
+			/*synonyms.addClass("related list-group-item");*/
 
 			synonyms.attr({
 				"data-index": response.synonyms[i]
@@ -32,7 +36,8 @@ function synonyms(){
 
 			synonyms.text(response.synonyms[i]);
 
-			$("#search-list").append(synonyms);
+			$("#synonyms-ul").append(li);
+			$("result" + [i]).append(synonyms);
 
 		} // End of For Loop
 
