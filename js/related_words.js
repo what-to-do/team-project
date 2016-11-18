@@ -22,12 +22,9 @@ function synonyms(){
 
 		for (var i = 0; i < response.synonyms.length; i++) {
 			var li = $("<li>");
-			var synonyms = $("<a>");
-
-
-			li.attr({"id": "result" + [i]})
-			synonyms.attr({"href": "#"})
-			synonyms.addClass("waves-effect");
+			var synonyms = $("<button>");
+		
+			synonyms.addClass("waves-effect related");
 			/*synonyms.addClass("related list-group-item");*/
 
 			synonyms.attr({
@@ -37,7 +34,7 @@ function synonyms(){
 			synonyms.text(response.synonyms[i]);
 
 			$("#synonyms-ul").append(li);
-			$("result" + [i]).append(synonyms);
+			
 
 		} // End of For Loop
 
