@@ -13,21 +13,34 @@ function create_sidebar_btn(){
 	 */
 	for (var i = 0; i < btn_names_related.length; i++) {
 		
-		var btns_search = $("<button>");
-
-		btns_search.addClass("searching btn btn-outline-success waves-effect");
+		var li = $("<li/>");
+		var btns_search = $("<a/>");
+		var div = $("<div/>");
+		var ul = $("<ul/>");
+		var icon = $("<i/>");
+		
+		icon.addClass("fa fa-angle-down rotate-icon");
+		div.addClass("collapsible-body");
+		div.css("display", "none")
+		ul.attr({"id": btn_names_related[i].toLowerCase()})
+		ul.text("test")
+		btns_search.addClass("collapsible-header waves-effect arrow-r");
 
 		btns_search.attr({
 			"data-index": btn_names_related[i].toLowerCase(),
-			//adds Help ToolTips 
+			/*adds Help ToolTips 
 			"data-toggle": "tooltip",
 			"data-placement": "bottom",
-			"title": "click here for " + btn_names_related[i].toLowerCase()
+			"title": "click here for " + btn_names_related[i].toLowerCase()*/
 		});
 
+		//adds div and ul at the end of the results to come in
 		btns_search.text(btn_names_related[i]);
-
-		$(".hey").append(btns_search);
+		$("#side-nav-add").append(li);
+		$(li).append(btns_search);
+		$(btns_search).append(icon);
+		$(btns_search).after(div);
+		$(div).append("<ul/>")
 		
 
 	} // End of For Loop
