@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-category_bar();
+//category_bar();
 //create_sidebar_btn();
 
 
