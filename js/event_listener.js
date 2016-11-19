@@ -97,7 +97,7 @@ function event_listener(){
     }); // End of category_buttons click event
 
 //will expand div when user presses magnifying glass
-$("#category").click(function(){
+$("#mag-glass").click(function(){
 
     $("#category").animate({height: '150px'});
 
