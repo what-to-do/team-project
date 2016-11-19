@@ -68,6 +68,7 @@ function event_listener(){
 
 	}); // End of searching click event
 
+
  $(".category_buttons").on("click", function() {
         var user_category_click = $(this);
         var user_category_pick = user_category_click.data("name");

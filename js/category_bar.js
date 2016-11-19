@@ -18,9 +18,11 @@ function category_bar() {
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.addClass("btn btn-info category_buttons style")
+		options.addClass("btn btn-info category_buttons style hoverable")
 
 		$("#category").append(options);
+
+
 
 	} // End of For Loop
 
