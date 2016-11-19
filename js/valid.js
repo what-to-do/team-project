@@ -10,7 +10,7 @@ function valid(){
 	    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
 	    data: {}, // Additional parameters here
 	    dataType: 'json',
-	    success: function(data) { console.dir((data.source)); console.log(data);},
+	    success: function(data) { },
 	    error: function(err) { wrong() },
 	    beforeSend: function(xhr) {
 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
@@ -18,36 +18,8 @@ function valid(){
 
 
 	}).done(function(response){
-
-		console.log(response);
-
-		$("#synonyms-ul").empty();
-
-		for (var i = 0; i < response.synonyms.length; i++) {
-			var li = $("<li>")
-			var synonyms = $("<a>");
-
-			synonyms.addClass("waves-effect related");
-
-			synonyms.attr({
-				"href": "#",
-				"data-index": response.synonyms[i]
-			});
-
-			synonyms.text(response.synonyms[i]);
-
-			$("#synonyms-ul").append(li);
-			$(li).append(synonyms);	
-
-		} // End of For Loop
+		related(); 
 		
-		if(response.synonyms.length == 0) {
-			//if there are no results it will do this:
-			$("#synonyms-ul").text("no results")
-
-		}//end of if statement
-
-		event_listener();
 
 	}); // End of ajax of synonyms
 
@@ -80,17 +52,15 @@ function wrong(){
 	
 
 	}).done(function(response){
-		console.log(word);
-		console.log(response);
-		var hey = Object.keys(response.corrections);
-		console.log(hey);
-		console.log(response.corrections +".lighht");
-	$.each(response.corrections, function(c) {
-	$("#main-display").append("<br>");
-	$("#main-display").append(response.corrections[c].join("<br>"));
-  	console.log(response.corrections[c]);
 
-});
+		var key = baton
+
+		var result = response.corrections[key];
+
+		console.log(result);
+
+		$("#main-display").append(result.join("<br>"));
+
 
 
 	}); // End of ajax of synonyms
@@ -129,9 +99,6 @@ function wrong(){
         .fail(function() {
             alert("error");
         });*/
-
-
-	event_listener();
 
 } // End of wrong function
 

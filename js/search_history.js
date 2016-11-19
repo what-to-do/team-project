@@ -35,7 +35,7 @@ function search_history() {
 	} // End of For Loop
 
 	
-	event_listener();
+	
 
 } // End of search_history function
 
