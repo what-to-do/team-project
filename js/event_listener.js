@@ -137,9 +137,13 @@ function event_listener(){
 
     }); // End of synonyms click event
 
-    $(".category_buttons").on("click", function(){
-    	$(this).toggleClass("selected");
-    })
+
+
+    	$(".btn-info:hover").css("background-color", "red");
+    
+
+    // .btn-info:focus, .btn-info:hover {
+    //background-color: red;
 
 } // End of event_listener function
 

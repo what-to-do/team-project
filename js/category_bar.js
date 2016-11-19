@@ -18,7 +18,7 @@ function category_bar() {
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.addClass("btn btn-info category_buttons style hoverablem")
+		options.addClass("btn btn-info category_buttons style hoverable btn-info:hover")
 
 		$("#category").append(options);
 
