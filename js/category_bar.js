@@ -1,4 +1,4 @@
-function category_bar() {
+/*function category_bar() {
 	//this ensures buttons are centered to the page when buttons are made
 	$("#category").css("text-align", "center");
 
@@ -21,7 +21,7 @@ function category_bar() {
 
 		options.addClass("btn btn-info category_buttons hoverable")
 
-		$("#category").append(options);	
+		$("#category").append(options);	*/
 
 	} // End of For Loop
 

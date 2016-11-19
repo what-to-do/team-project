@@ -6,10 +6,7 @@ body {
 #category {
 	background-color: #9e9e9e;
 	height: 75px;
-}
-
-.selected_button {
-	background-color: red;
+	text-align: center;
 }
 
 /*search/synonyms buttons and results div*/
