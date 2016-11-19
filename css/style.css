@@ -8,6 +8,10 @@ body {
 	height: 75px;
 }
 
+.selected_button {
+	background-color: red;
+}
+
 
 /*search/synonyms buttons and results div*/
 #side-nav {

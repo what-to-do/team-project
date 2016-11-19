@@ -133,5 +133,9 @@ function event_listener(){
 
     }); // End of synonyms click event
 
+    $(".category_buttons").on("click", function(){
+    	$(this).toggleClass("selected");
+    })
+
 } // End of event_listener function
 
