@@ -15,14 +15,13 @@ function category_bar() {
 					  "data-index": btn_options[i],
 					  //add tooltip help
 					  "data-toggle": "tooltip",
+					  "data-toggle":"button",
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.addClass("btn btn-info category_buttons style hoverable btn-info:hover")
+		options.addClass("btn btn-info category_buttons hoverable")
 
-		$("#category").append(options);
-
-
+		$("#category").append(options);	
 
 	} // End of For Loop
 
