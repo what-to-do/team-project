@@ -3,11 +3,6 @@ var baton = "";
 
 function event_listener(){
 
-	$("#home").on("click", function() {
-	    $("#side-nav").slideToggle();
-
-	});
-
 	//Tooltips Initialization
 	$(function () {
 	 $('[data-toggle="tooltip"]').tooltip()
