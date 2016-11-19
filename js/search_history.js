@@ -62,7 +62,7 @@ function search_history_add(baton, search_history_record) {
 
 	}
 
-	if (found === false) {
+	if (found === false && search_history_record.length < 10) {
 
 		search_history_record.push(baton);
 
@@ -70,6 +70,16 @@ function search_history_add(baton, search_history_record) {
 
 		console.log(search_history_record);
 
+	} else if (found === false && search_history_record.length >= 10) {
+
+		search_history_record.shift();
+
+		search_history_record.push(baton);
+
+		localStorage["search_history_record"] = JSON.stringify(search_history_record);
+
+		console.log(search_history_record);
+		
 	}
 }
 
