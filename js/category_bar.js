@@ -23,11 +23,7 @@
 
 		$("#category").append(options);	*/
 
-	} // End of For Loop
+	//} // End of For Loop
 
-} //End of category_bar function
+//} //End of category_bar function
 
-// Tooltips Initialization
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
