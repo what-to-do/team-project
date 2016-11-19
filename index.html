@@ -133,14 +133,15 @@
         <div class="breadcrumb-dn">
             <p>Pipeline</p>
         </div>
-
-        <ul class="nav navbar-nav pull-right">
+        <!--magnifying glass icon-->
+        <a class="btn-floating btn-small red pull-right"><i class="fa fa-search" id="mag-glass"></i></a>
+        
+        <ul class="nav navbar-nav pull-right ">
 
             <li class="nav-item ">
                 <!--Search form-->
                     <form class="form-inline waves-effect waves-light">
-                        <!--magnifying glass icon-->
-                        <i class="fa fa-search" aria-hidden="true" id="mag-glass"></i>
+                        
                         <!--search input field--> 
                         <input class="form-control" type="text" placeholder="Search" id="user-input">
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" id="help-button" data="false">Help</button>
@@ -167,23 +168,24 @@
 
         <!--category-->
     <div class="container-fluid" data-toggle="buttons" id="category">
-        <label class="category_buttons btn btn-primary active">
+        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for dictionary">
             <input type="radio" data-name="dictionary" id="option1" autocomplete="off" checked> Dictionary
         </label>
-        <label class="category_buttons btn btn-primary">
+        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for wikipedia">
             <input type="radio" data-name="wikipedia" id="option2" autocomplete="off"> Wikipedia
         </label>
-        <label class="category_buttons btn btn-primary">
+        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for youtube">
             <input type="radio" data-name="youtube" id="option3" autocomplete="off"> Youtube
         </label>
-        <label class="category_buttons btn btn-primary">
-            <input type="radio" data-name="giphy" id="option4" autocomplete="off"> Giphy
+        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for giphy">
+            <input type="radio" data-name="giphy"  id="option4" autocomplete="off"> Giphy
         </label>
     </div>
 
 
             <!-- Teal page content  -->
             <div class="col-sm-12" id="main-display">Main Display</div>
+            <a class="btn-floating btn-small red"><i class="fa fa-search" id="mag-glass"></i></a>
         </div> <!--end of main-->
         
 
@@ -212,6 +214,10 @@
         <script type="text/javascript" src="js/nav.js"></script>
         <script type="text/javascript" src="js/related_words.js"></script>
         <script type="text/javascript" src="js/search_history.js"></script>
+        <script type="text/javascript" src="js/wikipedia.js"></script>
+        <script type="text/javascript" src="js/dictionary.js"></script>
+        <script type="text/javascript" src="js/youtube.js"></script>
+        <script type="text/javascript" src="js/giphy.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
 
 

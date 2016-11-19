@@ -3,22 +3,29 @@ var baton = "";
 
 function event_listener(){
 
-	$("#home").on("click", function() {
-	    $("#side-nav").slideToggle();
-
-	});
-
 	//Tooltips Initialization
-	$(function () {
+	/*$(function () {
 	 $('[data-toggle="tooltip"]').tooltip()
-	});
-
+	});*/
+var num = 1
 	//when user clicks on help button
 	$("#help-button").on("click", function(){
-		//if user click =true activate hover function until click false
-		alert("Justin needs help");
+		num++
+		if(num % 2 ==0){	
+			$('.rick').tooltip();
 
-	})
+			console.log(num + " is even");
+		}
+		//if user click =true activate hover function until click false
+		////Tooltips Initialization
+		else{
+			$('.rick').attr({
+				"data-toggle": ""
+			})	
+		
+		console.log(num + " is odd");
+	}
+	});
 
 	$("#mag-glass").on("click" , function(){
 
