@@ -136,11 +136,7 @@ function event_listener(){
 
 
     }); // End of synonyms click event
-
-
-
-    	$(".btn-info:hover").css("background-color", "red");
-    
+    	  
 
     // .btn-info:focus, .btn-info:hover {
     //background-color: red;
