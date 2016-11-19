@@ -28,8 +28,22 @@ function related(){
 
 		}).done(function(response){
 
+			var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
+
+			for (var j = 0; j < related_options.length; j++) {
 			
+				if (response[key]) {
+
+				var key = related_options[j];
+
+				console.log(response[key]);
+
+			}
+
+			}		
 
 		});
+
+	}
 
 } // End of synonyms function
