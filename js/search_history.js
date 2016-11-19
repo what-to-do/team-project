@@ -39,7 +39,7 @@ function search_history() {
 
 } // End of search_history function
 
-search_history();
+//search_history();
 
 	
 
