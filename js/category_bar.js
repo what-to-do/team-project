@@ -21,13 +21,18 @@
 
 		options.addClass("btn btn-info category_buttons hoverable")
 
-		$("#category").append(options);	*/
+		$("#category").append(options);
 
 	} // End of For Loop
 
 } //End of category_bar function
 
-// Tooltips Initialization
+// Tooltips Initialization	*/
+
+
+
+
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
