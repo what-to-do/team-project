@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
 category_bar();
 //create_sidebar_btn();
 
