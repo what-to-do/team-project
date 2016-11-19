@@ -96,6 +96,16 @@ function event_listener(){
 
     }); // End of category_buttons click event
 
+//will expand div when user presses magnifying glass
+$("#mag-glass").click(function(){
+
+    $("#category").animate({height: '150px'});
+
+    $(".category_buttons").animate({top: '75px'});
+
+    }); //end of animated category click event
+
+
     $(".past_searches").on("click", function() {
 
         var past_searches_click = $(this);
