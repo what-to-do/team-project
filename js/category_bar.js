@@ -15,7 +15,7 @@ function category_bar() {
 					  "data-index": btn_options[i],
 					  //add tooltip help
 					  "data-toggle": "tooltip",
-					  "data-toggle":"button",
+					  "data-toggle": "button",
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 

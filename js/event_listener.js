@@ -134,7 +134,13 @@ function event_listener(){
         //event_listener();
 
 
-    }); // End of synonyms click event    
+    }); // End of synonyms click event
+    	  
+    $(".category_buttons").on("click", function() {
+    	console.log("this is active")
+		$(this).toggleClass("selected_button")
+    });
+    
 
 } // End of event_listener function
 
