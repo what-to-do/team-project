@@ -32,15 +32,14 @@ function related(word){
 			//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
 
 			for (var j = 0; j < related_options.length; j++) {
-			
-				console.log("HEY YOU JUDE");
 
 				var key = related_options[j];
 
 				if (response[key] && response[key].length > 0) {
 
-	
-				console.log(response[key]);
+					
+
+					console.log(response[key]);
 
 			}
 
