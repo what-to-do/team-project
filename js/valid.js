@@ -27,7 +27,7 @@ function valid(){
 			var li = $("<li>")
 			var synonyms = $("<a>");
 
-			synonyms.addClass("waves-effect");
+			synonyms.addClass("waves-effect related");
 
 			synonyms.attr({
 				"href": "#",
@@ -46,6 +46,9 @@ function valid(){
 			$("#synonyms-ul").text("no results")
 
 		}//end of if statement
+
+		event_listener();
+
 	}); // End of ajax of synonyms
 
 } // End of Valid function
