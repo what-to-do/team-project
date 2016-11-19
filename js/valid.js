@@ -10,7 +10,7 @@ function valid(){
 	    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
 	    data: {}, // Additional parameters here
 	    dataType: 'json',
-	    success: function(data) { },
+	    success: function(data) { related(word); },
 	    error: function(err) { wrong() },
 	    beforeSend: function(xhr) {
 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
@@ -18,9 +18,7 @@ function valid(){
 
 
 	}).done(function(response){
-		related(); 
 		
-
 	}); // End of ajax of synonyms
 
 } // End of Valid function
@@ -42,8 +40,8 @@ function wrong(){
 	    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
 	    data: {}, // Additional parameters here
 	    dataType: 'json',
-	    success: function(data) { console.dir((data.source)); console.log(data);},
-	    error: function(err) { wrong(word) },
+	    success: function(data) { },
+	    error: function(err) { },
 	    beforeSend: function(xhr) {
 	    console.log(check);
 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
