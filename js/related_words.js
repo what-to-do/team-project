@@ -1,8 +1,8 @@
 function related(){
-	console.log(baton);
-	var word = "die";
+	//console.log(baton);
+	var word = baton;
 
-
+	counter = 0;
 	var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
 	var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
@@ -28,53 +28,8 @@ function related(){
 
 		}).done(function(response){
 
-
-			var names_options = ["antonyms-ul" , "categories-ul" , "holonyms-ul" , "hyponyms-ul" , "meronyms-ul" , "similar-ul"];
-
-			var hey = '"' + related_options[0] +  '"';
-
-			console.log(hey);
-
-			console.log(response["related_options[0]"]);
-
-/*			for (var i = 0; i < names_options.length; i++) {
-
 			
-				$("'." + names_options[i] + "'").empty();
 
-				for (var j = 0; j < response.synonyms.length; j++) {
-					var li = $("<li>");
-					var synonyms = $("<a>");
-				
-					synonyms.addClass("waves-effect related");
-					synonyms.addClass("related list-group-item");
-
-					synonyms.attr({
-						"data-index": response.synonyms[j]
-					});
-
-					synonyms.text(response.synonyms[j]);
-
-					$("#synonyms-ul").append(lj);
-					
-
-				} // End of For Loop
-
-
-					$.each(response.corrections, function(c) {
-					$("#main-display").append("<br>");
-					$("#main-display").append(response.corrections[c].join("<br>"));
-  						console.log(response.corrections[c]);
-
-					});
-
-			}
-			event_listener();
-
-			console.log(response);*/
-
-		}); // End of ajax of synonyms
-
-	}
+		});
 
 } // End of synonyms function

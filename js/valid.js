@@ -18,35 +18,7 @@ function valid(){
 
 
 	}).done(function(response){
-
-		console.log(response);
-
-		$("#synonyms-ul").empty();
-
-		for (var i = 0; i < response.synonyms.length; i++) {
-			var li = $("<li>")
-			var synonyms = $("<a>");
-
-			synonyms.addClass("waves-effect related");
-
-			synonyms.attr({
-				"href": "#",
-				"data-index": response.synonyms[i]
-			});
-
-			synonyms.text(response.synonyms[i]);
-
-			$("#synonyms-ul").append(li);
-			$(li).append(synonyms);	
-
-		} // End of For Loop
-		
-		if(response.synonyms.length == 0) {
-			//if there are no results it will do this:
-			$("#synonyms-ul").text("no results")
-
-		}//end of if statement
-
+		related();
 		event_listener();
 
 	}); // End of ajax of synonyms
