@@ -30,6 +30,8 @@ function event_listener(){
 
 		valid()
 
+		search_history_add(baton, search_history_record);
+
 	}); // End of mag-glass click event
 
 	//if user presses enter on search input
@@ -43,6 +45,8 @@ function event_listener(){
 			$("#main-display").append("<br>" + "By enter: " + baton);
 
 			valid();
+
+			search_history_add(baton, search_history_record);
 
 			return false;
 		}
