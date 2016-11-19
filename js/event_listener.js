@@ -30,7 +30,7 @@ function event_listener(){
 
 		valid()
 
-		search_history_add(baton, search_history_record);
+		//search_history_add(baton, search_history_record);
 
 	}); // End of mag-glass click event
 
@@ -46,7 +46,7 @@ function event_listener(){
 
 			valid();
 
-			search_history_add(baton, search_history_record);
+			//search_history_add(baton, search_history_record);
 
 			return false;
 		}
