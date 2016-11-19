@@ -4,7 +4,7 @@ body {
 
 /*category buttons div*/
 #category {
-	background-color: teal;
+	background-color: #9e9e9e;
 	height: 75px;
 }
 
@@ -42,7 +42,7 @@ body {
 
 /*where the api content will show*/
 #main-display {
-	background-color: yellow;
+	background-color: #eeeeee;
 	height: 100vh;
 }
 
