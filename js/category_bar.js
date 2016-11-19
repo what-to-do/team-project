@@ -1,4 +1,4 @@
-function category_bar() {
+/*function category_bar() {
 	//this ensures buttons are centered to the page when buttons are made
 	$("#category").css("text-align", "center");
 
@@ -15,14 +15,13 @@ function category_bar() {
 					  "data-index": btn_options[i],
 					  //add tooltip help
 					  "data-toggle": "tooltip",
+					  "data-toggle": "button",
 					  "data-placement": "bottom",
 					  "title": "click here for " + btn_options[i].toLowerCase() + " results"});
 
-		options.addClass("btn btn-info category_buttons style hoverable")
+		options.addClass("btn btn-info category_buttons hoverable")
 
-		$("#category").append(options);
-
-
+		$("#category").append(options);	*/
 
 	} // End of For Loop
 

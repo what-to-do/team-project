@@ -78,7 +78,6 @@ function event_listener(){
         var user_category_pick = user_category_click.data("name");
 
         if (user_category_pick == "dictionary") {
-
             dictionary();
 
         } else if (user_category_pick == "wikipedia") {
