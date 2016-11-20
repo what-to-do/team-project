@@ -28,30 +28,17 @@
     <!-- Sidebar navigation -->
     <ul id="slide-out" class="side-nav custom-scrollbar">
 
-        <!-- Logo -->
-        <li>
-            <div class="logo-wrapper waves-light">
-                <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
-            </div>
-        </li>
-        <!--/. Logo -->
-
-
-
-        <!--Search Form-->
-        <li>
-            <form class="search-form" role="search">
-                <div class="form-group waves-light">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-            </form>
-        </li>
-        <!--/.Search Form-->
-
         <!-- Side navigation links -->
         <li>
             <ul class="collapsible collapsible-accordion" id="side-nav-add">
                 
+<!--                 <li><a class="collapsible-header waves-effect arrow-r">Past<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                        <ul id="past-ul">
+                            
+                        </ul>
+                    </div>
+                </li>
                 <li><a class="collapsible-header waves-effect arrow-r">Past<i class="fa fa-angle-down rotate-icon"></i></a>
                     <div class="collapsible-body">
                         <ul id="past-ul">
@@ -59,55 +46,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Antonyms<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=antonyms-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Category<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=category-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Holonyms<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=holonyms-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Hyponyms<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=hyponyms-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Meronyms<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=meronyms-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Similar<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=similar-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="collapsible-header waves-effect arrow-r">Synonyms<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
-                        <ul id=synonyms-ul>
-                            
-                        </ul>
-                    </div>
-                </li>
+ -->
               
                 
             </ul>
@@ -174,19 +113,19 @@
         <!--category-->
     <div class="container-fluid" data-toggle="buttons" id="category">
         <h2 class="display_user_word"></h2>
-        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for dictionary">
+        <label class="category_buttons btn btn-primary rick" data-name="dictionary" data-toggle="tooltip" data-placement="bottom" title="click here for dictionary">
             <input type="radio" data-name="dictionary" id="option1" autocomplete="off" checked> Dictionary
         </label>
-        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for wikipedia">
+        <label class="category_buttons btn btn-primary rick" data-name="wikipedia" data-toggle="tooltip" data-placement="bottom" title="click here for wikipedia">
             <input type="radio" data-name="wikipedia" id="option2" autocomplete="off"> Wikipedia
         </label>
-        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for youtube">
+        <label class="category_buttons btn btn-primary rick" data-name="youtube" data-toggle="tooltip" data-placement="bottom" title="click here for youtube">
             <input type="radio" data-name="youtube" id="option3" autocomplete="off"> Youtube
         </label>
-        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for giphy">
+        <label class="category_buttons btn btn-primary rick" data-name="giphy" data-toggle="tooltip" data-placement="bottom" title="click here for giphy">
             <input type="radio" data-name="giphy"  id="option4" autocomplete="off"> Giphy
         </label>
-        <label class="category_buttons btn btn-primary rick" data-toggle="tooltip" data-placement="bottom" title="click here for google images">
+        <label class="category_buttons btn btn-primary rick" data-name="google_images" data-toggle="tooltip" data-placement="bottom" title="click here for google images">
             <input type="radio" data-name="google_images"  id="option5" autocomplete="off"> Google Images
         </label>
     </div>
