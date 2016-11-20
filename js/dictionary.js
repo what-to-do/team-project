@@ -1,7 +1,7 @@
 function dictionary(){
 
 	//console.log(word);
-	console.log("Dance Monkey");
+	
 	var user = "example";
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
@@ -29,30 +29,91 @@ function dictionary(){
 
 		}).done(function(response){
 
-			//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
-			console.log(response);
+				//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
+				console.log(response);
 
-			$("#main-display").html("");
-
-
-			var wrapper = $("<div>");
-
-			wrapper.addClass("accordion");
-			wrapper.attr({
-				"id": "accordion",
-				"role": "tablist",
-				"aria-multiselectable": "true"
-			});
+				$("#main-display").html("");
 
 
+				var wrapper = $("<div>");
+
+				wrapper.addClass("accordion");
+				wrapper.attr({
+					"id": "accordion",
+					"role": "tablist",
+					"aria-multiselectable": "true"
+				});
+
+				$("#main-display").html(wrapper);
+
+			console.log(response.results.length);
+
+			for (var j = 0; j < response.results.length; j++) {
+	
+				console.log(j);
+
+				var div_panel = $("<div>");
+
+				div_panel.addClass("panel panel-default");
+
+				var div_header = $("<div>");
+
+				div_header.addClass("panel-heading");
+
+				div_header.attr({
+					"role": "tab",
+					"id":"heading" + j
+				});
+
+				var h = $("<h5>");
+
+				h.addClass("panel-title");
+
+				var anchor = $("<a>");
+
+				anchor.attr({
+					"class":         "arrrow-r",
+					"data-toggle":   "collapse",
+					"data-parent":   "#accordion",
+					"href":          "#collapse" + j,
+					"aria-expanded": "true",
+					"aria-controls": "collapse" + j
+
+				});
+
+				anchor.text(response.results[j].definition);
+
+				var i = $("<i>");
+
+				i.addClass("fa fa-angle-down rotate-icon");
+
+				var div_body = $("<div>");
+
+				div_body.attr({
+					"id": "collapse" + j,
+					"class": "panel-collapse collapse",
+					"role": "tabpanel",
+					"aria-labelledby": "headingOne",
+					"aria-expanded": "false"
+				});
 
 
-			$("#main-display").html(wrapper);
-			$("#main-display").html("hello world");
+				$(div_panel).appendTo(wrapper);
+				$(div_header).appendTo(div_panel);
+				$(h).appendTo(div_header);
+				$(anchor).appendTo(h);
+				$(i).appendTo(anchor);
+				$(div_body).appendTo(div_panel);
+				$(div_body).append("The type of Word is a " + response.results[j].partOfSpeech + "<br>");
+				$(div_body).append("Synonyms " + response.results[j].synonyms.join("<br>") + "<br>");
+				$(div_body).append("Has type of thoughts of " + response.results[j].typeOf.join("<br>") + "<br>");
+				$(div_body).append("Has thoughts of  " + response.results[j].hasTypes.join("<br>") + "<br>");
+				$(div_body).append("Derivation(s) " + response.results[j].derivation.join("<br>") + "<br>");
+				//$(test).appendTo(div_body);
 
+				console.log(j);
 
-
-
+			}
 
 		});
 
