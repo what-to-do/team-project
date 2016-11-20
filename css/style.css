@@ -55,6 +55,10 @@ body {
 
 /*magnifying glass next to search*/
 #mag-glass {
-	color: #fff;
+	color: #eee;
+	
 }
 
+.fa-search:before {
+	margin-right: 14px;
+}
