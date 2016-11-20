@@ -37,6 +37,8 @@ var num = 1
 
 		valid()
 
+		expand_category_box()
+
 		//search_history_add(baton, search_history_record);
 
 	}); // End of mag-glass click event
@@ -53,6 +55,7 @@ var num = 1
 
 			valid();
 
+			expand_category_box()
 			//search_history_add(baton, search_history_record);
 
 			return false;
@@ -102,16 +105,6 @@ var num = 1
         } // End of If Else
 
     }); // End of category_buttons click event
-
-//will expand div when user presses magnifying glass
-$("#mag-glass").click(function(){
-
-    $("#category").animate({height: '150px'});
-
-    $(".category_buttons").animate({top: '75px'});
-
-    }); //end of animated category click event
-
 
     $(".past_searches").on("click", function() {
 
