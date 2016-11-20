@@ -86,7 +86,8 @@ var num = 1
  $(".category_buttons").on("click", function() {
         var user_category_click = $(this);
         var user_category_pick = user_category_click.data("name");
-
+        console.log(user_category_click);
+        console.log(user_category_pick);
         if (user_category_pick == "dictionary") {
             dictionary();
 

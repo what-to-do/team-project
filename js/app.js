@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+//related();	
 //category_bar();
 //create_sidebar_btn();
 

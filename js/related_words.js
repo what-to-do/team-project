@@ -1,20 +1,20 @@
-function related(word){
+function related(){
 
-	console.log(word);
+	//console.log(word);
 	
-	var user = word;
+	var user = "example";
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
 	var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
 
-	console.log(related_options);
-
-	for (var i = 0; i < related_options.length; i++) {
+	//console.log(related_options);
 
 
 
-		var related_url = "https://wordsapiv1.p.mashape.com/words/" + user +"/" + related_options[i]
+
+
+		var related_url = "https://wordsapiv1.p.mashape.com/words/" + user;
 
 		console.log(related_url);
 
@@ -30,24 +30,221 @@ function related(word){
 		}).done(function(response){
 
 			//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
+			console.log(response);
 
-			for (var j = 0; j < related_options.length; j++) {
+			var list = $("<li>");
+			var anchor = $("<a class='collapsible-header waves-effect arrow-r'>");
+			var symbols = $("<i>");
+			var unordered = $("<ul>");
+			var div = $("<div>");
+
+
+			//anchor.addClass("collapsible-header waves-effect arrow-r");
 			
-				console.log("HEY YOU JUDE");
+			$("#header ul").append('<li><a href="/user/messages"><span class="tab">Message Center</span></a></li>');
+			
+			symbols.addClass("fa fa-angle-down rotate-icon");
+			unordered.attr({
+				"id" : "Hey you"
+			});
 
-				var key = related_options[j];
+			div.addClass("collapsible-body");
 
-				if (response[key] && response[key].length > 0) {
+			$(".collapsible-accordion").append(list);
+			$(".collapsible-accordion").append(anchor);
+			$(".collapsible-accordion").append(symbols);
+			$(".collapsible-accordion").append("Hey you");
 
-	
-				console.log(response[key]);
+			$(".collapsible-accordion").append(div);
+			$(".collapsible-accordion").append(unordered);
+			// var word_types = ["typeOf" , "hasTypes" , "derivation"];
 
-			}
+			// console.log("The length of response.results is -- "response.results.length);
 
-			}		
+			// for (var i = 0; i < respone.results.length; i++) {
+
+			// 	if (response.results[i].typeOf.length > 0) {
+
+					
+
+			// 		console.log(response.results[0].typeOf);
+
+			// 	}
+
+			// }
 
 		});
 
-	}
+	
 
 } // End of synonyms function
+
+// {
+//   "word": "example",
+//   "results": [
+//     {
+//       "definition": "a representative form or pattern",
+//       "partOfSpeech": "noun",
+//       "synonyms": [
+//         "model"
+//       ],
+//       "typeOf": [
+//         "representation",
+//         "internal representation",
+//         "mental representation"
+//       ],
+//       "hasTypes": [
+//         "prefiguration",
+//         "archetype",
+//         "epitome",
+//         "guide",
+//         "holotype",
+//         "image",
+//         "loadstar",
+//         "lodestar",
+//         "microcosm",
+//         "original",
+//         "paradigm",
+//         "pilot",
+//         "prototype",
+//         "template",
+//         "templet",
+//         "type specimen"
+//       ],
+//       "derivation": [
+//         "exemplify"
+//       ],
+//       "examples": [
+//         "I profited from his example"
+//       ]
+//     },
+//     {
+//       "definition": "something to be imitated",
+//       "partOfSpeech": "noun",
+//       "synonyms": [
+//         "exemplar",
+//         "good example",
+//         "model"
+//       ],
+//       "typeOf": [
+//         "ideal"
+//       ],
+//       "hasTypes": [
+//         "pacemaker",
+//         "pattern",
+//         "beauty",
+//         "prodigy",
+//         "beaut",
+//         "pacesetter"
+//       ],
+//       "derivation": [
+//         "exemplify",
+//         "exemplary"
+//       ]
+//     },
+//     {
+//       "definition": "an occurrence of something",
+//       "partOfSpeech": "noun",
+//       "synonyms": [
+//         "case",
+//         "instance"
+//       ],
+//       "typeOf": [
+//         "happening",
+//         "natural event",
+//         "occurrence",
+//         "occurrent"
+//       ],
+//       "hasTypes": [
+//         "clip",
+//         "mortification",
+//         "piece",
+//         "time",
+//         "humiliation",
+//         "bit"
+//       ],
+//       "derivation": [
+//         "exemplify"
+//       ],
+//       "examples": [
+//         "but there is always the famous example of the Smiths"
+//       ]
+//     },
+//     {
+//       "definition": "an item of information that is typical of a class or group",
+//       "partOfSpeech": "noun",
+//       "synonyms": [
+//         "illustration",
+//         "instance",
+//         "representative"
+//       ],
+//       "typeOf": [
+//         "information"
+//       ],
+//       "hasTypes": [
+//         "excuse",
+//         "apology",
+//         "specimen",
+//         "case in point",
+//         "sample",
+//         "exception",
+//         "quintessence",
+//         "precedent"
+//       ],
+//       "derivation": [
+//         "exemplify",
+//         "exemplary"
+//       ],
+//       "examples": [
+//         "this patient provides a typical example of the syndrome",
+//         "there is an example on page 10"
+//       ]
+//     },
+//     {
+//       "definition": "punishment intended as a warning to others",
+//       "partOfSpeech": "noun",
+//       "synonyms": [
+//         "deterrent example",
+//         "lesson",
+//         "object lesson"
+//       ],
+//       "typeOf": [
+//         "monition",
+//         "admonition",
+//         "word of advice",
+//         "warning"
+//       ],
+//       "derivation": [
+//         "exemplary"
+//       ],
+//       "examples": [
+//         "they decided to make an example of him"
+//       ]
+//     },
+//     {
+//       "definition": "a task performed or problem solved in order to develop skill or understanding",
+//       "partOfSpeech": "noun",
+//       "synonyms": [
+//         "exercise"
+//       ],
+//       "typeOf": [
+//         "lesson"
+//       ],
+//       "examples": [
+//         "you must work the examples at the end of each chapter in the textbook"
+//       ]
+//     }
+//   ],
+//   "syllables": {
+//     "count": 3,
+//     "list": [
+//       "ex",
+//       "am",
+//       "ple"
+//     ]
+//   },
+//   "pronunciation": {
+//     "all": "ɪɡ'zæmpəl"
+//   },
+//   "frequency": 4.67
+// }
