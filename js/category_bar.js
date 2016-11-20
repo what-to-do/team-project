@@ -1,10 +1,14 @@
 //will expand div when user presses magnifying glass
 
-function expand_category_box(){
+function expand_category_box() {
 
     $("#category").animate({height: '150px'});
 
-    $(".category_buttons").animate({top: '75px'});
+    $(".category_buttons").animate({top: '25px'});
+
+    var display_word = $("#user-input").val().trim();
+
+   $(".display_user_word").text(display_word);
 
     };//end of expand_category_box
 
