@@ -1,3 +1,17 @@
+//will expand div when user presses magnifying glass
+
+function expand_category_box(){
+
+    $("#category").animate({height: '150px'});
+
+    $(".category_buttons").animate({top: '75px'});
+
+    };//end of expand_category_box
+
+
+
+
+
 /*function category_bar() {
 	//this ensures buttons are centered to the page when buttons are made
 	$("#category").css("text-align", "center");
