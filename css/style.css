@@ -14,9 +14,19 @@ search/synonyms buttons and results div*/
 	margin-top: 5px;
 
 }
+
+.fa-bars {
+	margin-top: 5px;
+}
+
 /*top nav*/
 #logo {
 	margin-left: 70px;
+}
+
+.navbar{
+	height: 60px;
+	background-color: #4B515D;
 }
 
 /*magnifying glass next to search*/
@@ -25,8 +35,23 @@ search/synonyms buttons and results div*/
 	
 }
 
-.fa-search:before {
-	margin-right: 14px;
+.search { 
+	position: relative; 
+}
+
+.search input { 
+	text-indent: 30px;
+}
+
+.search .fa-search { 
+  position: absolute;
+  top: 24px;
+  left: 7px;
+  font-size: 15px;
+}
+
+.fa-question-circle {
+	padding-right: 10px;
 }
 
 /*search input bar*/
@@ -35,7 +60,7 @@ search/synonyms buttons and results div*/
 }
 .switch {
 	float: right;
-	margin-top: 27px;
+	margin-top: 10px;
 	font-weight: bold;
 	color: white;
 }
