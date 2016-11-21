@@ -2,7 +2,7 @@ function dictionary(){
 
 	//console.log(word);
 	
-	var user = "example";
+	var user = "bear";
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
@@ -49,8 +49,6 @@ function dictionary(){
 			console.log(response.results.length);
 
 			for (var j = 0; j < response.results.length; j++) {
-	
-				console.log(j);
 
 				var div_panel = $("<div>");
 
@@ -104,14 +102,39 @@ function dictionary(){
 				$(anchor).appendTo(h);
 				$(i).appendTo(anchor);
 				$(div_body).appendTo(div_panel);
-				$(div_body).append("The type of Word is a " + response.results[j].partOfSpeech + "<br>");
-				$(div_body).append("Synonyms " + response.results[j].synonyms.join("<br>") + "<br>");
-				$(div_body).append("Has type of thoughts of " + response.results[j].typeOf.join("<br>") + "<br>");
-				$(div_body).append("Has thoughts of  " + response.results[j].hasTypes.join("<br>") + "<br>");
-				$(div_body).append("Derivation(s) " + response.results[j].derivation.join("<br>") + "<br>");
-				//$(test).appendTo(div_body);
 
-				console.log(j);
+				for (var m = 0; m < response.results[j].synonyms.length; m++) {
+
+					var synonyms_btn = $("<button>");
+
+					synonyms_btn.attr({
+						"data-index": response.results[j].synonyms[m]
+					});
+
+					synonyms_btn.text(response.results[j].synonyms[m]);
+
+					$(div_body).append(synonyms_btn);
+					
+				}
+
+				for (var m = 0; m < response.results[j].synonyms.length; m++) {
+
+					var synonyms_btn = $("<button>");
+
+					synonyms_btn.attr({
+						"data-index": response.results[j].synonyms[m]
+					});
+
+					synonyms_btn.text(response.results[j].synonyms[m]);
+
+					$(div_body).append(synonyms_btn);
+					
+				}
+				// $(div_body).append("The type of Word is a " + response.results[j].partOfSpeech + "<br>");
+				// $(div_body).append("Synonyms " + response.results[j].synonyms.join("<br>") + "<br>");
+				// $(div_body).append("Has type of thoughts of " + response.results[j].typeOf.join("<br>") + "<br>");
+				// $(div_body).append("Has thoughts of  " + response.results[j].hasTypes.join("<br>") + "<br>");
+				// $(div_body).append("Derivation(s) " + response.results[j].derivation.join("<br>") + "<br>");
 
 			}
 
