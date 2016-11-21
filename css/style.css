@@ -1,7 +1,9 @@
 body {
  height: 100vh;
 }
-/*search/synonyms buttons and results div*/
+
+/*side nav
+search/synonyms buttons and results div*/
 #side-nav {
 	background-color: grey;
 	height: 100vh;
@@ -12,7 +14,7 @@ body {
 	margin-top: 5px;
 
 }
-
+/*top nav*/
 #logo {
 	margin-left: 70px;
 }
