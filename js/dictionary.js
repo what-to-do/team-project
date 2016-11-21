@@ -2,7 +2,7 @@ function dictionary(){
 
 	//console.log(word);
 	
-	var user = "bear";
+	var user = "example";
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
@@ -32,6 +32,8 @@ function dictionary(){
 				//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
 				console.log(response);
 
+				var hello = Object.keys(response.results);
+
 				$("#main-display").html("");
 
 
@@ -49,6 +51,8 @@ function dictionary(){
 			console.log(response.results.length);
 
 			for (var j = 0; j < response.results.length; j++) {
+
+				var keys = Object.keys(response.results[j]);
 
 				var div_panel = $("<div>");
 
@@ -95,7 +99,6 @@ function dictionary(){
 					"aria-expanded": "false"
 				});
 
-
 				$(div_panel).appendTo(wrapper);
 				$(div_header).appendTo(div_panel);
 				$(h).appendTo(div_header);
@@ -103,6 +106,57 @@ function dictionary(){
 				$(i).appendTo(anchor);
 				$(div_body).appendTo(div_panel);
 
+				var nav_bar = $("<ul>");
+
+				nav_bar.attr({
+					"class": "nav nav-tabs red tabs-" + keys.length,
+					"role": "tablist"
+				});
+
+				for (var n = 0; n < keys.length; n++) {
+
+					console.log(keys);
+					var list = $("<li>");
+
+					list.attr({
+						"class": "nav-item"
+					});
+
+					var anchor_nav = $("<a>");
+
+					anchor_nav.attr({
+						"class": "nav-link active",
+						"data-toggle": "tab",
+						"href": "#panel" + n,
+						"role": "tab"
+					});
+
+					var nav_div = $("<div>");
+
+					nav_div.attr({
+						"class": "tab-content card"
+					});
+
+					var div_pane = $("<div>");
+
+					nav_div.attr({
+						"class": "tab-pane fade in active",
+						"id": "panel" + n,
+						"role": "tabpanel"
+					});
+
+					anchor_nav.text(keys[n]);
+						$(anchor_nav).appendTo(list);
+						$(list).appendTo(nav_bar);
+
+				}
+							
+					$(nav_bar).appendTo(div_body);
+			
+				
+				
+				
+/*
 				for (var m = 0; m < response.results[j].synonyms.length; m++) {
 
 					var synonyms_btn = $("<button>");
@@ -115,21 +169,8 @@ function dictionary(){
 
 					$(div_body).append(synonyms_btn);
 					
-				}
+				}*/
 
-				for (var m = 0; m < response.results[j].synonyms.length; m++) {
-
-					var synonyms_btn = $("<button>");
-
-					synonyms_btn.attr({
-						"data-index": response.results[j].synonyms[m]
-					});
-
-					synonyms_btn.text(response.results[j].synonyms[m]);
-
-					$(div_body).append(synonyms_btn);
-					
-				}
 				// $(div_body).append("The type of Word is a " + response.results[j].partOfSpeech + "<br>");
 				// $(div_body).append("Synonyms " + response.results[j].synonyms.join("<br>") + "<br>");
 				// $(div_body).append("Has type of thoughts of " + response.results[j].typeOf.join("<br>") + "<br>");
