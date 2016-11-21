@@ -29,6 +29,10 @@ search/synonyms buttons and results div*/
 	margin-right: 14px;
 }
 
+/*search input bar*/
+#user-input {
+	color: white;
+}
 .switch {
 	float: right;
 	margin-top: 27px;
@@ -52,7 +56,6 @@ search/synonyms buttons and results div*/
 }
 /*where the api content will show*/
 #main-display {
-	background-color: #eeeeee;
 	height: 100vh;
 }
 
@@ -62,6 +65,14 @@ search/synonyms buttons and results div*/
 	width: 100%;
 }
 
+.gifs {
+	height: 200px;
+	width: 350px;
+	padding: 5px;
+}
+.gifWrapper {
+	display: inline-block;
+}
 
 
 
