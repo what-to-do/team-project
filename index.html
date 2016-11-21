@@ -20,7 +20,7 @@
         <link href="css/style.css" rel="stylesheet">
         
     </head>
-    <body class="hidden-sn blue-skin">
+    <body class="hidden-sn">
 
         <!--Double navigation-->
 <header>
@@ -80,27 +80,24 @@
             <li class="nav-item ">
                 <!--Search form-->
 
-                <!--magnifying glass icon-->
-               <a class="btn-floating btn-small red circle-button">
-                    <i class="fa fa-search" id="mag-glass"></i>
-                </a>
 
 
                    <form class="form-inline waves-effect waves-light">
                         
                         <!--search input field-->
+                        <i class="fa fa-search search" id="mag-glass"></i>
                         <input class="form-control" type="text" placeholder="Search" id="user-input">
 
                         <!--Help Button-->
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" id="help-button" data="false">Help</button>
+                        <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" id="help-button" data="false"></i>
 
                          <!-- Switch -->
                          <div class="switch">
                             <label>
-                                Off
+                                
                                 <input type="checkbox">
                                 <span class="lever"></span>
-                                On
+                               
                             </label>
                         </div> <!--end of Switch--> 
                     </form> 
