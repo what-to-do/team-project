@@ -71,13 +71,33 @@ search/synonyms buttons and results div*/
 }
 .category_buttons {
 	margin-top: 10px;
+	background-color: black;
 }
 
 #category {
-	background-color: #9e9e9e;
-	height: 100px;
+	background-color: black;
+	height: 75px;
 	text-align: center;
 	padding-top: 8px;
+}
+
+.category_buttons {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 3px;
+}
+.category_buttons:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 1px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+.category_buttons:hover:after {
+	width: 100%;
+	background: white;
 }
 /*where the api content will show*/
 #main-display {
