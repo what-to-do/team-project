@@ -9,11 +9,20 @@ $.ajax({
 	method: 'GET',
 	dataType: 'jsonp',
 }).done(function(result) {
-	var objResult = result;
-	console.log(objResult);
+	console.log(result);
 	console.log(url);
 	console.log(result.items[0].link);
-	$('#main-display').append('<img src="' + result.items[0].urlFormattedUrl + '"');
+
+
+	$('#main-display').empty();
+	
+	var img = $("<img>")
+	
+	img.attr({
+			   "src":    result.items[0].htmlFormattedUrl
+	}) 
+	
+	$('#main-display').append(img);
 })
 
 }
