@@ -2,7 +2,7 @@ function dictionary(word){
 
 	//console.log(word);
 	
-	var user = word;
+	var user = "example";
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
@@ -27,9 +27,8 @@ function dictionary(word){
 		}).done(function(response){
 
 				//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
-				console.log(response);
+				//console.log(response);
 
-				var hello = Object.keys(response.results);
 
 
 				// Empties main display
@@ -60,6 +59,7 @@ function dictionary(word){
 			for (var j = 0; j < response.results.length; j++) {
 
 				// Returns the keys of response
+			
 				var keys = Object.keys(response.results[j]);
 				// Panel for the meanings
 				var div_panel = $("<div>");
@@ -182,14 +182,13 @@ function dictionary(word){
 					
 
 				}
-
-					// $.each(response.results , function(c){
-					// 	var dance = response.results[c];
-					// 	console.log(dance[keys[j]]);
-					// });
-
-				console.log(keys[j]);
-				console.log(response.results[0][keys[j]]);		
+			
+				console.log(response.results[j][keys[j]]);
+				for (var o = 0; o < response.results[j][keys[o]].length; o++) {
+					//console.log(response.results[j][keys[o]]);
+					//console.log("length " + response.results[j][keys[o]].length);
+					//console.log(response.results[j][keys[o]]);
+				}	
 
 
 				$(nav_bar).appendTo(div_body);
