@@ -11,9 +11,6 @@ function dictionary(){
 	//console.log(related_options);
 
 
-
-
-
 		var related_url = "https://wordsapiv1.p.mashape.com/words/" + user;
 
 		console.log(related_url);
