@@ -103,7 +103,11 @@ var num = 1
         	
             giphy();
 
-        } // End of If Else
+        } else if (user_category_pick == "google_images") {
+        	
+            
+
+        }// End of If Else
 
     }); // End of category_buttons click event
 
