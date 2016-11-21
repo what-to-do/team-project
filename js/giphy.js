@@ -1,4 +1,4 @@
-	function displayGifs() {
+	function giphy() {
 		//variables for giphy api key and url to be used in AJAX
 		var apiKey = "dc6zaTOxFJmzC";
 		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=10&rating=pg&api_key=" + apiKey;
@@ -25,7 +25,7 @@
 							   'data-state': 'still'});
 
 				//append the div to gifs ID then append rating and gifImage to the div
-				$('#gifs').append(gifWrapper);
+				$('#main-display').append(gifWrapper);
 				$('#gifWrap' + [i]).append(gifImage);	
 			}
 			

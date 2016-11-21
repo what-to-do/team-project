@@ -33,7 +33,7 @@ var num = 1
 		
 		console.log("The baton is " + baton);
 		
-		$("#main-display").append("<br>" + "Mag click " + baton);
+		/*$("#main-display").append("<br>" + "Mag click " + baton);*/
 
 		valid()
 
@@ -51,7 +51,7 @@ var num = 1
 			/*user_search.push(user_input);*/
 			console.log("The baton is: " + baton);
 
-			$("#main-display").append("<br>" + "By enter: " + baton);
+			/*$("#main-display").append("<br>" + "By enter: " + baton);*/
 
 			valid();
 
@@ -100,7 +100,7 @@ var num = 1
             youtube();
 
         } else if (user_category_pick == "giphy") {
-
+        	
             giphy();
 
         } // End of If Else
