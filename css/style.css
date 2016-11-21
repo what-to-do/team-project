@@ -25,7 +25,8 @@ search/synonyms buttons and results div*/
 }
 
 .navbar{
-	height: 65px;
+	height: 60px;
+	background-color: #4B515D;
 }
 
 /*magnifying glass next to search*/
