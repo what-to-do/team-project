@@ -150,6 +150,7 @@ function dictionary(word){
 					// Making anchor 
 					var anchor_nav = $("<a>");
 
+					// Adding attr to the anchor
 					anchor_nav.attr({
 						"class": "nav-link active",
 						"data-toggle": "tab",
@@ -157,22 +158,26 @@ function dictionary(word){
 						"role": "tab"
 					});
 
+					// Making div for the body
 					var nav_div = $("<div>");
 
+					// Adding attr. to nav_bar
 					nav_div.attr({
 						"class": "tab-content card"
 					});
-
+					// Adding the spefic body div to div_pane
 					var div_pane = $("<div>");
-
+					// Adding attr. to nav_div
 					nav_div.attr({
 						"class": "tab-pane fade in active",
 						"id": "panel" + n,
 						"role": "tabpanel"
 					});
-
+					// Putting text on the anchor 
 					anchor_nav.text(keys[n]);
+					// Anchor_nav -> list
 					$(anchor_nav).appendTo(list);
+					// List -> nav_bar
 					$(list).appendTo(nav_bar);
 					
 
