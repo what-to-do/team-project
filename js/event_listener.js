@@ -39,7 +39,7 @@ var num = 1
 
 		expand_category_box()
 
-		//search_history_add(baton, search_history_record);
+		search_history_add(baton, search_history_record);
 
 	}); // End of mag-glass click event
 
@@ -56,7 +56,7 @@ var num = 1
 			valid();
 
 			expand_category_box()
-			//search_history_add(baton, search_history_record);
+			search_history_add(baton, search_history_record);
 
 			return false;
 		}

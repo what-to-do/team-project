@@ -2,6 +2,9 @@ function search_history() {
 
 	console.log("hey you");
 
+
+//	var search_history_record = new Array();
+
 	$("#search-list").empty();
 
 	// reusing code from synonyms() in order to create
