@@ -1,8 +1,8 @@
-function dictionary(){
+function dictionary(word){
 
 	//console.log(word);
 	
-	var user = "example";
+	var user = word;
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
