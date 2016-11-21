@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 // For testing of valid
 // valid();
-var search_history_record = new Array();
+search_history_record = new Array();
 event_listener();
 
 
