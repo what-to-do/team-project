@@ -3,10 +3,11 @@
 		var apiKey = "dc6zaTOxFJmzC";
 		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=10&rating=pg&api_key=" + apiKey;
 		
+		
 
 		$.ajax({url: giphyURL, method: 'GET'}).done(function(response) {
 			//clear gifs from webpage
-			$('#gifs').empty();
+			$("#main-display").empty();
 
 			//loop to create gifs on webpage when button clicked
 			for(var i=0; i<10; i++) {
