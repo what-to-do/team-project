@@ -1,3 +1,5 @@
+
+
 function wikiajax(query) {
 	console.log('call wikiajax');
 	var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&indexpageids=1&iwurl=1&redirects=1&converttitles=1&exlimit=max&utf8=1&titles=';
@@ -19,3 +21,7 @@ function wikiajax(query) {
 		});
 	});
 }	// end of function wikiajax
+
+function wikipedia() {
+	wikiajax(baton);
+}
