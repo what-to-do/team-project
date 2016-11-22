@@ -5,7 +5,9 @@
 		
 		
 
-		$.ajax({url: giphyURL, method: 'GET'}).done(function(response) {
+		$.ajax({url: giphyURL, 
+			   method: 'GET'})
+			  .done(function(response) {
 			//clear gifs from webpage
 			$("#main-display").empty();
 
