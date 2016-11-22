@@ -16,6 +16,7 @@ $.ajax({
 	for (var i = 0; i < response.items.length; i++) {
 
 	var video_ID = response.items[i].id.videoId;
+	console.log(video_ID)
 	var title = response.items[i].snippet.title;
 	var description = response.items[i].snippet.description;
 	var thumb = response.items[i].snippet.thumbnails.high.url;
@@ -29,11 +30,12 @@ $.ajax({
 	'<img src ="' + thumb + '">' + 
 	'</div>' +
 	'<div class = "list-right">' +
-	'<h3><a class="fancybox fancybox.iframe" herf="http://www.youtube.com/embed' + video_ID +'">'  + title + '</a></h3>' +
+	'<h3><a href="http://www.youtube.com/embed/' + video_ID +'" class="fancybox fancybox.iframe">'  + title + '</a></h3>' +
 	'<small> By <span class="cTitle">' + channel_title+ '</span> on' + video_date + '</small>' + '<p>' + description + '</p>' +
 	'</div>' + '</li>' + '<div class="clearfix"></div>' +
 	'';
 	$(output).appendTo(".display");
+	console.log(output);
 	}; //end of for loop   
 
 }); // End of Ajax Request / Done Function
