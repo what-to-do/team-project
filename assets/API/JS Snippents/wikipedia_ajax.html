@@ -13,41 +13,102 @@
   crossorigin="anonymous"></script></script>
 
 		<script type="text/javascript">
+function wikiajax(query) {
+	console.log('call wikiajax');
+	var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&indexpageids=1&iwurl=1&redirects=1&converttitles=1&exlimit=max&utf8=1&titles=';
+
+///w/api.php?action=query&format=json&prop=extracts&meta=&indexpageids=1&iwurl=1&titles=set&redirects=1&converttitles=1&utf8=1&exlimit=20&exsectionformat=wiki&excontinue=
+
+	var queryString = query;
+	url += queryString;
+	console.log(url);
+	$.ajax({
+		url: url,
+		method: 'GET',
+		dataType: 'jsonp',
+		contentType: "application/json; charset-utf-8",
+		async: false,
+	}).done(function(result) {
+		var objResult = result;
+		console.log(objResult);
+//		var string = JSON.stringify(result);
+//		var pageId = result.query.pages;
+//		var pageIdArray = [];
+//		pageIdArray = result;
+//		var array = [];
+//		var theTypeIs = Object.keys(result.query.pages)[0];				
+		$.each(result.query.pages, function(c) {
+			var hey = result.query.pages[c].extract;
+			$("#content").html(hey);
+//			var test1 = hey.indexOf("From other capitalisation");
+//			console.log(test1);
+//			var test2 = hey.indexOf("may refer to:");
+//			console.log(test2);
+//			if (test1 !== -1) {
+//				console.log(queryString.charAt(0));
+//				console.log(queryString.charAt(0).toUpperCase());
+//				console.log(queryString.slice(1));
+//				queryString = (queryString.charAt(0).toUpperCase() + queryString.slice(1));
+//				console.log(queryString);
+//				wikiajax(queryString);
+//			}
+//			if (test2 !== -1) {
+
+				//console.log(result.query.pages[c].extract);
+//			}
+//			debugger;
+
+		});
+	});
+}	// end of function wikiajax
 
 //			var url = "https://en.wikipedia.org/w/api.php?action=query&titles=Star%20Wars&format=json&prop=revisions&rvprop=content&rvsection=0";
 
-			var url = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=';
+//			var url = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=';
 //			var url = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=Star%20Wars";
 //			var url = "http://en.wikipedia.org/w/api.php?action=parse&removeLinks=true&format=json&prop=text&section=0&callback=?&page=";
-			url += "zebra"
-			$.ajax({
-				url: url,
-				method: 'GET',
-				dataType: 'jsonp',
-				contentType: "application/json; charset-utf-8",
-				async: false,
-			}).done(function(result) {
-				var objResult = result;
-				var string = JSON.stringify(result);
-				//console.log(string);
-				//console.log(objResult);
-				var pageId = result.query.pages;
-				console.log(pageId);
-				var pageIdArray = [];
-				pageIdArray = result;
-				//console.log(pageIdArray.query.pages);
-				var array = [];
-
-				var theTypeIs = Object.keys(result.query.pages)[0];
-				console.log(theTypeIs);
-				
-				$.each(result.query.pages, function(c) {
-					var hey = result.query.pages[c].extract;
-					console.log(hey);
-					$("#content").html(hey);
+			var queryString = "set";
+			wikiajax(queryString);
+//			url += queryString;
+//			$.ajax({
+//				url: url,
+//				method: 'GET',
+//				dataType: 'jsonp',
+//				contentType: "application/json; charset-utf-8",
+//				async: false,
+//			}).done(function(result) {
+//				var objResult = result;
+//				var string = JSON.stringify(result);
+//				//console.log(string);
+//				//console.log(objResult);
+//				var pageId = result.query.pages;
+//				console.log(pageId);
+//				var pageIdArray = [];
+//				pageIdArray = result;
+//				//console.log(pageIdArray.query.pages);
+//				var array = [];
+//
+//				var theTypeIs = Object.keys(result.query.pages)[0];
+//				console.log(theTypeIs);
+//				
+//				$.each(result.query.pages, function(c) {
+//					var hey = result.query.pages[c].extract;
+//					console.log(hey);
+//					$("#content").html(hey);
+//					var test1 = hey.indexOf("From other capitalisation");
+//					console.log(test1);
+//					var test2 = hey.indexOf("may refer to:");
+//					console.log(test2);
+//					if (test1 !== -1) {
+//						console.log(queryString.charAt(0));
+//						console.log(queryString.charAt(0).toUpperCase());
+//						console.log(queryString.slice(1));
+//						queryString = (queryString.charAt(0).toUpperCase() + queryString.slice(1));
+//						console.log(queryString);
+//					}
   					//console.log(result.query.pages[c].extract);
 
-				});
+//				});
 
 
 				
@@ -66,7 +127,8 @@
 //				console.log(extract);
 				
 //				console.log(objResult.query.search[0]);
-			})
+//			})
+
 
 		</script>
 	</body>
