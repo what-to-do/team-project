@@ -28,7 +28,8 @@ function valid(){
 
 			var result = response.corrections[key];
 
-
+			$("#main-display").append("I don't think your thinking of a dictionary word tpye." + "<br>");
+			$("#main-display").append("Try these out:" + "<br>");
 
 			for (var i = 0; i < response.corrections[key].length; i++) {
 
@@ -36,7 +37,15 @@ function valid(){
 
 				btn.text(result[i]);
 
+				btn.addClass("btn btn-outline-default btn-rounded waves-effect related");
+
+				btn.attr({
+					"data-index": result[i]
+				});
+
+
 				$("#main-display").append(btn);
+				$("#main-display").append("<br>");
 		
 			}
 
@@ -45,6 +54,7 @@ function valid(){
 			
 		}
 
+		event_listener();
 
 	});
 		
