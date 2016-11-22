@@ -1,8 +1,8 @@
-function dictionary(word){
+function dictionary(){
 
 	//console.log(word);
 	
-	var user = "example";
+	var user = baton;
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
@@ -129,7 +129,7 @@ function dictionary(word){
 
 				// Adding attr. to nav_bar
 				nav_bar.attr({
-					"class": "nav nav-tabs red tabs-" + keys.length,
+					"class": "nav nav-tabs md-pills pills-ins",
 					"role": "tablist"
 				});
 
@@ -182,10 +182,23 @@ function dictionary(word){
 
 					if (keys[o] == "definition") {
 
-						nav_pane.text(get);
-
-					} else if{
 						
+
+					} else if (keys[o] == "partOfSpeech"){
+						nav_pane.text(get);
+					} else{
+
+						for (var p = 0; p < get.length; p++) {
+						
+							var btns = $("<button>");
+
+							btns.addClass("btn btn-sm btn-outline-info btn-rounded waves-effect text-xs-center");
+
+							btns.text(get[p]);
+							$(nav_pane).append(btns);
+
+						}
+
 					}
 
 					$(nav_pane).appendTo(nav_div);
