@@ -180,9 +180,13 @@ function dictionary(word){
 						"role": "tabpanel"
 					});
 
-					nav_pane.text(get);
+					if (keys[o] == "definition") {
 
-					debugger;
+						nav_pane.text(get);
+
+					} else if{
+						
+					}
 
 					$(nav_pane).appendTo(nav_div);
 
