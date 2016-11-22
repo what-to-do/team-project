@@ -1,7 +1,7 @@
 function valid(){
 
 	var word = baton;
-	var synonyms_url = "https://wordsapiv1.p.mashape.com/words/" + word +"/synonyms"
+	var synonyms_url = "https://montanaflynn-spellcheck.p.mashape.com/check/?text=" + word;
 
 	// Ajax request to wordsapi 
 	// Will return the synonyms of the searched word

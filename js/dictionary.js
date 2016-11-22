@@ -1,8 +1,8 @@
-function dictionary(word){
+function dictionary(){
 
 	//console.log(word);
 	
-	var user = word;
+	var user = baton;
 
 	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
 
@@ -13,7 +13,7 @@ function dictionary(word){
 
 		var related_url = "https://wordsapiv1.p.mashape.com/words/" + user;
 
-		console.log(related_url);
+		//console.log(related_url);
 
 		// Ajax request to wordsapi 
 		// Will return the synonyms of the searched word
@@ -27,15 +27,15 @@ function dictionary(word){
 		}).done(function(response){
 
 				//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
-				console.log(response);
+				//console.log(response);
 
-				var hello = Object.keys(response.results);
-
+				// Empties main display
 				$("#main-display").html("");
 
-
+				// Creates a wrapper for the tab.pill
 				var wrapper = $("<div>");
 
+				// Adding the class and attr. for it to work with mdbootstrap
 				wrapper.addClass("accordion");
 				wrapper.attr({
 					"id": "accordion",
@@ -43,33 +43,43 @@ function dictionary(word){
 					"aria-multiselectable": "true"
 				});
 
+				// Put the wrapper to the page
+				// Make a div of wrapper
 				$("#main-display").html(wrapper);
 
-			console.log(response.results.length);
+			//console.log(response.results.length);
 
+			/**
+			 * Loops through the object
+			 * @param  {Response resutls} var j             j is the # of results in response
+			 * @return {Makes a collapsable panel}     Collapsable panels of the different meaning of baton
+			 */
 			for (var j = 0; j < response.results.length; j++) {
 
+				// Returns the keys of response
+			
 				var keys = Object.keys(response.results[j]);
 
+				// Panel for the meanings
 				var div_panel = $("<div>");
-
+				// Adds classes for mdbootstrap
 				div_panel.addClass("panel panel-default");
-
+				// Makes a div for the header
 				var div_header = $("<div>");
-
+				// Adds class for the panel heading
 				div_header.addClass("panel-heading");
-
+				// Adds header attr to it
 				div_header.attr({
 					"role": "tab",
 					"id":"heading" + j
 				});
-
+				// Making a header
 				var h = $("<h5>");
-
+				// Added class for  mdbootstrap
 				h.addClass("panel-title");
-
+				// Making anchors for it to be clickable
 				var anchor = $("<a>");
-
+				// Adding attr. to anchor
 				anchor.attr({
 					"class":         "arrrow-r",
 					"data-toggle":   "collapse",
@@ -79,15 +89,15 @@ function dictionary(word){
 					"aria-controls": "collapse" + j
 
 				});
-
+				// Putting texts on the panel
 				anchor.text(response.results[j].definition);
-
+				// Adding icon
 				var i = $("<i>");
-
+				// Adding class for mdbootstrap
 				i.addClass("fa fa-angle-down rotate-icon");
-
+				// Making hidden div body
 				var div_body = $("<div>");
-
+				// Adding attr. on div body
 				div_body.attr({
 					"id": "collapse" + j,
 					"class": "panel-collapse collapse",
@@ -95,63 +105,124 @@ function dictionary(word){
 					"aria-labelledby": "headingOne",
 					"aria-expanded": "false"
 				});
-
+				// Now for the show
+				// Making the elements created by jQuery to the page
+				// div_panel -> wrapper
 				$(div_panel).appendTo(wrapper);
+				// div_header -> div_panel
 				$(div_header).appendTo(div_panel);
+				// h -> div header
 				$(h).appendTo(div_header);
+				// anchors - h
 				$(anchor).appendTo(h);
+				// i -> anchor
 				$(i).appendTo(anchor);
+				// div_body -> div_panel
 				$(div_body).appendTo(div_panel);
 
+				// End of collapsable Accordion
+				// --------------------------------------------------------------------------------------
+				// Beginning of nav-tabs
+				// 
+				// Making nav_bar for accordion
 				var nav_bar = $("<ul>");
 
+				// Adding attr. to nav_bar
 				nav_bar.attr({
-					"class": "nav nav-tabs red tabs-" + keys.length,
+					"class": "nav nav-tabs md-pills pills-ins",
 					"role": "tablist"
 				});
 
+				/**
+				 * Loops the keys of the object response
+				 * @param  {keys of the object respone} var n             [description]
+				 * @return {Putting nav_bar on the page under header}     [description]
+				 */
 				for (var n = 0; n < keys.length; n++) {
 
-					console.log(keys);
+					// Making a list item
 					var list = $("<li>");
-
+					// Adding attr 
 					list.attr({
 						"class": "nav-item"
 					});
-
+					// Making anchor 
 					var anchor_nav = $("<a>");
 
+					// Adding attr to the anchor
 					anchor_nav.attr({
-						"class": "nav-link active",
+						"class": "nav-link",
 						"data-toggle": "tab",
-						"href": "#panel" + n,
+						"href": "#panel" + j + n,
 						"role": "tab"
 					});
 
+					// Making div for the body
 					var nav_div = $("<div>");
 
+					// Adding attr. to nav_bar
 					nav_div.attr({
 						"class": "tab-content card"
 					});
 
-					var div_pane = $("<div>");
+				for (var o = 0; o < keys.length; o++) {
 
-					nav_div.attr({
+					console.log(keys[o]); 
+					var get = response.results[j][keys[o]];
+					console.log(get);
+
+					// Adding the spefic body div to div_pane
+					var nav_pane = $("<div>");
+					// Adding attr. to nav_div
+					nav_pane.attr({
 						"class": "tab-pane fade in active",
-						"id": "panel" + n,
+						"id": "panel" + j + o,
 						"role": "tabpanel"
 					});
 
+					if (keys[o] == "definition") {
+
+						
+
+					} else if (keys[o] == "partOfSpeech"){
+						nav_pane.text(get);
+					} else{
+
+						for (var p = 0; p < get.length; p++) {
+						
+							var btns = $("<button>");
+
+							btns.addClass("btn btn-sm btn-outline-info btn-rounded waves-effect text-xs-center");
+
+							btns.text(get[p]);
+							$(nav_pane).append(btns);
+
+						}
+
+					}
+
+					$(nav_pane).appendTo(nav_div);
+
+				}	
+
+					// Putting text on the anchor 
 					anchor_nav.text(keys[n]);
-						$(anchor_nav).appendTo(list);
-						$(list).appendTo(nav_bar);
+					// Anchor_nav -> list
+					$(anchor_nav).appendTo(list);
+					// List -> nav_bar
+					$(list).appendTo(nav_bar);
+
+				
+					
 
 				}
-							
-					$(nav_bar).appendTo(div_body);
-			
+
+				$(nav_bar).appendTo(div_body);
+
+				$(nav_div).appendTo(div_body);
 				
-				
+					
+				//debugger;
 				
 /*
 				for (var m = 0; m < response.results[j].synonyms.length; m++) {

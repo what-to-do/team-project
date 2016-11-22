@@ -89,7 +89,8 @@ var num = 1
         console.log(user_category_click);
         console.log(user_category_pick);
         if (user_category_pick == "dictionary") {
-            dictionary(baton);
+
+            dictionary();
 
         } else if (user_category_pick == "wikipedia") {
 
