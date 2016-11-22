@@ -28,9 +28,21 @@ function valid(){
 
 			var result = response.corrections[key];
 
+
+
+			for (var i = 0; i < response.corrections[key].length; i++) {
+
+				var btn = $("<button>");
+
+				btn.text(result[i]);
+
+				$("#main-display").append(btn);
+		
+			}
+
 			console.log(result);
 
-			$("#main-display").append(result.join("<br>"));
+			
 		}
 
 
