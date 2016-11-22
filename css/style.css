@@ -76,6 +76,11 @@ search/synonyms buttons and results div*/
 	padding-top: 8px;
 }
 
+h2 {
+	margin-right: auto;
+	margin-left: auto;
+}
+
 h6 {
 	color: black;
 }
@@ -94,7 +99,6 @@ h6 {
 }
 .category_buttons:after {
 	content: '';
-	display: block;
 	margin: auto;
 	height: 1px;
 	width: 0px;
