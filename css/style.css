@@ -99,6 +99,7 @@ h6 {
 }
 .category_buttons:after {
 	content: '';
+	display: inline-block;
 	margin: auto;
 	height: 1px;
 	width: 0px;
