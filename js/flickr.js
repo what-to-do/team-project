@@ -18,14 +18,16 @@ function flickr(){
                     var secret_id = response.photos.photo[i].secret;
                     var full_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + ".jpg";
                     //edit photos with class .flicker-photos
-                    $(img).addClass("flicker-photos")
+                    $(img).addClass("flickr-photos")
                     $(img).attr({
-                                "id": "flicker" + i,
+                                "id": "flickr" + i,
                                 "src": full_img_url
                     })
                 //append images to the main display
                 $("#main-display").append(img);
+
             }
             }) 
 
 } //end of flickr()
+
