@@ -13,7 +13,7 @@ function dictionary(word){
 
 		var related_url = "https://wordsapiv1.p.mashape.com/words/" + user;
 
-		console.log(related_url);
+		//console.log(related_url);
 
 		// Ajax request to wordsapi 
 		// Will return the synonyms of the searched word
@@ -28,8 +28,6 @@ function dictionary(word){
 
 				//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
 				//console.log(response);
-
-
 
 				// Empties main display
 				$("#main-display").html("");
@@ -49,7 +47,7 @@ function dictionary(word){
 				// Make a div of wrapper
 				$("#main-display").html(wrapper);
 
-			console.log(response.results.length);
+			//console.log(response.results.length);
 
 			/**
 			 * Loops through the object
@@ -61,6 +59,7 @@ function dictionary(word){
 				// Returns the keys of response
 			
 				var keys = Object.keys(response.results[j]);
+
 				// Panel for the meanings
 				var div_panel = $("<div>");
 				// Adds classes for mdbootstrap
@@ -152,9 +151,9 @@ function dictionary(word){
 
 					// Adding attr to the anchor
 					anchor_nav.attr({
-						"class": "nav-link active",
+						"class": "nav-link",
 						"data-toggle": "tab",
-						"href": "#panel" + n,
+						"href": "#panel" + j + n,
 						"role": "tab"
 					});
 
@@ -165,36 +164,50 @@ function dictionary(word){
 					nav_div.attr({
 						"class": "tab-content card"
 					});
+
+				for (var o = 0; o < keys.length; o++) {
+
+					console.log(keys[o]); 
+					var get = response.results[j][keys[o]];
+					console.log(get);
+
 					// Adding the spefic body div to div_pane
-					var div_pane = $("<div>");
+					var nav_pane = $("<div>");
 					// Adding attr. to nav_div
-					nav_div.attr({
+					nav_pane.attr({
 						"class": "tab-pane fade in active",
-						"id": "panel" + n,
+						"id": "panel" + j + o,
 						"role": "tabpanel"
 					});
+
+					nav_pane.text(get);
+
+					$(nav_pane).appendTo(nav_div);
+
+				}	
+
 					// Putting text on the anchor 
 					anchor_nav.text(keys[n]);
 					// Anchor_nav -> list
 					$(anchor_nav).appendTo(list);
 					// List -> nav_bar
 					$(list).appendTo(nav_bar);
+
+				
 					
 
 				}
-			
-				console.log(response.results[j][keys[j]]);
-				for (var o = 0; o < response.results[j][keys[o]].length; o++) {
-					//console.log(response.results[j][keys[o]]);
-					//console.log("length " + response.results[j][keys[o]].length);
-					//console.log(response.results[j][keys[o]]);
-				}	
-
 
 				$(nav_bar).appendTo(div_body);
+		
 			
-					
+			
+
+
+				$(nav_div).appendTo(div_body);
 				
+					
+				//debugger;
 				
 /*
 				for (var m = 0; m < response.results[j].synonyms.length; m++) {
