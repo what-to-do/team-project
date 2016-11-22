@@ -10,6 +10,8 @@ function expand_category_box() {
 
    $(".display_user_word").text(display_word);
 
+   $(".display_user_word").css("margin-bottom", "-20px");
+
     };//end of expand_category_box
 
 
