@@ -182,6 +182,8 @@ function dictionary(word){
 
 					nav_pane.text(get);
 
+					debugger;
+
 					$(nav_pane).appendTo(nav_div);
 
 				}	
@@ -199,10 +201,6 @@ function dictionary(word){
 				}
 
 				$(nav_bar).appendTo(div_body);
-		
-			
-			
-
 
 				$(nav_div).appendTo(div_body);
 				
