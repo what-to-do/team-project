@@ -1,58 +1,42 @@
 
-/*https://api.gettyimages.com/v3/search/images?ids=<asset id>,<asset id>*/
 
-/*function getty_images(){
-var getty_url = "https://api.gettyimages.com/v3/search/images?phrase=zebra&key=g3vdr3ns4xp6g2psweh6zc9y";
-var api_key =  "g3vdr3ns4xp6g2psweh6zc9y"
-		$.ajax({url: getty_url, 
-			   method: 'GET'})
-			  .done(function(response) {
-			  	console.log(response);
-
-			  })
-}*/
-
-/*function getty_images() {
-$.ajax({ 
-    url: 'https://api.imgur.com/3/image',
-    headers: {
-        'Authorization': 'Client-IDac560bb4069f8f4'
-    },
-    type: 'POST',
-    data: {
-        'image': 'helloworld.jpg'
-    },
-    success: function(result) { 
-    	console.log(result); }
-});
-
-}*/
 function getty_images(){
-var clientId = "ac560bb4069f8f4";
-var imgUrl = "https://api.imgur.com/3/image";
+    var flickr_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&text=dog&content_type=1&safe_search=1&sort=relevance&format=json";
+    var api_key = "&api_key=5fe01295efad5e61547cd49f8d37f223";
+    console.log(flickr_url + api_key);
+    $("#main-display").empty();
+    $.ajax({url:     flickr_url + api_key,
+            method: 'GET',
+            datatype: "JSON",
+            data: {
+            success:function(data){},
+            error:function(message){}
+            }
+            /*method: "flickr.photos.search"*/})
+            .done(function(response) {
+                console.log(response);
+                $("#main-display").append("<object src=https://www.flickr.com/photos/58130019@N08/5340131446>")
+            }) 
 
-$.ajax({
-    url: "https://api.imgur.com/3/image",
-    type: "POST",
-    datatype: "json",
-    data: {image: imgUrl},
-    success: showMe,
-    error: showMe,
-    beforeSend: function (xhr) {
-        xhr.setRequestHeader("Authorization", "Client-ID " + clientId);
-    }
-});
-
-function showMe(data) {
-   	console.log(data);
-
-    if(data.success == true) {
-        $("#main-display").append("<img src='"+data.data.link+"'/>");
-    }
-}
-}
+} 
+        
 
 
 
 
+
+/*(function(){
+    jQuery('#a-link').remove();   
+    
+    jQuery('<img alt="" />').attr('id', 'loader').attr('src', 'ajax-loader.gif').appendTo('#image-container');
+    
+    //assign your api key equal to a variable
+    var apiKey = '[YOUR API KEY]';
+    
+    //the initial json request to flickr
+    //to get your latest public photos, use this request: http://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=' + apiKey + '&amp;user_id=29096781@N02&amp;per_page=15&amp;page=2&amp;format=json&amp;jsoncallback=?
+    $.getJSON('https://api.flickr.com/services/rest/?&amp;method=flickr.photosets.getPhotos&amp;api_key=' + apiKey + '&amp;photoset_id=72157619415192530&amp;format=json&amp;jsoncallback=?',
+
+
+*/
 
