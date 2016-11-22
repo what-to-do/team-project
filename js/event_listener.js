@@ -30,6 +30,8 @@ var num = 1
 	$("#mag-glass").on("click" , function(){
 
 		baton = $("#user-input").val().trim();
+
+		$("#user-input").append("");
 		
 		console.log("The baton is " + baton);
 		
