@@ -105,7 +105,7 @@ var num = 1
 
         } else if (user_category_pick == "google_images") {
         	
-            google_image();
+            getty_images();
 
         }// End of If Else
 
