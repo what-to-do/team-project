@@ -9,10 +9,10 @@ $.ajax({
 
 }).done(function(response){
 
-    //$.each(response.items , function(i, item){
-    	//var output = getOutput();
-    	//$("#main-display").append(output)
-    //}); 
+    $.each(response.items , function(i, item){
+    	var output = getOutput();
+    	$("#main-display").append(output)
+    }); 
 
 
 function getOutput(){
@@ -33,9 +33,9 @@ function getOutput(){
 	'<li>' +
 	'<div class = "list-left">' +
 	'<img src ="' + thumb + '">' + 
-	'</div>'
+	'</div>' +
 	'<div class = "list-right">' +
-	'<h3>'  + title + '<h3></div>'
+	'<h3>'  + title + '<h3></div>' +
 	'<small> By <span class="cTitle">' + channel_title+ '</span> on' + video_date + '</small>' + '<p>' + description + '</p>' +
 	'</div>' + '</li>' + '<div class="clearfix"></div>'
 	console.log(output); 
