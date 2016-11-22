@@ -1,4 +1,8 @@
-function youtube () {
+$(document).ready(function() {
+	$(".fancybox").fancybox();
+});	
+
+function youtube() {
 var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
 var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton +"&key=" + key ;
 
@@ -8,15 +12,8 @@ $.ajax({
     method: "GET"
 
 }).done(function(response){
-
-    $.each(response.items , function(i, item){
-    	var output = getOutput(item);
-    	$("#main-display").append(output)
-    }); 
-
-
-function getOutput(){
-	for (i = 0; i < response.items.length; i++) {
+	//for loop to gather data
+	for (var i = 0; i < response.items.length; i++) {
 
 	var video_ID = response.items[i].id.videoId;
 	var title = response.items[i].snippet.title;
@@ -24,38 +21,20 @@ function getOutput(){
 	var thumb = response.items[i].snippet.thumbnails.high.url;
 	var channel_title = response.items[i].snippet.channelTitle;
 	var video_date = response.items[i].snippet.publishedAt;
-	}
-
-	console.log(title);
+	
 	//build output string
-
 	var output = 
 	'<li class = "results">' +
 	'<div class = "list-left">' +
 	'<img src ="' + thumb + '">' + 
 	'</div>' +
 	'<div class = "list-right">' +
-	'<h3>'  + title + '<h3></div>' +
+	'<h3><a class="fancybox fancybox.iframe" herf="http://www.youtube.com/embed' + video_ID +'">'  + title + '</a></h3>' +
 	'<small> By <span class="cTitle">' + channel_title+ '</span> on' + video_date + '</small>' + '<p>' + description + '</p>' +
-	'</div>' + '</li>' + '<div class="clearfix"></div>'
-	console.log(output); 
+	'</div>' + '</li>' + '<div class="clearfix"></div>' +
+	'';
 	$(output).appendTo(".display");
-
-}
-
-getOutput()
-
-
+	}; //end of for loop   
 
 }); // End of Ajax Request / Done Function
-
-
-
-
-
-
-
-
-
-
-}; // End of Document Ready Function
+}; // End of youtube Function

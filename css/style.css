@@ -127,6 +127,7 @@ h6 {
 }
 
 .results {
+	width: 90%;
 	padding: 10px 0;
 	list-style: none;
 }
