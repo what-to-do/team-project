@@ -37,7 +37,7 @@ var num = 1
 
 		valid()
 
-		expand_category_box()
+		expand_category_box(baton)
 
 		search_history_add(baton, search_history_record);
 
@@ -145,7 +145,7 @@ var num = 1
 
         console.log('The baton is ' + baton);
 
-        $("#main-display").append("<br>" + "By related: " + baton);
+       updated_category_box();
 
         //event_listener();
 
