@@ -15,7 +15,7 @@ function wikiajax(query) {
 		console.log(objResult);
 		$.each(result.query.pages, function(c) {
 			var hey = result.query.pages[c].extract;
-			$("#content").html(hey);
+			$("#main-display").html(hey);
 		});
 	});
 }	// end of function wikiajax
