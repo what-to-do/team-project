@@ -104,9 +104,9 @@ var num = 1
         	
             giphy();
 
-        } else if (user_category_pick == "google_images") {
+        } else if (user_category_pick == "flickr") {
         	
-            getty_images();
+            flickr();
 
         }// End of If Else
 
