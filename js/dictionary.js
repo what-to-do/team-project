@@ -167,10 +167,9 @@ function dictionary(){
 
 				for (var o = 0; o < keys.length; o++) {
 
-					console.log(keys[o]); 
-					var get = response.results[j][keys[o]];
-					console.log(get);
 
+					var get = response.results[j][keys[o]];
+	
 					// Adding the spefic body div to div_pane
 					var nav_pane = $("<div>");
 					// Adding attr. to nav_div
@@ -192,18 +191,21 @@ function dictionary(){
 						
 							var btns = $("<button>");
 
-							btns.addClass("btn btn-sm btn-outline-info btn-rounded waves-effect text-xs-center");
+							btns.addClass("btn btn-sm btn-outline-info btn-rounded waves-effect text-xs-center related");
+							btns.attr({
+								"data-index" : get[p]
+							});
 
 							btns.text(get[p]);
 							$(nav_pane).append(btns);
 
-						}
+						} // End of For Loop P
 
-					}
+					} // End of Else
 
 					$(nav_pane).appendTo(nav_div);
 
-				}	
+				} // End of For Loop O
 
 					// Putting text on the anchor 
 					anchor_nav.text(keys[n]);
@@ -215,15 +217,14 @@ function dictionary(){
 				
 					
 
-				}
+				} // End of For Loop N
 
 				$(nav_bar).appendTo(div_body);
 
 				$(nav_div).appendTo(div_body);
 				
 					
-				//debugger;
-				
+								
 /*
 				for (var m = 0; m < response.results[j].synonyms.length; m++) {
 
@@ -245,11 +246,11 @@ function dictionary(){
 				// $(div_body).append("Has thoughts of  " + response.results[j].hasTypes.join("<br>") + "<br>");
 				// $(div_body).append("Derivation(s) " + response.results[j].derivation.join("<br>") + "<br>");
 
-			}
+			} // End of Master Loop
+	event_listener();
+		}); // End of Ajax request
 
-		});
 
-	
 
 } // End of synonyms function
 

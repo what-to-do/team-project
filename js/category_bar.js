@@ -14,7 +14,20 @@ function expand_category_box() {
 
     };//end of expand_category_box
 
+function updated_category_box(){
 
+
+	var display_word = baton;
+
+    $("#category").animate({height: '150px'});
+
+    $(".button_div").animate({top: '25px'});
+
+   $(".display_user_word").text(display_word);
+
+   $(".display_user_word").css("margin-bottom", "0px");
+
+}
 
 
 
