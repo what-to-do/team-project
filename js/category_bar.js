@@ -27,6 +27,8 @@ function updated_category_box(){
 
    $(".display_user_word").css("margin-bottom", "0px");
 
+   $("#main-display").html("");
+
 }
 
 
