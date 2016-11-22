@@ -60,6 +60,97 @@ function dictionary(){
 			
 				var keys = Object.keys(response.results[j]);
 
+							var keys = Object.keys(response.results[j]);
+
+
+				var new_keys = [];
+
+				for (var q = 0; q < keys.length; q++) {
+					
+					switch (keys[q]) {
+						case "synonyms":
+							new_keys.push("Synonyms");
+							break;
+						case "antonyms":
+							new_keys.push("Antonyms");
+							break;
+						case "examples":
+							new_keys.push("Examples");
+							break;
+						case "typeOf":
+							new_keys.push("Hypernyms");
+							break;
+						case "hasTypes":
+							new_keys.push("Hyponyms");
+							break;
+						case "partOf":
+							new_keys.push("Holonyms");
+							break;
+						case "hasParts":
+							new_keys.push("Meronyms");
+							break;
+						case "instanceOf":
+							new_keys.push("Instances Of");
+							break;
+						case "hasInstances":
+							new_keys.push("Examples of");
+							break;
+						case "similarTo":
+							new_keys.push("Similar");
+							break;
+						case "also":
+							new_keys.push("Phrases");
+							break;
+						case "entails":
+							new_keys.push("Implied Words");
+							break;
+						case "memberOf":
+							new_keys.push("Group Family");
+							break;
+						case "hasMembers":
+							new_keys.push("Word Group");
+							break;
+						case "substanceOf":
+							new_keys.push("Substance");
+							break;
+						case "hasSubstances":
+							new_keys.push("Part of Word");
+							break;
+						case "inCategory":
+							new_keys.push("Domain Category");
+							break;	
+						case "hasCategories":
+							new_keys.push("Category of Word");
+							break;	
+						case "usageOf":
+							new_keys.push("Domain Usage");
+							break;	
+						case "hasUsages":
+							new_keys.push("Domain Defines");
+							break;	
+						case "inRegion":
+							new_keys.push("Regions is Used");
+							break;	
+						case "regionOf":
+							new_keys.push("Regions are Used");
+							break;	
+						case "pertainsTo":
+							new_keys.push("Relevant");
+							break;	
+						case "derivation":
+							new_keys.push("Derivation");
+							break;	
+						case "partOfSpeech":
+							new_keys.push("Type");
+							break;	
+						case "definition":
+							new_keys.push("Definition");	
+					}
+					console.log(keys[q]);
+					console.log(new_keys);
+
+				}
+
 				// Panel for the meanings
 				var div_panel = $("<div>");
 				// Adds classes for mdbootstrap
@@ -181,7 +272,7 @@ function dictionary(){
 
 					if (keys[o] == "definition") {
 
-						
+						nav_pane.text(get);
 
 					} else if (keys[o] == "partOfSpeech"){
 						nav_pane.text(get);
@@ -208,7 +299,7 @@ function dictionary(){
 				} // End of For Loop O
 
 					// Putting text on the anchor 
-					anchor_nav.text(keys[n]);
+					anchor_nav.text(new_keys[n]);
 					// Anchor_nav -> list
 					$(anchor_nav).appendTo(list);
 					// List -> nav_bar
