@@ -126,6 +126,31 @@ h6 {
 	display: inline-block;
 }
 
+.results {
+	padding: 10px 0;
+	list-style: none;
+}
+
+.list-left {
+	float: left;
+	width: 20%;
+}
+
+.list-left img {
+	width: 100%;
+	padding: 3px;
+	border: solid #ccc 1px;
+}
+
+.list-right {
+	float: right;
+	width: 78%;
+}
+
+.cTitle {
+	color: red;
+}
+
 
 
 

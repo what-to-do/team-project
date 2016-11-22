@@ -10,7 +10,7 @@ $.ajax({
 }).done(function(response){
 
     $.each(response.items , function(i, item){
-    	var output = getOutput();
+    	var output = getOutput(item);
     	$("#main-display").append(output)
     }); 
 
@@ -30,7 +30,7 @@ function getOutput(){
 	//build output string
 
 	var output = 
-	'<li>' +
+	'<li class = "results">' +
 	'<div class = "list-left">' +
 	'<img src ="' + thumb + '">' + 
 	'</div>' +
