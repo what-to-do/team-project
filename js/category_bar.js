@@ -4,13 +4,13 @@ function expand_category_box() {
 
     $("#category").animate({height: '150px'});
 
-    $(".category_buttons").animate({top: '25px'});
+    $(".button_div").animate({top: '25px'});
 
     var display_word = $("#user-input").val().trim();
 
    $(".display_user_word").text(display_word);
 
-   $(".display_user_word").css("margin-bottom", "-20px");
+   $(".display_user_word").css("margin-bottom", "0px");
 
     };//end of expand_category_box
 

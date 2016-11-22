@@ -73,6 +73,7 @@ search/synonyms buttons and results div*/
 	background-color: #fafafa;
 	height: 75px;
 	padding-top: 8px;
+	overflow: hidden;
 }
 
 h6 {
