@@ -72,8 +72,8 @@ search/synonyms buttons and results div*/
 	width: 100%;
 	background-color: #fafafa;
 	height: 75px;
-	text-align: center;
 	padding-top: 8px;
+	overflow: hidden;
 }
 
 h6 {
@@ -94,7 +94,7 @@ h6 {
 }
 .category_buttons:after {
 	content: '';
-	display: block;
+	display: inline-block;
 	margin: auto;
 	height: 1px;
 	width: 0px;
