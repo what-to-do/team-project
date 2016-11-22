@@ -1,30 +1,71 @@
 function valid(){
 
 	var word = baton;
-	var synonyms_url = "https://montanaflynn-spellcheck.p.mashape.com/check/?text=" + word;
-
+	var test_url = "https://montanaflynn-spellcheck.p.mashape.com/check/?text=" + word;
+	//debugger;
 	// Ajax request to wordsapi 
 	// Will return the synonyms of the searched word
 	$.ajax({
-	    url: synonyms_url, // The URL to the API. You can get this in the API page of the API you intend to consume
+	    url: test_url, // The URL to the API. You can get this in the API page of the API you intend to consume
 	    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
 	    data: {}, // Additional parameters here
 	    dataType: 'json',
-	    success: function(data) { related(word); },
-	    error: function(err) { wrong() },
+	    success: function(data) { },
+	    error: function(err) { },
 	    beforeSend: function(xhr) {
 	    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
 	    }
 
 
 	}).done(function(response){
+		console.log(response.suggestion);
+		if (word == response.suggestion){
+
+
+
+		}else {
+			var key = baton
+
+			var result = response.corrections[key];
+
+			$("#main-display").append("I don't think your thinking of a dictionary word tpye." + "<br>");
+			$("#main-display").append("Try these out:" + "<br>");
+
+			for (var i = 0; i < response.corrections[key].length; i++) {
+
+				var btn = $("<button>");
+
+				btn.text(result[i]);
+
+				btn.addClass("btn btn-outline-default btn-rounded waves-effect related");
+
+				btn.attr({
+					"data-index": result[i]
+				});
+
+
+				$("#main-display").append(btn);
+				$("#main-display").append("<br>");
 		
-	}); // End of ajax of synonyms
+			}
+
+			console.log(result);
+
+			
+		}
+
+		event_listener();
+
+	});
+		
+	
 
 } // End of Valid function
 
 
 function wrong(){
+
+
 
 	 $("#main-display").html("");
 	 $("#main-display").append("Sorry that is not a valid word");

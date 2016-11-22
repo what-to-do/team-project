@@ -37,7 +37,7 @@ var num = 1
 		
 		/*$("#main-display").append("<br>" + "Mag click " + baton);*/
 
-		valid()
+		//valid()
 
 		expand_category_box(baton)
 
@@ -55,7 +55,7 @@ var num = 1
 
 			/*$("#main-display").append("<br>" + "By enter: " + baton);*/
 
-			valid();
+			//valid();
 
 			expand_category_box()
 			search_history_add(baton, search_history_record);
@@ -91,6 +91,8 @@ var num = 1
         console.log(user_category_click);
         console.log(user_category_pick);
         if (user_category_pick == "dictionary") {
+
+        	valid();
 
             dictionary();
 
