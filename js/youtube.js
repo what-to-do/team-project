@@ -1,6 +1,8 @@
 function youtube() {
 var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
 var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton +"&key=" + key ;
+//empty main display 
+$("#main-display").empty();
 
 $.ajax({
 
