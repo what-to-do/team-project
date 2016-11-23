@@ -116,11 +116,14 @@ h6 {
 	height: 100vh;
 	width: 100%;
 }
-
+/*style gifs on main-display*/
 .gifs {
 	height: 200px;
 	width: 350px;
 	padding: 5px;
+}
+.gifs:hover {
+	cursor: pointer;
 }
 .gifWrapper {
 	display: inline-block;
@@ -132,8 +135,6 @@ h6 {
 	width: 350px;
 	padding: 5px;
 }
-
-
 
 
 
