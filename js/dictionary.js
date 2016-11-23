@@ -1,19 +1,8 @@
 function dictionary(){
 
-	//console.log(word);
-	
 	var user = baton;
 
-	//var names_options = ["antonyms" , "categories" , "holonyms" , "hyponyms" , "meronyms" , "similar"];
-
-	//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
-
-	//console.log(related_options);
-
-
 		var related_url = "https://wordsapiv1.p.mashape.com/words/" + user;
-
-		//console.log(related_url);
 
 		// Ajax request to wordsapi 
 		// Will return the synonyms of the searched word
@@ -25,9 +14,6 @@ function dictionary(){
 		    }
 
 		}).done(function(response){
-
-				//var related_options = ["antonyms" , "hasCategories" , "partOf" , "hasTypes" , "hasParts" , "similarTo" ,"synonyms"];
-				//console.log(response);
 
 				// Empties main display
 				$("#main-display").html("");
@@ -47,8 +33,6 @@ function dictionary(){
 				// Make a div of wrapper
 				$("#main-display").html(wrapper);
 
-			//console.log(response.results.length);
-
 			/**
 			 * Loops through the object
 			 * @param  {Response resutls} var j             j is the # of results in response
@@ -60,11 +44,13 @@ function dictionary(){
 			
 				var keys = Object.keys(response.results[j]);
 
-							var keys = Object.keys(response.results[j]);
-
-
 				var new_keys = [];
 
+				/**
+				 * Will create a new arry
+				 * @param  {The keys of the object} var q             the amount of keys
+				 * @return {Makes array}     This the array that the user will see
+				 */
 				for (var q = 0; q < keys.length; q++) {
 					
 					switch (keys[q]) {
@@ -145,11 +131,9 @@ function dictionary(){
 							break;	
 						case "definition":
 							new_keys.push("Definition");	
-					}
-					console.log(keys[q]);
-					console.log(new_keys);
+					} // End of Switch Statement 
 
-				}
+				} // End of Foor Loop Q
 
 				// Panel for the meanings
 				var div_panel = $("<div>");
@@ -255,9 +239,12 @@ function dictionary(){
 					nav_div.attr({
 						"class": "tab-content card"
 					});
-
+				/**
+				 * Makes the buttons
+				 * @param  {The keys of Object} var o             Object Length
+				 * @return {Clickable Buttons}     For the user to be able to pipe to other word
+				 */
 				for (var o = 0; o < keys.length; o++) {
-
 
 					var get = response.results[j][keys[o]];
 	
@@ -275,8 +262,10 @@ function dictionary(){
 						nav_pane.text(get);
 
 					} else if (keys[o] == "partOfSpeech"){
+
 						nav_pane.text(get);
-					} else{
+
+					} else {
 
 						for (var p = 0; p < get.length; p++) {
 						
@@ -298,219 +287,26 @@ function dictionary(){
 
 				} // End of For Loop O
 
-					// Putting text on the anchor 
-					anchor_nav.text(new_keys[n]);
-					// Anchor_nav -> list
-					$(anchor_nav).appendTo(list);
-					// List -> nav_bar
-					$(list).appendTo(nav_bar);
-
-				
-					
+				// Putting text on the anchor 
+				anchor_nav.text(new_keys[n]);
+				// Anchor_nav -> list
+				$(anchor_nav).appendTo(list);
+				// List -> nav_bar
+				$(list).appendTo(nav_bar);
 
 				} // End of For Loop N
 
 				$(nav_bar).appendTo(div_body);
 
 				$(nav_div).appendTo(div_body);
-				
-					
-								
-/*
-				for (var m = 0; m < response.results[j].synonyms.length; m++) {
-
-					var synonyms_btn = $("<button>");
-
-					synonyms_btn.attr({
-						"data-index": response.results[j].synonyms[m]
-					});
-
-					synonyms_btn.text(response.results[j].synonyms[m]);
-
-					$(div_body).append(synonyms_btn);
-					
-				}*/
-
-				// $(div_body).append("The type of Word is a " + response.results[j].partOfSpeech + "<br>");
-				// $(div_body).append("Synonyms " + response.results[j].synonyms.join("<br>") + "<br>");
-				// $(div_body).append("Has type of thoughts of " + response.results[j].typeOf.join("<br>") + "<br>");
-				// $(div_body).append("Has thoughts of  " + response.results[j].hasTypes.join("<br>") + "<br>");
-				// $(div_body).append("Derivation(s) " + response.results[j].derivation.join("<br>") + "<br>");
 
 			} // End of Master Loop
+
 	event_listener();
+
 		}); // End of Ajax request
 
 
 
 } // End of synonyms function
 
-// {
-//   "word": "example",
-//   "results": [
-//     {
-//       "definition": "a representative form or pattern",
-//       "partOfSpeech": "noun",
-//       "synonyms": [
-//         "model"
-//       ],
-//       "typeOf": [
-//         "representation",
-//         "internal representation",
-//         "mental representation"
-//       ],
-//       "hasTypes": [
-//         "prefiguration",
-//         "archetype",
-//         "epitome",
-//         "guide",
-//         "holotype",
-//         "image",
-//         "loadstar",
-//         "lodestar",
-//         "microcosm",
-//         "original",
-//         "paradigm",
-//         "pilot",
-//         "prototype",
-//         "template",
-//         "templet",
-//         "type specimen"
-//       ],
-//       "derivation": [
-//         "exemplify"
-//       ],
-//       "examples": [
-//         "I profited from his example"
-//       ]
-//     },
-//     {
-//       "definition": "something to be imitated",
-//       "partOfSpeech": "noun",
-//       "synonyms": [
-//         "exemplar",
-//         "good example",
-//         "model"
-//       ],
-//       "typeOf": [
-//         "ideal"
-//       ],
-//       "hasTypes": [
-//         "pacemaker",
-//         "pattern",
-//         "beauty",
-//         "prodigy",
-//         "beaut",
-//         "pacesetter"
-//       ],
-//       "derivation": [
-//         "exemplify",
-//         "exemplary"
-//       ]
-//     },
-//     {
-//       "definition": "an occurrence of something",
-//       "partOfSpeech": "noun",
-//       "synonyms": [
-//         "case",
-//         "instance"
-//       ],
-//       "typeOf": [
-//         "happening",
-//         "natural event",
-//         "occurrence",
-//         "occurrent"
-//       ],
-//       "hasTypes": [
-//         "clip",
-//         "mortification",
-//         "piece",
-//         "time",
-//         "humiliation",
-//         "bit"
-//       ],
-//       "derivation": [
-//         "exemplify"
-//       ],
-//       "examples": [
-//         "but there is always the famous example of the Smiths"
-//       ]
-//     },
-//     {
-//       "definition": "an item of information that is typical of a class or group",
-//       "partOfSpeech": "noun",
-//       "synonyms": [
-//         "illustration",
-//         "instance",
-//         "representative"
-//       ],
-//       "typeOf": [
-//         "information"
-//       ],
-//       "hasTypes": [
-//         "excuse",
-//         "apology",
-//         "specimen",
-//         "case in point",
-//         "sample",
-//         "exception",
-//         "quintessence",
-//         "precedent"
-//       ],
-//       "derivation": [
-//         "exemplify",
-//         "exemplary"
-//       ],
-//       "examples": [
-//         "this patient provides a typical example of the syndrome",
-//         "there is an example on page 10"
-//       ]
-//     },
-//     {
-//       "definition": "punishment intended as a warning to others",
-//       "partOfSpeech": "noun",
-//       "synonyms": [
-//         "deterrent example",
-//         "lesson",
-//         "object lesson"
-//       ],
-//       "typeOf": [
-//         "monition",
-//         "admonition",
-//         "word of advice",
-//         "warning"
-//       ],
-//       "derivation": [
-//         "exemplary"
-//       ],
-//       "examples": [
-//         "they decided to make an example of him"
-//       ]
-//     },
-//     {
-//       "definition": "a task performed or problem solved in order to develop skill or understanding",
-//       "partOfSpeech": "noun",
-//       "synonyms": [
-//         "exercise"
-//       ],
-//       "typeOf": [
-//         "lesson"
-//       ],
-//       "examples": [
-//         "you must work the examples at the end of each chapter in the textbook"
-//       ]
-//     }
-//   ],
-//   "syllables": {
-//     "count": 3,
-//     "list": [
-//       "ex",
-//       "am",
-//       "ple"
-//     ]
-//   },
-//   "pronunciation": {
-//     "all": "ɪɡ'zæmpəl"
-//   },
-//   "frequency": 4.67
-// }
