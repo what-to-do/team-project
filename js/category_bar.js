@@ -34,12 +34,11 @@ function updated_category_box(){
 } // End of updated_category_box function
 
 
-
 function category_bar() {
 
 	$("#category-div").html("");
 
-	var category = ["Dictionary" , "Wikipedia" , "YouTube" , "Giphy" , "Flickr"];
+	var category = ["Dictionary" , "Wikipedia" , "YouTube" , "Giphy" , "Flickr" , "Movies"];
 
 	var div_main = $("<div>");
 
@@ -128,6 +127,10 @@ function category_bar() {
         } else if (user_category_pick == "flickr") {
         	
             flickr();
+
+        } else if (user_category_pick == "movies"){
+
+        	omba();
 
         }// End of If Else
 
