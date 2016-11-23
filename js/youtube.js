@@ -32,7 +32,7 @@ $.ajax({
 	'<small> By <span class="cTitle">' + channel_title+ '</span> on' + video_date + '</small>' + '<p>' + description + '</p>' +
 	'</div>' + '</li>' + '<div class="clearfix"></div>' +
 	'';
-	$(output).appendTo(".display");
+	$(output).appendTo("#main-display");
 	console.log(output);
 	}; //end of for loop   
 
