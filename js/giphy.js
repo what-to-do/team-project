@@ -1,18 +1,24 @@
 	function giphy() {
 		//variables for giphy api key and url to be used in AJAX
 		var apiKey = "dc6zaTOxFJmzC";
-		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&rating=pg&api_key=" + apiKey;
+		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=12&rating=pg&api_key=" + apiKey;
 		
 		
 
 		$.ajax({url: giphyURL, 
-			   method: 'GET'})
+			   method: 'GET',
+			   beforeSend: function(){
+			   	$("#category-div").css("pointer", "progress")},
+			   complete: function(){
+			   	$(document).removeClass("progress")}	
+			})
 			  .done(function(response) {
 			//clear gifs from webpage
 			$("#main-display").empty();
+			console.log(response)
 
 			//loop to create gifs on webpage when button clicked
-			for(var i=0; i<12; i++) {
+			for(var i=0; i<response.data.length; i++) {
 				var image = response.data[i].images.fixed_height_still.url;
 				var animated = response.data[i].images.fixed_height.url;
 				var gifImage = $('<img>');
