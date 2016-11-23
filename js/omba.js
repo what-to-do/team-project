@@ -1,12 +1,14 @@
 function omba (){
 
 	var title = baton;
-	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json";
+	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&tomatoes=true&r=json";
 
 	$.ajax({
 		url: queryURL,
 		method: 'GET'
 	}).done(function(response) {
+
+		 $("#main-display").html("");
 
 		var div_table = $("<div>");
 
@@ -67,7 +69,13 @@ function omba (){
 
 			tr_sub.appendTo(tbody);
 
-			if (keys[i] != "Poster") {
+			if (keys[i] == "Poster") {
+
+
+			} else if (response[keys[i]] == "N/A"){
+
+
+			} else {
 
 				var th = $("<th>");
 
@@ -78,10 +86,9 @@ function omba (){
 				th.text(keys[i]);
 
 				th.appendTo(tr_sub);
+			}
 
-			} 
-
-			if (keys[i] == "Poster") {
+			if (keys[i] == "Poster" && response[keys[i]] != "N/A") {
 
 				var img = $("<img>")
 
@@ -90,6 +97,10 @@ function omba (){
 				});
 
 				img.appendTo(div_poster);
+
+
+
+			} else if (response[keys[i]] == "N/A") {
 
 			} else {
 
