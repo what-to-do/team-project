@@ -8,6 +8,8 @@ function expand_category_box() {
 
     var display_word = $("#user-input").val().trim();
 
+   $(".display_user_word").addClass("animated fadeIn");
+
    $(".display_user_word").text(display_word);
 
    $(".display_user_word").css("margin-bottom", "0px");
@@ -28,6 +30,8 @@ function updated_category_box(){
    $(".display_user_word").text(display_word);
 
    $(".display_user_word").css("margin-bottom", "0px");
+
+   $(".display_user_word").addClass("fadeIn");
 
    $("#main-display").html("");
 
@@ -94,6 +98,8 @@ function category_bar() {
 		input.appendTo(label);
 
 		var category_headers = $("<h6>");
+
+		category_headers.addClass("animated fadeIn");
 
 		category_headers.text(category[i]);
 
