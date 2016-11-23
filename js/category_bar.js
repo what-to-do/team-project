@@ -12,7 +12,9 @@ function expand_category_box() {
 
    $(".display_user_word").css("margin-bottom", "0px");
 
-    };//end of expand_category_box
+    $("#main-display").html("");
+
+};//end of expand_category_box
 
 function updated_category_box(){
 
@@ -29,7 +31,7 @@ function updated_category_box(){
 
    $("#main-display").html("");
 
-}
+} // End of updated_category_box function
 
 
 
