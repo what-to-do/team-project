@@ -1,10 +1,8 @@
-$(document).ready(function() {
-	$(".fancybox").fancybox();
-});	
-
 function youtube() {
 var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
 var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton +"&key=" + key ;
+//empty main display 
+$("#main-display").empty();
 
 $.ajax({
 
@@ -30,7 +28,7 @@ $.ajax({
 	'<img src ="' + thumb + '">' + 
 	'</div>' +
 	'<div class = "list-right">' +
-	'<h3><a href="http://www.youtube.com/embed/' + video_ID +'" class="fancybox fancybox.iframe">'  + title + '</a></h3>' +
+	'<h3><a href="http://www.youtube.com/embed/' + video_ID +'"class="fancybox fancybox.iframe">'  + title + '</a></h3>' +
 	'<small> By <span class="cTitle">' + channel_title+ '</span> on' + video_date + '</small>' + '<p>' + description + '</p>' +
 	'</div>' + '</li>' + '<div class="clearfix"></div>' +
 	'';
