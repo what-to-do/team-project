@@ -1,7 +1,4 @@
 $(document).ready(function() {
-//related();	
-//category_bar();
-//create_sidebar_btn();
 
 
 // For testing of valid

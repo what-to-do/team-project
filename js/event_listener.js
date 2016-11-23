@@ -39,7 +39,9 @@ var num = 1
 
 		//valid()
 
-		expand_category_box(baton)
+		category_bar();
+
+		expand_category_box()
 
 		search_history_add(baton, search_history_record);
 
@@ -57,7 +59,10 @@ var num = 1
 
 			//valid();
 
-			expand_category_box()
+			category_bar();
+
+			expand_category_box();
+
 			search_history_add(baton, search_history_record);
 
 			return false;
@@ -85,36 +90,6 @@ var num = 1
 	}); // End of searching click event
 
 
- $(".category_buttons").on("click", function() {
-        var user_category_click = $(this);
-        var user_category_pick = user_category_click.data("name");
-        console.log(user_category_click);
-        console.log(user_category_pick);
-        if (user_category_pick == "dictionary") {
-
-        	valid();
-
-            dictionary();
-
-        } else if (user_category_pick == "wikipedia") {
-
-            wikipedia();
-
-        } else if (user_category_pick == "youtube") {
-
-            youtube();
-
-        } else if (user_category_pick == "giphy") {
-        	
-            giphy();
-
-        } else if (user_category_pick == "flickr") {
-        	
-            flickr();
-
-        }// End of If Else
-
-    }); // End of category_buttons click event
 
     $(".past_searches").on("click", function() {
 
@@ -133,28 +108,6 @@ var num = 1
        // event_listener();
 
     }); // End of past_searches click event
-
-
-    $(".related").on("click", function() {
-
-        console.log("synonym click");
-
-        var synonym_click = $(this);
-
-        var synonym_pick = synonym_click.data("index");
-
-        console.log("Synonym pick is " + synonym_pick);
-
-        baton = synonym_pick;
-
-        console.log('The baton is ' + baton);
-
-       updated_category_box();
-
-        //event_listener();
-
-
-    }); // End of synonyms click event
 
 } // End of event_listener function
 

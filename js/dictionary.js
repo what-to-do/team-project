@@ -302,9 +302,30 @@ function dictionary(){
 
 			} // End of Master Loop
 
-	event_listener();
+			    $(".related").on("click", function() {
+
+        console.log("synonym click");
+
+        var synonym_click = $(this);
+
+        var synonym_pick = synonym_click.data("index");
+
+        console.log("Synonym pick is " + synonym_pick);
+
+        baton = synonym_pick;
+
+        console.log('The baton is ' + baton);
+
+       updated_category_box();
+
+        //event_listener();
+
+
+    }); // End of synonyms click event
+
 
 		}); // End of Ajax request
+
 
 
 

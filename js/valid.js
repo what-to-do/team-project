@@ -28,7 +28,7 @@ function valid(){
 
 			var result = response.corrections[key];
 
-			$("#main-display").append("I don't think your thinking of a dictionary word tpye." + "<br>");
+			$("#main-display").append("I don't think you are thinking of a dictionary word type." + "<br>");
 			$("#main-display").append("Try these out:" + "<br>");
 
 			for (var i = 0; i < response.corrections[key].length; i++) {
@@ -54,7 +54,26 @@ function valid(){
 			
 		}
 
-		event_listener();
+    $(".related").on("click", function() {
+
+        console.log("synonym click");
+
+        var synonym_click = $(this);
+
+        var synonym_pick = synonym_click.data("index");
+
+        console.log("Synonym pick is " + synonym_pick);
+
+        baton = synonym_pick;
+
+        console.log('The baton is ' + baton);
+
+       updated_category_box();
+
+        //event_listener();
+
+
+    }); // End of synonyms click event
 
 	});
 		
