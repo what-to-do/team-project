@@ -302,7 +302,7 @@ function dictionary(){
 
 			} // End of Master Loop
 
-			    $(".related").on("click", function() {
+	$(".related").on("click", function() {
 
         console.log("synonym click");
 
