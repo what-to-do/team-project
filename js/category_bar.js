@@ -114,7 +114,7 @@ function category_bar() {
         console.log(user_category_pick);
         if (user_category_pick == "dictionary") {
 
-        	valid();
+        	//valid();
 
             dictionary();
 

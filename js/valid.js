@@ -21,8 +21,6 @@ function valid(){
 		console.log(response.suggestion);
 		if (word == response.suggestion){
 
-
-
 		}else {
 			var key = baton
 
