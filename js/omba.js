@@ -1,7 +1,7 @@
 function omba (){
 
 	var title = baton;
-	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&tomatoes=true&r=json";
+	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=full&tomatoes=true&r=json";
 
 	$.ajax({
 		url: queryURL,
@@ -62,6 +62,12 @@ function omba (){
 		console.log(response);
 		console.log(keys);
 
+		var names = [];
+
+		names = response.Actors.split(", ");
+
+		console.log(names);
+
 		for (var i = 0; i < keys.length; i++) {
 
 
@@ -102,6 +108,94 @@ function omba (){
 
 			} else if (response[keys[i]] == "N/A") {
 
+			} else if (keys[i] == "tomatoURL") {
+
+				var a = $("<a>");
+
+				a.attr({
+					"href": response[keys[i]]
+				})
+
+				a.text(response[keys[i]]);
+
+				var td = $("<td>");
+
+				a.appendTo(td);
+
+				td.appendTo(tr_sub);
+
+			}else if (keys[i] == "Genre") {
+
+				var genre = response.Genre.split(", ");
+
+				console.log(genre);
+				console.log(genre.length);
+
+				var td = $("<td>");
+
+				for (var j = 0; j < genre.length; j++) {
+					
+					var btn = $("<button>");
+
+					btn.attr({
+						"data-index": genre[j],
+						"class": "btn btn-primary btn-sm related"
+					});
+
+					btn.text(genre[j]);
+
+					btn.appendTo(td);
+
+					td.appendTo(tr_sub);
+
+				} // End of For Loop J
+
+			} else if (keys[i] == "Director") {
+
+				var director = response.Director.split(", ");
+
+				var td = $("<td>");
+
+				for (var k = 0; k < director.length; k++) {
+					
+					var btn = $("<button>");
+
+					btn.attr({
+						"data-index": director[k],
+						"class": "btn btn-primary btn-sm related"
+					});
+
+					btn.text(director[k]);
+
+					btn.appendTo(td);
+
+					td.appendTo(tr_sub);
+
+				}
+
+			} else if(keys[i] == "Actors") {
+
+				var actors = response.Actors.split(", ");
+
+				var td = $("<td>");
+
+				for (var l = 0; l < actors.length; l++) {
+					
+					var btn = $("<button>");
+
+					btn.attr({
+						"data-index": actors[l],
+						"class": "btn btn-primary btn-sm related"
+					});
+
+					btn.text(actors[l]);
+
+					btn.appendTo(td);
+
+					td.appendTo(tr_sub);
+
+				}
+
 			} else {
 
 				var td = $("<td>");
@@ -114,7 +208,26 @@ function omba (){
 
 		} // End of For Loop I
 
+	$(".related").on("click", function() {
 
+        console.log("synonym click");
+
+        var synonym_click = $(this);
+
+        var synonym_pick = synonym_click.data("index");
+
+        console.log("Synonym pick is " + synonym_pick);
+
+        baton = synonym_pick;
+
+        console.log('The baton is ' + baton);
+
+       updated_category_box();
+
+        //event_listener();
+
+
+    }); // End of synonyms click event
 
 	}); // End of Ajax Request
 
