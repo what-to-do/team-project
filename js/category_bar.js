@@ -2,10 +2,6 @@
 
 function expand_category_box() {
 
-   
-
-    
-
     $("#category").animate({height: '150px'});
 
     $(".button_div").animate({top: '25px'});
