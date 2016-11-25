@@ -2,11 +2,15 @@
 
 function expand_category_box() {
 
+   
+
+    console.log("baby got back");
+
     $("#category").animate({height: '150px'});
 
     $(".button_div").animate({top: '25px'});
 
-    var display_word = $("#user-input").val().trim();
+    var display_word = baton;
 
    $(".display_user_word").addClass("animated fadeInDown");
 
@@ -40,9 +44,7 @@ function updated_category_box(){
 
 function category_bar() {
 
-	$("#category-div").html("");
-
-	var category = ["Dictionary" , "Wikipedia" , "YouTube" , "Giphy" , "Flickr" , "Movies"];
+	 $("#category-div").html("");
 
 	var div_main = $("<div>");
 
@@ -72,7 +74,7 @@ function category_bar() {
 
 	sub_div.appendTo(div_main);
 
-	for (var i = 0; i < category.length; i++) {
+	for (var i = 0; i < possible_categories.length; i++) {
 
 		var label = $("<label>");
 
@@ -80,8 +82,8 @@ function category_bar() {
 			"class": "category_buttons btn rick",
 			"data-toggle": "tooltip",
 			"data-placement":"bottom",
-			"title": "Click Here For " + category[i],
-			"data-name": category[i].toLowerCase()
+			"title": "Click Here For " + possible_categories[i],
+			"data-name": possible_categories[i].toLowerCase()
 		});
 
 		label.appendTo(sub_div);
@@ -90,7 +92,7 @@ function category_bar() {
 
 		input.attr({
 			"type": "radio",
-			"data-name": category[i].toLowerCase(),
+			"data-name": possible_categories[i].toLowerCase(),
 			"id": "option" + i,
 			"autocomplete": "off"
 		});
@@ -101,11 +103,13 @@ function category_bar() {
 
 		category_headers.addClass("animated fadeInDown");
 
-		category_headers.text(category[i]);
+		category_headers.text(possible_categories[i]);
 
 		category_headers.appendTo(label);
 
 	} // End of For Loop I
+
+
 
  $(".category_buttons").on("click", function() {
         var user_category_click = $(this);
@@ -143,34 +147,5 @@ function category_bar() {
     }); // End of category_buttons click event
 
 } //End of category_bar function
-
-
-
-
-/*       
-
-<div class="container-fluid" align="center" data-toggle="buttons" id="category">
-    <h2 class="display_user_word" align="center"></h2>
-    <div class="button_div">
-    <label class="category_buttons btn rick" data-name="dictionary" data-toggle="tooltip" data-placement="bottom" title="click here for dictionary">
-        <input type="radio" data-name="dictionary" id="option1" autocomplete="off" checked> <h6>Dictionary</h6>        
-    </label>
-    <label class="category_buttons btn rick" data-name="wikipedia" data-toggle="tooltip" data-placement="bottom" title="click here for wikipedia">
-        <input type="radio" data-name="wikipedia" id="option2" autocomplete="off"> <h6>Wikipedia</h6> 
-    </label>
-    <label class="category_buttons btn rick" data-name="youtube" data-toggle="tooltip" data-placement="bottom" title="click here for youtube">
-        <input type="radio" data-name="youtube" id="option3" autocomplete="off"> <h6>Youtube</h6> 
-    </label>
-    <label class="category_buttons btn rick" data-name="giphy" data-toggle="tooltip" data-placement="bottom" title="click here for giphy">
-        <input type="radio" data-name="giphy"  id="option4" autocomplete="off"> <h6>Giphy</h6> 
-    </label>
-    <label class="category_buttons btn rick" data-name="flickr" data-toggle="tooltip" data-placement="bottom" title="click here for google images">
-        <input type="radio" data-name="google_images"  id="option5" autocomplete="off"> <h6>Flickr</h6> 
-    </label>
-    </div>
-</div>
-
-*/
-
 
 

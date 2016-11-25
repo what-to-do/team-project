@@ -2,6 +2,8 @@ function omba (){
 
 	var title = baton;
 	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=full&tomatoes=true&r=json";
+ 
+	console.log(queryURL);
 
 	$.ajax({
 		url: queryURL,
@@ -103,8 +105,6 @@ function omba (){
 				});
 
 				img.appendTo(div_poster);
-
-
 
 			} else if (response[keys[i]] == "N/A") {
 

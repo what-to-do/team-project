@@ -17,8 +17,6 @@ function dictionary(){
 
 		}).done(function(response){
 
-			console.log(good);
-
 			// Empties main display
 			$("#main-display").html("");
 
@@ -328,10 +326,7 @@ function dictionary(){
     }); // End of synonyms click event
 
 
-		}); // End of Ajax request
-
-
-
+	}); // End of Ajax request
 
 } // End of synonyms function
 

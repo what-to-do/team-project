@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-ajax();
+
 // For testing of valid
 // valid();
 //google_image();

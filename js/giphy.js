@@ -11,7 +11,7 @@
 			//clear gifs from webpage
 			$("#main-display").empty();
 			console.log(response)
-
+			console.log(giphyURL);
 			//loop to create gifs on webpage when button clicked
 			for(var i=0; i<response.data.length; i++) {
 				var image = response.data[i].images.fixed_height_still.url;

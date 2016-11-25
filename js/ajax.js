@@ -2,9 +2,9 @@ function ajax () {
 
 // Dictionary --------------------------------------------------------------------------------
 
-	var baton = "Danc";
+	possible_categories = [];
 
-
+	console.log(baton);
 
 	var user = baton;
 
@@ -13,8 +13,11 @@ function ajax () {
 	$.ajax({
 		    url: related_url, // The URL to the API. You can get this in the API page of the API you intend to consume
 		    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
-		   	success: function(data) { success_dictionary = true; check(success_dictionary); },
-	    	error: function(err) { success_dictionary = false; check(success_dictionary);},
+		   	success: function(data) { 
+		   		var name = "Dictionary";
+		   		check(data,name);
+		   	 },
+	    	error: function(err) { success_dictionary = false; },
 		    beforeSend: function(xhr) {
 		    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
 		    }
@@ -25,20 +28,23 @@ function ajax () {
 
 // Wikia ---------------------------------------------------------------------------------------
 
-		var query = baton;
-		var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&indexpageids=1&iwurl=1&redirects=1&converttitles=1&exlimit=max&utf8=1&titles=';
-		var queryString = query;
-		url += queryString;
-		
-		$.ajax({
-			url: url,
-			method: 'GET',
-			dataType: 'jsonp',
-			contentType: "application/json; charset-utf-8",
-			async: false,
-			success: function(data) { success_wikipedia = true; },
-	    	error: function(err) { success_wikipedia = false; }
-		});
+	var query = baton;
+	var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&indexpageids=1&iwurl=1&redirects=1&converttitles=1&exlimit=max&utf8=1&titles=';
+	var queryString = query;
+	url += queryString;
+	
+	$.ajax({
+		url: url,
+		method: 'GET',
+		dataType: 'jsonp',
+		contentType: "application/json; charset-utf-8",
+		async: false,
+		success: function(data) { 
+			var name = "Wikipedia";
+			check(data, name); 
+		},
+    	error: function(err) { success_wikipedia = false; }
+	});
 
 	
 
@@ -57,7 +63,10 @@ function ajax () {
 
 	    url: query_url,
 	    method: "GET",
-		success: function(data) { success_youtube = true; },
+		success: function(data) { 
+			var name = "YouTube";
+			check(data, name)
+		},
 		error: function(err) { success_youtube = false; }
 	});
 
@@ -74,7 +83,10 @@ function ajax () {
 	$.ajax({
 		url: giphyURL, 
 		method: 'GET',
-		success: function(data) { success_giphy = true; },
+		success: function(data) { 
+			var name = "Giphy";
+			check(data,name);
+		},
 		error: function(err) { success_giphy = false; }
 	});
 
@@ -93,7 +105,10 @@ function ajax () {
     $.ajax({url:   
     	flickr_url + api_key,
     	method: 'GET',
-    	success: function(data) { success_flickr = true; },
+    	success: function(data) {
+    		var name = "Flickr";
+    		check(data,name);
+    	},
 		error: function(err) { success_flickr = false; }
     });
 
@@ -108,48 +123,79 @@ function ajax () {
 	$.ajax({
 		url: queryURL,
 		method: 'GET',
-    	success: function(data) { success_omba = true; },
+    	success: function(data) { 
+    		var name = "Movies";
+    		check(data,name);
+    	},
 		error: function(err) { success_omba = false; }
 	});
 
 
 // Movies ---------------------------------------------------------------------------------------
 
-check();
-
 } // End of Ajax function
 
 
-function check(dictionary){
+function check(data,name){
 
-	if (dictionary) {
-		console.log("damn scope");
-	} else {
-		console.log("Fine by that way");
-	}
+	var category = ["Dictionary" , "Wikipedia" , "YouTube" , "Giphy" , "Flickr" , "Movies"];
+
+	var test = category.indexOf(name);
+
+	console.log("Index of " + test);
+
+	switch(test){
+		case(0):
+			possible_categories.push(category[0]);
+			break;
+		case(1):
+			if (data.query.pageids[0] > -1) {
+				possible_categories.push(category[1]);
+			} else {
+				console.log("Not valid search of wikipedia");
+			} // End of If Else
+			break;
+		case(2):
+			if (data.pageInfo.totalResults > 0){
+				possible_categories.push(category[2]);
+			} else {
+				console.log("Not vaild YouTube");
+			}
+			break;
+		case(3):
+			console.log("Youtube test " + data.pagination.total_count);
+			if (data.pagination.total_count > 0){
+				possible_categories.push(category[3]);
+			} else {
+				console.log("Not vaild Giphy");
+			}
+			break;
+		case(4):
+			if (data.photos.pages > 0){
+				possible_categories.push(category[4]);
+			} else {
+				console.log("Not a valid Flickr");
+			}
+			break;
+		case(5):
+			if (data.Response === "True"){
+				possible_categories.push(category[5])
+			} else {
+				console.log("Not a valid Movies");
+			}
+
+	} // End of Switch
 
 
-// 	console.log(success_dictionary);
+console.log("possible_categories --- " + possible_categories.join(" "));
 
-// var possible_category = [success_dictionary , success_wikipedia , success_youtube , success_giphy , success_flickr , success_omba];
+possible_categories.sort();
 
-// var category = ["Dictionary" , "Wikipedia" , "YouTube" , "Giphy" , "Flickr" , "Movies"];
 
-// var success_category = [];
+console.log("possible_categories with sort--- " + possible_categories.join(" "));
 
-// var fail_category = [];
+category_bar();
 
-// for (var i = 0; i < possible_category.length; i++) {
+expand_category_box();
 
-// 	if (possible_category[i]) {
-// 		success_category.push(category[i]);
-// 	} else {
-// 		fail_category.push(category[i]);
-// 	}
-
-// } // End of For Loop I
-
-// console.log("success_category " + success_category);
-// console.log("fail_category " + fail_category);
-
-}
+} // End of Check function

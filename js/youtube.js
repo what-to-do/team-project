@@ -10,7 +10,8 @@ $.ajax({
     method: "GET"
 
 }).done(function(response){
-	//for loop to gather data
+
+	//for loop to gather data;
 	for (var i = 0; i < response.items.length; i++) {
 
 	var video_ID = response.items[i].id.videoId;
