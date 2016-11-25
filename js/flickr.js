@@ -4,7 +4,7 @@ function flickr(){
     
     //empty main display 
     $("#main-display").empty();
-    console.log(flickr_url)
+    
     //ajax call for flickr
     $.ajax({url:    flickr_url,
             method: 'GET'})
