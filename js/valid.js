@@ -48,7 +48,7 @@ function valid(){
 			}
 
 			console.log(result);
-
+//			search_history_add(baton);
 			
 		}
 
