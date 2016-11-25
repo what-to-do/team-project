@@ -1,23 +1,12 @@
 function search_history() {
 
-	console.log("call search_history");
-
-
 //	var search_history_record = new Array();
 
-	$("#search-list").empty();
-
-	// reusing code from synonyms() in order to create
-	// Past and Synonyms buttons after emptying content of div upon reset
-
-	//create_sidebar_btn();
+	$("#past-ul").empty();
 
 	// past searches are saved in search_history_record in local storage
 	// open search_history_record, iterate through items
 	// create buttons for each record in search_history_record
-
-	//  the following line is for testing purposes of search_history only
-//	var search_history_record = ["dogs", "zebra", "the thing"];
 
 	for (var j = 0; j < search_history_record.length; j++) {
 
@@ -33,19 +22,11 @@ function search_history() {
 		$("#past-ul").append(li);
 		$("#result" + [j]).append(search_result);
 
-
+		console.log("search_history()")
 		
-
 	} // End of For Loop
 
-	
-	
-
 } // End of search_history function
-
-search_history();
-
-	
 
 
 function search_history_add(baton, search_history_record) {
@@ -73,24 +54,7 @@ function search_history_add(baton, search_history_record) {
 		localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
 		console.log(search_history_record);
-		$("#past-ul").empty();
 		
-		//add baton to history in side nav
-		for (var j = 0; j < search_history_record.length; j++) {
-		var li = $("<li>")
-		var search_result = $("<a>")
-
-		li.attr({"id": "result" + [j]})
-		search_result.attr({"href": "#"})
-		search_result.addClass("waves-effect");
-		search_result.css("color", "black");
-		search_result.text(search_history_record[j]);
-
-		$("#past-ul").append(li);
-		$("#result" + [j]).append(search_result);
-
-		console.log("added to history " + search_history_record);
-	}
 
 	} else if (found === false && search_history_record.length >= 10) {
 
@@ -107,7 +71,6 @@ function search_history_add(baton, search_history_record) {
 		
 	}
 	search_history();
-//	$(".pull-left").append(search_history_record);
 }
 
 function search_history_retrieve(search_history_record) {
