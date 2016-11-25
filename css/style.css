@@ -7,12 +7,18 @@ search/synonyms buttons and results div*/
 #side-nav {
 	background-color: grey;
 	height: 100vh;
+
 }
 
 #side-nav-button {
 	color: white;
 	margin-top: 5px;
 
+}
+
+/*side nav past css*/
+#search-his {
+	color: black;
 }
 
 .fa-bars {

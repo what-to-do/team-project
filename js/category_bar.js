@@ -4,7 +4,7 @@ function expand_category_box() {
 
    
 
-    console.log("baby got back");
+    /*console.log("baby got back");*/
 
     $("#category").animate({height: '150px'});
 
