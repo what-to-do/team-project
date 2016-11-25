@@ -27,6 +27,7 @@ function search_history() {
 		li.attr({"id": "result" + [j]})
 		search_result.attr({"href": "#"})
 		search_result.addClass("waves-effect");
+		search_result.css("color", "black");
 		search_result.text(search_history_record[j]);
 
 		$("#past-ul").append(li);
@@ -42,7 +43,7 @@ function search_history() {
 
 } // End of search_history function
 
-//search_history();
+search_history();
 
 	
 
@@ -72,6 +73,24 @@ function search_history_add(baton, search_history_record) {
 		localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
 		console.log(search_history_record);
+		$("#past-ul").empty();
+		
+		//add baton to history in side nav
+		for (var j = 0; j < search_history_record.length; j++) {
+		var li = $("<li>")
+		var search_result = $("<a>")
+
+		li.attr({"id": "result" + [j]})
+		search_result.attr({"href": "#"})
+		search_result.addClass("waves-effect");
+		search_result.css("color", "black");
+		search_result.text(search_history_record[j]);
+
+		$("#past-ul").append(li);
+		$("#result" + [j]).append(search_result);
+
+		console.log("added to history " + search_history_record);
+	}
 
 	} else if (found === false && search_history_record.length >= 10) {
 
@@ -81,7 +100,9 @@ function search_history_add(baton, search_history_record) {
 
 		localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
-		console.log(search_history_record);
+		console.log("already in history " + search_history_record);
+
+		
 		
 		
 	}
