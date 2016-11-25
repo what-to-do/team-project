@@ -9,29 +9,31 @@ function dictionary(){
 		$.ajax({
 		    url: related_url, // The URL to the API. You can get this in the API page of the API you intend to consume
 		    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+		   	success: function(data) { },
+	    	error: function(err) { },
 		    beforeSend: function(xhr) {
 		    xhr.setRequestHeader("X-Mashape-Authorization", "JVsFpSsea5mshtsH7N5dZQOYQd0yp1dqScujsnjdKNIoipqLfS"); // Enter here your Mashape key
 		    }
 
 		}).done(function(response){
 
-				// Empties main display
-				$("#main-display").html("");
+			// Empties main display
+			$("#main-display").html("");
 
-				// Creates a wrapper for the tab.pill
-				var wrapper = $("<div>");
+			// Creates a wrapper for the tab.pill
+			var wrapper = $("<div>");
 
-				// Adding the class and attr. for it to work with mdbootstrap
-				wrapper.addClass("accordion");
-				wrapper.attr({
-					"id": "accordion",
-					"role": "tablist",
-					"aria-multiselectable": "true"
-				});
+			// Adding the class and attr. for it to work with mdbootstrap
+			wrapper.addClass("accordion");
+			wrapper.attr({
+				"id": "accordion",
+				"role": "tablist",
+				"aria-multiselectable": "true"
+			});
 
-				// Put the wrapper to the page
-				// Make a div of wrapper
-				$("#main-display").html(wrapper);
+			// Put the wrapper to the page
+			// Make a div of wrapper
+			$("#main-display").html(wrapper);
 
 			/**
 			 * Loops through the object
@@ -324,10 +326,7 @@ function dictionary(){
     }); // End of synonyms click event
 
 
-		}); // End of Ajax request
-
-
-
+	}); // End of Ajax request
 
 } // End of synonyms function
 

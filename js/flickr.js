@@ -3,11 +3,13 @@ function flickr(){
     var api_key = "5fe01295efad5e61547cd49f8d37f223";
     //empty main display 
     $("#main-display").empty();
-    
+
     //ajax call for flickr
     $.ajax({url:    flickr_url + api_key,
             method: 'GET'})
+
             .done(function(response) {
+
                 //for loop to create 10 images
                 for(var i = 0; i <=10; i++) {
                     //variables to set up img tag and full url address

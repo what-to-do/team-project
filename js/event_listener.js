@@ -1,6 +1,8 @@
 
 var baton = "";
 
+var possible_categories = [];
+
 function event_listener(){
 
 	//Tooltips Initialization
@@ -39,9 +41,9 @@ var num = 1
 
 		//valid()
 
-		category_bar();
+		ajax();
 
-		expand_category_box()
+	
 
 		search_history_add(baton, search_history_record);
 
@@ -58,10 +60,12 @@ var num = 1
 			/*$("#main-display").append("<br>" + "By enter: " + baton);*/
 
 			//valid();
-
-			category_bar();
-
+			
 			expand_category_box();
+		
+			ajax();
+
+
 
 			search_history_add(baton, search_history_record);
 
