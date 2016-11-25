@@ -2,10 +2,6 @@
 
 function expand_category_box() {
 
-   
-
-    console.log("baby got back");
-
     $("#category").animate({height: '150px'});
 
     $(".button_div").animate({top: '25px'});
@@ -23,7 +19,6 @@ function expand_category_box() {
 };//end of expand_category_box
 
 function updated_category_box(){
-
 
 	var display_word = baton;
 

@@ -4,7 +4,6 @@ function ajax () {
 
 	possible_categories = [];
 
-	console.log(baton);
 
 	var user = baton;
 
@@ -142,8 +141,6 @@ function check(data,name){
 
 	var test = category.indexOf(name);
 
-	console.log("Index of " + test);
-
 	switch(test){
 		case(0):
 			possible_categories.push(category[0]);
@@ -152,47 +149,42 @@ function check(data,name){
 			if (data.query.pageids[0] > -1) {
 				possible_categories.push(category[1]);
 			} else {
-				console.log("Not valid search of wikipedia");
+				
 			} // End of If Else
 			break;
 		case(2):
 			if (data.pageInfo.totalResults > 0){
 				possible_categories.push(category[2]);
 			} else {
-				console.log("Not vaild YouTube");
+				
 			}
 			break;
 		case(3):
-			console.log("Youtube test " + data.pagination.total_count);
+			
 			if (data.pagination.total_count > 0){
 				possible_categories.push(category[3]);
 			} else {
-				console.log("Not vaild Giphy");
+			
 			}
 			break;
 		case(4):
 			if (data.photos.pages > 0){
 				possible_categories.push(category[4]);
 			} else {
-				console.log("Not a valid Flickr");
+		
 			}
 			break;
 		case(5):
 			if (data.Response === "True"){
 				possible_categories.push(category[5])
 			} else {
-				console.log("Not a valid Movies");
+			
 			}
 
 	} // End of Switch
 
 
-console.log("possible_categories --- " + possible_categories.join(" "));
-
 possible_categories.sort();
-
-
-console.log("possible_categories with sort--- " + possible_categories.join(" "));
 
 category_bar();
 
