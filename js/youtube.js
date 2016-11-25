@@ -34,7 +34,7 @@ $.ajax({
 	'</div>' + '</li>' + '<div class="clearfix"></div>' +
 	'';
 	$(output).appendTo("#main-display");
-	console.log(output);
+
 	}; //end of for loop   
 
 }); // End of Ajax Request / Done Function

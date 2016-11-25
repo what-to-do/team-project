@@ -1,6 +1,6 @@
 function search_history() {
 
-	console.log("hey you");
+	console.log("call search_history");
 
 
 //	var search_history_record = new Array();
@@ -17,7 +17,7 @@ function search_history() {
 	// create buttons for each record in search_history_record
 
 	//  the following line is for testing purposes of search_history only
-	var search_history_record = ["dogs", "zebra", "the thing"];
+//	var search_history_record = ["dogs", "zebra", "the thing"];
 
 	for (var j = 0; j < search_history_record.length; j++) {
 
@@ -53,7 +53,7 @@ function search_history_add(baton, search_history_record) {
 	// searches the search history for it
 	// if not present, the baton is pushed to the search history
 	// then the search history is saved in local storage
-
+	console.log("call search_history_add");
 	var found = false;
 
 	for (var i = 0; i < search_history_record.length; i++) {
@@ -104,7 +104,10 @@ function search_history_add(baton, search_history_record) {
 
 		
 		
+		
 	}
+	search_history();
+//	$(".pull-left").append(search_history_record);
 }
 
 function search_history_retrieve(search_history_record) {

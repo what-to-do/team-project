@@ -6,6 +6,7 @@ $(document).ready(function() {
 //google_image();
 $(".fancybox .fancybox.iframe").fancybox();
 search_history_record = new Array();
+create_sidebar_btn();
 event_listener();
 
 

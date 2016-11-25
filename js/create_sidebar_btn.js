@@ -1,5 +1,5 @@
 function create_sidebar_btn(){
-
+	console.log("call create_sidebar_btn");
 	/**
 	 * Names of the buttons inside search-list
 	 * @type {Strings}
@@ -7,7 +7,7 @@ function create_sidebar_btn(){
 	var btn_names_related = ["Past" , "Synonyms"];
 
 	// initialize the search history record for the entire application
-	var search_history_record = new Array();
+//	var search_history_record = new Array();
 
 	/**
 	 * Creates button

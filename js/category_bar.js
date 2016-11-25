@@ -20,7 +20,6 @@ function expand_category_box() {
 
 function updated_category_box(){
 
-
 	var display_word = baton;
 
     $("#category").animate({height: '150px'});
