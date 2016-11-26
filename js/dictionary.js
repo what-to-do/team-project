@@ -316,6 +316,8 @@ function dictionary(){
 
         baton = synonym_pick;
 
+        ajax();
+
         console.log('The baton is ' + baton);
 
        updated_category_box();
