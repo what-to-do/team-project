@@ -186,6 +186,36 @@ h6 {
 	color: red;
 }
 
+.paging-button {
+	font-size: 28px;
+	margin-top: 10px;
+	background-color: #fafafa;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 3px;
+	outline: none;
+  	border: none !important;
+  	-webkit-box-shadow: none !important;
+  	-moz-box-shadow: none !important;
+  	box-shadow: none !important;
+}
+
+.paging-button:after {
+	content: '';
+	display: inline-block;
+	margin: auto;
+	height: 1px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+.paging-button:hover:after {
+	width: 100%;
+	background: black;
+}
+
+
+
 
 
 
