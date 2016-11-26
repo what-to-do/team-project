@@ -10,12 +10,10 @@ $.ajax({
     method: "GET"
 
 }).done(function(response){
-
 	//for loop to gather data;
 	for (var i = 0; i < response.items.length; i++) {
 
 	var video_ID = response.items[i].id.videoId;
-	console.log(video_ID)
 	var title = response.items[i].snippet.title;
 	var description = response.items[i].snippet.description;
 	var thumb = response.items[i].snippet.thumbnails.high.url;
@@ -34,8 +32,44 @@ $.ajax({
 	'</div>' + '</li>' + '<div class="clearfix"></div>' +
 	'';
 	$(output).appendTo("#main-display");
+	$(".fancybox").fancybox();
 
-	}; //end of for loop   
+	}; //end of for loop  
+
+	var next_page = response.nextPageToken;
+	var prev_page = response.prevPageToken;
+	
+	var nextBtn =  $("<button id='next_button'>")
+		nextBtn.addClass("paging-button")
+		nextBtn.text("Next");
+		nextBtn.attr({
+			"token" : next_page,
+			"query" : baton,
+		})
+
+	var prevBtn =  $("<button id='prev_button'>")
+		prevBtn.addClass("paging-button")
+		prevBtn.text("Previous");
+		prevBtn.attr({
+			"token" : prev_page,
+			"query" : baton,
+		})
+	
+			//'onclick="nextPage();">Next Page</button>'
+	$(nextBtn).appendTo(".display");
+	$(prevBtn).appendTo(".display");
+
+
+	// function getButtons(prev_page, next_page) {
+	// 	if(prev_page == false) {
+
+	// 	} else {
+	// 		var btnOutput = '<div class = "button-container">' +
+	// 		'onclick="prevPage();">Previous Page</button></div>'
+	// 		'<button id="next_button" class="paging-button" data-token="' + next_page + '"' +
+	// 		'onclick="nextPage();">Next Page</button></div>'
+	// 	}
+	// }
 
 }); // End of Ajax Request / Done Function
 }; // End of youtube Function
