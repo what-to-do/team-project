@@ -23,15 +23,12 @@ function search_history() {
 		$("#past-ul").append(li);
 		$("#result" + [j]).append(search_result);
 
-		console.log("search_history()")
 		
 	} // End of For Loop
 		$("#past-ul li").on("click", function() {
-			console.log($(this).text() + " is value clicked in search history");
 			baton = $(this).text();
 			ajax();
 			updated_category_box();
-			console.log(baton);
 		});
 
 } // End of search_history function
@@ -42,7 +39,6 @@ function search_history_add(baton, search_history_record) {
 	// searches the search history for it
 	// if not present, the baton is pushed to the search history
 	// then the search history is saved in local storage
-	console.log("call search_history_add");
 	var found = false;
 
 	for (var i = 0; i < search_history_record.length; i++) {
@@ -61,7 +57,6 @@ function search_history_add(baton, search_history_record) {
 
 		localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
-		console.log(search_history_record);
 		
 
 	} else if (found === false && search_history_record.length >= 10) {
@@ -72,7 +67,6 @@ function search_history_add(baton, search_history_record) {
 
 		localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
-		console.log("already in history " + search_history_record);
 
 		
 		
