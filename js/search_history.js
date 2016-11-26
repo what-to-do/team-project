@@ -23,7 +23,10 @@ function search_history() {
 		$("#past-ul").append(li);
 		$("#result" + [j]).append(search_result);
 		$("#past-ul li").on("click", function() {
-			console.log($(this).data("value") + " is value clicked in search history");
+			console.log($(this).text() + " is value clicked in search history");
+			baton = $(this).text();
+			console.log(baton);
+			event_listener();
 		});
 
 		console.log("search_history()")
