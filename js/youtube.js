@@ -32,6 +32,7 @@ $.ajax({
 	'</div>' + '</li>' + '<div class="clearfix"></div>' +
 	'';
 	$(output).appendTo("#main-display");
+	$(".fancybox").fancybox();
 
 	}; //end of for loop  
 
@@ -46,7 +47,7 @@ $.ajax({
 			"query" : baton,
 		})
 
-	var prevBtn =  $("<button id='next_button'>")
+	var prevBtn =  $("<button id='prev_button'>")
 		prevBtn.addClass("paging-button")
 		prevBtn.text("Previous");
 		prevBtn.attr({
