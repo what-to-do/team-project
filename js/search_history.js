@@ -22,16 +22,17 @@ function search_history() {
 
 		$("#past-ul").append(li);
 		$("#result" + [j]).append(search_result);
-		$("#past-ul li").on("click", function() {
-			console.log($(this).text() + " is value clicked in search history");
-			baton = $(this).text();
-			console.log(baton);
-			event_listener();
-		});
 
 		console.log("search_history()")
 		
 	} // End of For Loop
+		$("#past-ul li").on("click", function() {
+			console.log($(this).text() + " is value clicked in search history");
+			baton = $(this).text();
+			ajax();
+			updated_category_box();
+			console.log(baton);
+		});
 
 } // End of search_history function
 
