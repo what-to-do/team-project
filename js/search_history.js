@@ -18,6 +18,7 @@ function search_history() {
 		search_result.addClass("waves-effect");
 		search_result.css("color", "black");
 		search_result.text(search_history_record[j]);
+		search_result.data("value", search_history_record[j]);
 
 		$("#past-ul").append(li);
 		$("#result" + [j]).append(search_result);
@@ -25,6 +26,13 @@ function search_history() {
 		console.log("search_history()")
 		
 	} // End of For Loop
+		$("#past-ul li").on("click", function() {
+			console.log($(this).text() + " is value clicked in search history");
+			baton = $(this).text();
+			ajax();
+			updated_category_box();
+			console.log(baton);
+		});
 
 } // End of search_history function
 
