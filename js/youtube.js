@@ -1,7 +1,7 @@
 function youtube() {
 var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
 var pageToken = "";
-var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&sp=" + pageToken + "&key=" + key ;
+var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&sp=" + pageToken + "&max-results=25&key=" + key ;
 //empty main display 
 $("#main-display").empty();
 
