@@ -21,13 +21,10 @@ function flickr(){
                     var small_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + "_m.jpg";
                     var big_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + "_b.jpg";
                     //edit photos with class .flicker-photos
-                   /* var div = $("<div>")
-                    $(div).addClass("flickr-div");
-                    $(div).attr({"id": "flickr-div" + i})*/
 
-                    $(a).addClass("big-flickr-photos")
+                    $(a).addClass("fancybox")
                     $(a).attr({"id": "big-flickr-photo" + i,
-                                "src": big_img_url});
+                                "href": big_img_url});
 
                     $(img).addClass("flickr-photos")
                     $(img).attr({
@@ -36,10 +33,9 @@ function flickr(){
                                 "alt": " "
                     })
                 //append images to the main display
-                /*$("#main-display").append(div);*/
                 $("#main-display").append(a);
                 $("#big-flickr-photo" + i).append(img);
-                $(".big-flickr-photos").fancybox();
+                $(".fancybox").fancybox(); //fancybox 
 
 
             }
