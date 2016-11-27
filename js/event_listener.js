@@ -119,6 +119,7 @@ var num = 1
     		$('#main-display').addClass('dark-mode');
     		$('.container-fluid').css('background-color', '#263238');
     		$('.category_buttons').css('background-color', '#263238');
+    		$('.display_user_word').css('color', '#fafafa');
 
     	}
     	else {
@@ -126,6 +127,7 @@ var num = 1
     		$('#main-display').removeClass('dark-mode')
     		$('.container-fluid').css('background-color', '#fafafa');
     		$('.category_buttons').css('background-color', '#fafafa');
+    		$('.display_user_word').css('color', 'black');
     	}
     }); //end of toggle switch 
 
