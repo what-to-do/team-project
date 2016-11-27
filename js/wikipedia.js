@@ -17,6 +17,13 @@ function wikiajax(query) {
 		console.log(objResult);
 		$.each(result.query.pages, function(c) {
 			var hey = result.query.pages[c].extract;
+//			var newDiv = $("<div>").attr("id", "newDiv").attr("height", "300px").attr("border", "1px solid red").attr("overflow-y", "scroll");
+//			newDiv.append(hey);
+//			var lowerDiv =$("<div>").attr("id", "lowerDiv").attr("height", "100px").attr("border", "1px solid blue");
+//			lowerDiv.innerHTML = "<h1>test this</h1>";
+//			var masterDiv = $("<div>").attr("id", "masterDiv");
+//			masterDiv.append(newDiv).append(lowerDiv);
+//			$("#main-display").html(masterDiv);
 			$("#main-display").html(hey);
 		});
 	});
