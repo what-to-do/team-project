@@ -1,11 +1,11 @@
 	function giphy() {
 		//variables for giphy api key and url to be used in AJAX
 		var apiKey = "dc6zaTOxFJmzC";
-		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=12&rating=pg&api_key=" + apiKey;
+		var giphy_URL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=12&rating=pg&api_key=" + apiKey;
 		
 		
 
-		$.ajax({url: giphyURL, 
+		$.ajax({url: giphy_URL, 
 			   method: 'GET'})
 			  .done(function(response) {
 			//clear gifs from webpage
@@ -15,21 +15,21 @@
 			for(var i=0; i<response.data.length; i++) {
 				var image = response.data[i].images.fixed_height_still.url;
 				var animated = response.data[i].images.fixed_height.url;
-				var gifImage = $('<img>');
-				var gifWrapper = $('<div/>');
+				var gif_image = $('<img>');
+				var gif_wrapper = $('<div/>');
 				
 				//add class and attributes to be used in the on click event
-				gifWrapper.addClass('gifWrapper');
-				gifImage.addClass('gifs');
-				gifWrapper.attr('id', "gifWrap" + [i])
-				gifImage.attr({'src': image,
+				gif_wrapper.addClass('gif-wrapper');
+				gif_image.addClass('gifs');
+				gif_wrapper.attr('id', "gif_wrap" + [i])
+				gif_image.attr({'src': image,
 							   'data-still': image,
 							   'data-animate': animated,
 							   'data-state': 'still'});
 
-				//append the div to gifs ID then append rating and gifImage to the div
-				$('#main-display').append(gifWrapper);
-				$('#gifWrap' + [i]).append(gifImage);	
+				//append the div to gifs ID then append rating and gif_image to the div
+				$('#main-display').append(gif_wrapper);
+				$('#gif_wrap' + [i]).append(gif_image);	
 			}
 			
 			//on click to change gif from still to animate and back
