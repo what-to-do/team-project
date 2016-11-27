@@ -136,11 +136,17 @@ h6 {
 }
 
 /*styles the flickr image results*/
-.flickr-photos {
-	height: 300px;
-	width: 350px;
-	padding: 5px;
+/*.flickr-div {
+	display: inline;
+	height: 220px;
+	
 }
+
+.flickr-photos {
+	height: 220px;
+	padding: 5px;
+}*/
+
 
 
 
