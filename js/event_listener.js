@@ -113,5 +113,16 @@ var num = 1
 
     }); // End of past_searches click event
 
+    $("#mode").change(function(){
+    	if ($(this).prop('checked')) {
+    		$('body').addClass('dark-mode');
+    		$('#main-display').addClass('dark-mode')
+    	}
+    	else {
+    		$('body').removeClass('dark-mode');
+    		$('#main-display').removeClass('dark-mode')
+    	}
+    }); //end of toggle switch 
+
 } // End of event_listener function
 

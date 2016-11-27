@@ -214,8 +214,18 @@ h6 {
 	background: black;
 }
 
+/*dark-mode*/
+body.dark-mode {
+	background-color: black;
+}
 
+#main-display.dark-mode {
+	background-color: black;
+	color: #fafafa;
+}
 
-
+#category-div.dark-mode {
+	background-color: black;
+}
 
 
