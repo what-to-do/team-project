@@ -216,16 +216,21 @@ h6 {
 
 /*dark-mode*/
 body.dark-mode {
-	background-color: black;
+	background-color: #263238;
 }
 
 #main-display.dark-mode {
-	background-color: black;
+	background-color: #263238;
 	color: #fafafa;
 }
 
 #category-div.dark-mode {
+	background-color: #263238;
+}
+
+.category_buttons.dark-mode{
 	background-color: black;
+	color: white;
 }
 
 
