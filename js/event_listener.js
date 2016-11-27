@@ -116,11 +116,16 @@ var num = 1
     $("#mode").change(function(){
     	if ($(this).prop('checked')) {
     		$('body').addClass('dark-mode');
-    		$('#main-display').addClass('dark-mode')
+    		$('#main-display').addClass('dark-mode');
+    		$('.container-fluid').css('background-color', '#263238');
+    		$('.category_buttons').css('background-color', '#263238');
+
     	}
     	else {
     		$('body').removeClass('dark-mode');
     		$('#main-display').removeClass('dark-mode')
+    		$('.container-fluid').css('background-color', '#fafafa');
+    		$('.category_buttons').css('background-color', '#fafafa');
     	}
     }); //end of toggle switch 
 
