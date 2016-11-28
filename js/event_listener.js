@@ -133,6 +133,7 @@ var num = 1
     		$('h6').css('color', 'black');
     	}
     }); //end of toggle switch 
+
     
 } // End of event_listener function
 
