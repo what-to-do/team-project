@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 search_history_record = new Array();
 create_sidebar_btn();
+welcome_splash();
 event_listener();
 
 
