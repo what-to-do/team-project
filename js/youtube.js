@@ -13,7 +13,7 @@ $.ajax({
 }).done(function(response){
 	//for loop to gather data;
 	for (var i = 0; i < response.items.length; i++) {
-
+	
 	var video_ID = response.items[i].id.videoId;
 	var title = response.items[i].snippet.title;
 	var description = response.items[i].snippet.description;
@@ -36,7 +36,7 @@ $.ajax({
 	$(".fancybox").fancybox();
 
 	}; //end of for loop  
-
+	console.log(query_url)
 	var next_page = response.nextPageToken;
 	var prev_page = response.prevPageToken;
 	
@@ -73,11 +73,12 @@ $.ajax({
 
 
 	 $("#next_button").on("click", function(){
-	 	pageToken = next_page;
-	 	console.log(pageToken);
-	 	youtube(pageToken = next_page);
+	 	var pageToken = next_page;
+	 	var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&sp=" + pageToken + "&maxResults=5&key=" + key;
+	 	
+	 	youtube(pageToken, query_url);
 	 	console.log(query_url);
-
+		console.log(pageToken);
 		});
 
 
