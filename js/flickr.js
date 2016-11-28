@@ -24,6 +24,7 @@ function flickr(){
 
                     $(a).addClass("fancybox")
                     $(a).attr({"id": "big-flickr-photo" + i,
+                                "data-fancybox-group": "gallery",
                                 "href": big_img_url});
 
                     $(img).addClass("flickr-photos")
@@ -35,7 +36,7 @@ function flickr(){
                 //append images to the main display
                 $("#main-display").append(a);
                 $("#big-flickr-photo" + i).append(img);
-                $(".fancybox").fancybox(); //fancybox 
+                $('.fancybox').fancybox();
 
 
             }
