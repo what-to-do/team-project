@@ -62,7 +62,7 @@ $.ajax({
 	if (typeof response.prevPageToken === "undefined") {
 	 	$("#prev_button").hide();
 	 	} else {
-	 		$("#prev_button").show();
+	 	$("#prev_button").show();
 	 	}
 	 if (typeof response.nextPageToken === "undefined") {
 	 	$("#next_button").hide();
@@ -72,7 +72,13 @@ $.ajax({
 
 
 
+	 $("#next_button").on("click", function(){
+	 	pageToken = next_page;
+	 	console.log(pageToken);
+	 	youtube(pageToken = next_page);
+	 	console.log(query_url);
 
+		});
 
 
 	 $("#prev_button").on("click", function(){
@@ -85,9 +91,7 @@ $.ajax({
 
 
 
-	 $("#next_button").on("click", function(){
-	 	youtube();
-});
+
 
 
 
