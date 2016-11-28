@@ -1,6 +1,8 @@
+var search_num = "12"
 function flickr(){
-	var api_key = "5fe01295efad5e61547cd49f8d37f223";
-    var flickr_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&text=" + baton + "&per_page=12&content_type=1&safe_search=1&sort=relevance&&extras=url_o&format=json&nojsoncallback=?&api_key=" + api_key;
+    
+    var api_key = "5fe01295efad5e61547cd49f8d37f223";
+    var flickr_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&text=" + baton + "&per_page=" + search_num + "&content_type=1&safe_search=1&sort=relevance&&extras=url_o&format=json&nojsoncallback=?&api_key=" + api_key;
     
     //empty main display 
     $("#main-display").empty();
@@ -38,13 +40,23 @@ function flickr(){
                 $("#big-flickr-photo" + i).append(img);
                 $('.fancybox').fancybox();
 
-
-            }
-            $("#main-display").append('<button id="rick-butt">show more</button>');
-
+                }   
+                //append search more button after photo gallery
+                $("#main-display").append('<button id="search-more-flickr">show more</button>');
+                //on click function for search more button to display 12 more photos
+                $("#search-more-flickr").on("click", function(){
+                //search_num from a string to number multiplied by 2
+                var string_to_num = parseInt(search_num) * 2;
+                //revert search_num back to a string
+                search_num = string_to_num.toString();
+                //call the flickr() function to search for more photos
+                flickr();
+                }) //end of search more click function
             }) 
+            
 
 } //end of flickr()
+
 
 
 
