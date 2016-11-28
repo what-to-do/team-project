@@ -40,8 +40,10 @@ $.ajax({
 	var next_page = response.nextPageToken;
 	var prev_page = response.prevPageToken;
 
-	
-
+	var next_token = $("#next_button").data("token");
+	var next_query = $("#next_button").data("query");
+	var prev_token = $("#prev_button").data("token");
+	var prev_query = $("#prev_button").data("query");
 	
 	var nextBtn =  $("<button id='next_button'>")
 		nextBtn.addClass("paging-button")
@@ -49,7 +51,6 @@ $.ajax({
 		nextBtn.attr({
 			"token" : next_page,
 			"query" : baton,
-			"onclick" : console.log("hi"),
 		});
 	
 	var prevBtn =  $("<button id='prev_button'>")
@@ -58,21 +59,39 @@ $.ajax({
 		prevBtn.attr({
 			"token" : prev_page,
 			"query" : baton,
-			"onclick" : console.log("hi"),
 		});
 	
 	$(nextBtn).appendTo(".display");
 	$(prevBtn).appendTo(".display");
 
-	var next_token = $("#next_button").data("token");
-	console.log(next_token);
-	var next_query = $("#next_button").data("query");
-	var prev_token = $("#prev_button").data("token");
-	var prev_query = $("#prev_button").data("query");
 
 }); // End of Ajax Request / Done Function
 }; // End of youtube Function
 
+
+	$("#next_button").on("click" , function(){
+
+		var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
+		var pageToken = next_page;
+		var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&sp=" + pageToken + "&maxResults=25&key=" + key ;
+		//empty main display 
+		$("#main-display").empty();
+
+	$.ajax({
+
+    	url: query_url,
+    	method: "GET"
+
+	}).done(function(response){
+			var next_page = response.nextPageToken;
+			console.log(next_page);
+	
+
+
+
+
+	});
+});
 
 
 
