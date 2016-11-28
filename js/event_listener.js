@@ -43,10 +43,11 @@ var num = 1
 
 		ajax();
 
-	
+		//Clear search field after submit
+		$("#user-input").val("");
 
 		search_history_add(baton, search_history_record);
-
+		
 	}); // End of mag-glass click event
 
 	//if user presses enter on search input
@@ -65,7 +66,8 @@ var num = 1
 		
 			ajax();
 
-
+			//Clear search field after submit
+			$("#user-input").val("");
 
 			search_history_add(baton, search_history_record);
 
