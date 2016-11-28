@@ -1,7 +1,9 @@
+	var search_num_giphy = "24";
+
 	function giphy() {
 		//variables for giphy api key and url to be used in AJAX
 		var apiKey = "dc6zaTOxFJmzC";
-		var giphy_URL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=12&rating=pg&api_key=" + apiKey;
+		var giphy_URL = "https://api.giphy.com/v1/gifs/search?q=" + baton + "&limit=" + search_num_giphy + "&rating=pg&api_key=" + apiKey;
 		
 		
 
@@ -45,7 +47,18 @@
 					$(this).attr('data-state', 'still');
 				}
 			})
-
+			//append search more button after photo gallery
+                $("#main-display").append('<button id="search-more-giphy">show more</button>');
+                //on click function for search more button to display 12 more photos
+                $("#search-more-giphy").on("click", function(){
+                //search_num from a string to number multiplied by 2
+                var string_to_num = parseInt(search_num_giphy) * 2;
+                //revert search_num back to a string
+                search_num_giphy = string_to_num.toString();
+                console.log(search_num_giphy);
+                //call the flickr() function to search for more photos
+                giphy();
+                }) //end of search more click function
 		})
 			
 	}; //end of giphy()
