@@ -1,6 +1,6 @@
 
 var baton = "";
-
+var instructions = "1. Enter the word you would like to research in the search bar located at the top right of the navigation bar. <br><br>2. Click on any of the buttons to retrieve information on the search topic. <br><br>3. Click the top left button to view your search history."
 var possible_categories = [];
 
 function event_listener(){
@@ -14,19 +14,15 @@ var num = 1
 	$("#help-button").on("click", function(){
 		num++
 		if(num % 2 ==0){	
-			$('.rick').tooltip();
-
-			console.log(num + " is even");
+			$('#main-display').empty();
+			$('#main-display').html(instructions);
 		}
 		//if user click =true activate hover function until click false
 		////Tooltips Initialization
 		else{
-			$('.rick').attr({
-				"data-toggle": ""
-			})	
+			$('#main-display').empty()
+			}
 		
-		console.log(num + " is odd");
-	}
 	});
 
 	$("#mag-glass").on("click" , function(){
