@@ -155,12 +155,26 @@ var num = 1
     	backToTop();
     	$(window).on('scroll', function () {
         backToTop();
+        if ($("#mode").prop('checked')) {
+			$('#back-to-top').css('background-color', '#263238');
+			$('#back-to-top').css('color', '#fafafa');
+    	} else {
+    		$('#back-to-top').css('background-color', '#fafafa');	
+			$('#back-to-top').css('color', '#263238');
+    	}; //end of css style
     });
     $('#back-to-top').on('click', function (e) {
         e.preventDefault();
         $('html,body').animate({
             scrollTop: 0
         }, 700);
+        if ($("#mode").prop('checked')) {
+			$('#back-to-top').css('background-color', '#263238');
+			$('#back-to-top').css('color', '#fafafa');
+    	} else {
+    		$('#back-to-top').css('background-color', '#fafafa');	
+			$('#back-to-top').css('color', '#263238');
+    	}; //end of css style
     });
 	}//end of scroll back to top
 
