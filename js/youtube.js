@@ -1,8 +1,10 @@
+//global variable needed
 var pageToken = "";
 
 function youtube() {
+	
 var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
-var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&pageToken=" + pageToken + "&maxResults=5&key=" + key ;
+var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&type=video&videoSyndicated=true&pageToken=" + pageToken + "&maxResults=5&key=" + key;
 //empty main display 
 $("#main-display").empty();
 
@@ -43,22 +45,17 @@ $.ajax({
 	var nextBtn =  $("<button id='next_button'>")
 		nextBtn.addClass("paging-button")
 		nextBtn.text("Next");
-		nextBtn.attr({
-			"token" : next_page,
-			"query" : baton,
-		});
-	
+
 	var prevBtn =  $("<button id='prev_button'>")
 		prevBtn.addClass("paging-button")
 		prevBtn.text("Previous");
-		prevBtn.attr({
-			"token" : prev_page,
-			"query" : baton,
-		});
-	
+
+	$(nextBtn).css("float", "right");
+	$(prevBtn).css("float", "left");
 	$(nextBtn).appendTo(".display");
 	$(prevBtn).appendTo(".display");
 
+	//only display next and previous buttons if they are needed.
 	if (typeof response.prevPageToken === "undefined") {
 	 	$("#prev_button").hide();
 	 	} else {
@@ -70,19 +67,16 @@ $.ajax({
 	 	$("#next_button").show();
 	 	}
 
-
-
 	 $("#next_button").on("click", function(){
 	 	pageToken = next_page;
-	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&pageToken=" + pageToken + "&maxResults=5&key=" + key;
+	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&type=video&videoSyndicated=true&pageToken=" + pageToken + "&maxResults=5&key=" + key;
 	 	youtube();
-		});
-
+		}); //end of "next button" onclick event
 
 	 $("#prev_button").on("click", function(){
 	 	pageToken = prev_page;
-	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&pageToken=" + pageToken + "&maxResults=5&key=" + key;
-	 	youtube();	 	
+	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&type=video&videoSyndicated=true&pageToken=" + pageToken + "&maxResults=5&key=" + key;
+	 	youtube();//end of "prev button" onclick event	 	
 	 });
 }); // End of Ajax Request / Done Function
 }; // End of youtube Function
