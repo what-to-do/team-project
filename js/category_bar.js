@@ -1,3 +1,4 @@
+
 //will expand div when user presses magnifying glass
 
 function expand_category_box() {
@@ -79,6 +80,10 @@ function category_bar() {
 
 		$('h6').css('color', '#fafafa');
 
+		$('.paging-button').css('background-color', '#263238');
+
+		$('.paging-button').css('color', '#fafafa');
+
     	}
     else {
     	$('.container-fluid').css('background-color', '#fafafa');
@@ -88,6 +93,10 @@ function category_bar() {
     	$('.display_user_word').css('color', 'black');
 
     	$('h6').css('color', 'black');
+
+    	$('.paging-button').css('background-color', '#263238');
+			
+		$('.paging-button').css('color', '#fafafa');
     	}; //end of css style
 
 	for (var i = 0; i < possible_categories.length; i++) {
@@ -129,11 +138,20 @@ function category_bar() {
 
     		$('h6').css('color', '#fafafa');
 
+			$('.paging-button').css('background-color', '#263238');
+
+			$('.paging-button').css('color', '#fafafa');
+
+
     	} else {
 
     		$('.container-fluid').css('background-color', '#fafafa');
 
     		$('.category_buttons').css('background-color', '#fafafa');
+
+    		$('.paging-button').css('background-color', '#263238');
+			
+			$('.paging-button').css('color', '#fafafa');
 
     	}; //end of css style
 
@@ -179,5 +197,3 @@ function category_bar() {
     }); // End of category_buttons click event
 
 } //End of category_bar function
-
-
