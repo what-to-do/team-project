@@ -42,7 +42,13 @@ function flickr(){
 
                 }   
                 //append search more button after photo gallery
-                $("#main-display").append('<button id="search-more-flickr">show more</button>');
+                var button_div = $("<div>")
+                var more_button = $("<button>");
+                    more_button.addClass("paging-button");
+                    more_button.attr({"id": "search-more-flickr", });
+                    more_button.text("Show more")
+                $("#main-display").append(button_div);
+                $(button_div).append(more_button);
                 //on click function for search more button to display 12 more photos
                 $("#search-more-flickr").on("click", function(){
                 //search_num from a string to number multiplied by 2

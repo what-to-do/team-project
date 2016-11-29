@@ -48,7 +48,13 @@
 				}
 			})
 			//append search more button after photo gallery
-                $("#main-display").append('<button id="search-more-giphy">show more</button>');
+                var button_div = $("<div>")
+                var more_button = $("<button>");
+                    more_button.addClass("paging-button");
+                    more_button.attr({"id": "search-more-giphy", });
+                    more_button.text("Show more")
+                $("#main-display").append(button_div);
+                $(button_div).append(more_button);
                 //on click function for search more button to display 12 more photos
                 $("#search-more-giphy").on("click", function(){
                 //search_num from a string to number multiplied by 2
