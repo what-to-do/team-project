@@ -1,7 +1,6 @@
 body {
- height: 100vh;
+	height: 150vh;
 }
-
 /*side nav
 search/synonyms buttons and results div*/
 #side-nav {
@@ -113,15 +112,10 @@ h6 {
 }
 /*where the api content will show*/
 #main-display {
-	height: 200vh;
+	height: 100%;
 	background-color: #fafafa;
 }
 
-/*div containing #side-nav and #main-display*/
-#main {
-	height: 100vh;
-	width: 100%;
-}
 /*style gifs on main-display*/
 .gifs {
 	height: 200px;
