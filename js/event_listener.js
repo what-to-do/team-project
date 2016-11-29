@@ -118,21 +118,28 @@ var num = 1
     $("#mode").change(function(){
     	if ($(this).prop('checked')) {
     		$('body').addClass('dark-mode');
+    		$('html').addClass('dark-mode');
     		$('#main-display').addClass('dark-mode');
     		$('.container-fluid').css('background-color', '#263238');
     		$('.category_buttons').css('background-color', '#263238');
     		$('.display_user_word').css('color', '#fafafa');
 			$('h6').css('color', '#fafafa');
+			$('.paging-button').css('background-color', '#263238');
+			$('.paging-button').css('color', '#fafafa');
     	}
     	else {
     		$('body').removeClass('dark-mode');
+    		$('html').removeClass('dark-mode');
     		$('#main-display').removeClass('dark-mode')
     		$('.container-fluid').css('background-color', '#fafafa');
     		$('.category_buttons').css('background-color', '#fafafa');
     		$('.display_user_word').css('color', 'black');
     		$('h6').css('color', 'black');
+    		$('.paging-button').css('background-color', '#fafafa');
+    		$('.paging-button').css('color', '#263238');
     	}
     }); //end of toggle switch 
+
 
     //scroll back to top
     if ($('#back-to-top').length) {
@@ -157,6 +164,7 @@ var num = 1
     });
 	}//end of scroll back to top
 
+
 	//if a letter key is pressed it will give the search input focus
 	$(window).keydown(function(event){
 		if(event.keyCode > 64 && event.keyCode < 91) {
@@ -165,5 +173,6 @@ var num = 1
 		}
 	})//end of keydown event
 	
+
 } // End of event_listener function
 

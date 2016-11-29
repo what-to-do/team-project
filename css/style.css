@@ -1,3 +1,7 @@
+html {
+	background-color: #fafafa
+}
+
 body {
 	height: 150vh;
 }
@@ -104,6 +108,7 @@ h6 {
 	width: 0px;
 	background: transparent;
 	transition: width .5s ease, background-color .5s ease;
+	background: black;
 }
 .category_buttons:hover:after {
 	width: 100%;
@@ -257,3 +262,4 @@ body.dark-mode {
 #content {
     height: 2000px;
 }
+
