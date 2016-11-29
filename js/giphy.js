@@ -29,6 +29,14 @@
 							   'data-animate': animated,
 							   'data-state': 'still'});
 
+				if ($("#mode").prop('checked')) {
+                    $('.paging-button').css('background-color', '#263238');
+                    $('.paging-button').css('color', '#fafafa');
+                } else {
+                    $('.paging-button').css('background-color', '#fafafa'); 
+                    $('.paging-button').css('color', '#263238');
+                }; //end of css style
+
 				//append the div to gifs ID then append rating and gif_image to the div
 				$('#main-display').append(gif_wrapper);
 				$('#gif_wrap' + [i]).append(gif_image);	
@@ -53,6 +61,13 @@
                     more_button.addClass("paging-button");
                     more_button.attr({"id": "search-more-giphy", });
                     more_button.text("Show more")
+                if ($("#mode").prop('checked')) {
+                    $('.paging-button').css('background-color', '#263238');
+                    $('.paging-button').css('color', '#fafafa');
+                } else {
+                    $('.paging-button').css('background-color', '#fafafa'); 
+                    $('.paging-button').css('color', '#263238');
+                }; //end of css style
                 $("#main-display").append(button_div);
                 $(button_div).append(more_button);
                 //on click function for search more button to display 12 more photos
