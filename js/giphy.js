@@ -22,7 +22,7 @@
 				
 				//add class and attributes to be used in the on click event
 				gif_wrapper.addClass('gif-wrapper');
-				gif_image.addClass('gifs');
+				gif_image.addClass('gifs img-responsive center-block');
 				gif_wrapper.attr('id', "gif_wrap" + [i])
 				gif_image.attr({'src': image,
 							   'data-still': image,
