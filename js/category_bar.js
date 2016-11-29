@@ -125,14 +125,16 @@ function category_bar() {
 
 		if ($("#mode").prop('checked')) {
 
-    		$('.category_buttons').css('background-color', '#263238')
+    		$('.category_buttons').css('background-color', '#263238');
+
+    		$('h6').css('color', '#fafafa');
 
     	} else {
 
     		$('.container-fluid').css('background-color', '#fafafa');
 
     		$('.category_buttons').css('background-color', '#fafafa');
-    		
+
     	}; //end of css style
 
 	} // End of For Loop I
