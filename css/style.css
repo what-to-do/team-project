@@ -113,7 +113,7 @@ h6 {
 }
 /*where the api content will show*/
 #main-display {
-	height: 100vh;
+	height: 200vh;
 	background-color: #fafafa;
 }
 
@@ -232,4 +232,6 @@ body.dark-mode {
 	color: white;
 }
 
-
+#arrow-button{
+	color: black;
+}
