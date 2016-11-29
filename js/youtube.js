@@ -56,6 +56,8 @@ $.ajax({
 			"query" : baton,
 		});
 	
+	$(nextBtn).css("float", "right");
+	$(prevBtn).css("float", "left");
 	$(nextBtn).appendTo(".display");
 	$(prevBtn).appendTo(".display");
 
