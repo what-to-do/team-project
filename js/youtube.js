@@ -28,7 +28,7 @@ $.ajax({
 	var output = 
 	'<li class = "results">' +
 	'<div class = "list-left">' +
-	'<img src ="' + thumb + '">' + 
+	'<a href="http://www.youtube.com/embed/' + video_ID +'"class="fancybox fancybox.iframe"><img src ="' + thumb + '"></a>' + 
 	'</div>' +
 	'<div class = "list-right">' +
 	'<h3><a href="http://www.youtube.com/embed/' + video_ID +'"class="fancybox fancybox.iframe">'  + title + '</a></h3>' +
