@@ -117,7 +117,7 @@ function ajax () {
 // Movies ---------------------------------------------------------------------------------------
 
 	var title = baton;
-	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=full&tomatoes=true&r=json";
+	var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=full&tomatoes=true&r=json";
 
 	$.ajax({
 		url: queryURL,
