@@ -2,7 +2,7 @@ var pageToken = "";
 
 function youtube() {
 var key = "AIzaSyBrQuQ65KpeO3KvEZ6zdmU7psymimrU6Is";
-var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&pageToken=" + pageToken + "&maxResults=5&key=" + key ;
+var query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&type=video&videoSyndicated=true&pageToken=" + pageToken + "&maxResults=5&key=" + key;
 //empty main display 
 $("#main-display").empty();
 
@@ -74,14 +74,14 @@ $.ajax({
 
 	 $("#next_button").on("click", function(){
 	 	pageToken = next_page;
-	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&pageToken=" + pageToken + "&maxResults=5&key=" + key;
+	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&type=video&videoSyndicated=true&pageToken=" + pageToken + "&maxResults=5&key=" + key;
 	 	youtube();
 		});
 
 
 	 $("#prev_button").on("click", function(){
 	 	pageToken = prev_page;
-	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&pageToken=" + pageToken + "&maxResults=5&key=" + key;
+	 	query_url = "https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=" + baton + "&type=video&videoSyndicated=true&pageToken=" + pageToken + "&maxResults=5&key=" + key;
 	 	youtube();	 	
 	 });
 }); // End of Ajax Request / Done Function
