@@ -156,5 +156,14 @@ var num = 1
         }, 700);
     });
 	}//end of scroll back to top
+
+	//if a letter key is pressed it will give the search input focus
+	$(window).keydown(function(event){
+		if(event.keyCode > 64 && event.keyCode < 91) {
+			console.log("focus")
+			$("#user-input").focus();
+		}
+	})//end of keydown event
+	
 } // End of event_listener function
 
