@@ -55,6 +55,14 @@ $.ajax({
 	$(nextBtn).appendTo(".display");
 	$(prevBtn).appendTo(".display");
 
+	if ($("#mode").prop('checked')) {
+		$('.paging-button').css('background-color', '#263238');
+		$('.paging-button').css('color', '#fafafa');
+    } else {
+    	$('.paging-button').css('background-color', '#fafafa');	
+		$('.paging-button').css('color', '#263238');
+    }; //end of css style
+
 	//only display next and previous buttons if they are needed.
 	if (typeof response.prevPageToken === "undefined") {
 	 	$("#prev_button").hide();

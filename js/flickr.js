@@ -47,6 +47,13 @@ function flickr(){
                     more_button.addClass("paging-button");
                     more_button.attr({"id": "search-more-flickr", });
                     more_button.text("Show more")
+                if ($("#mode").prop('checked')) {
+                    $('.paging-button').css('background-color', '#263238');
+                    $('.paging-button').css('color', '#fafafa');
+                } else {
+                    $('.paging-button').css('background-color', '#fafafa'); 
+                    $('.paging-button').css('color', '#263238');
+                }; //end of css style
                 $("#main-display").append(button_div);
                 $(button_div).append(more_button);
                 //on click function for search more button to display 12 more photos

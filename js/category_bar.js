@@ -94,9 +94,9 @@ function category_bar() {
 
     	$('h6').css('color', 'black');
 
-    	$('.paging-button').css('background-color', '#263238');
+    	$('.paging-button').css('background-color', '#fafafa');
 			
-		$('.paging-button').css('color', '#fafafa');
+			$('.paging-button').css('color', '#263238');
     	}; //end of css style
 
 	for (var i = 0; i < possible_categories.length; i++) {
@@ -149,9 +149,9 @@ function category_bar() {
 
     		$('.category_buttons').css('background-color', '#fafafa');
 
-    		$('.paging-button').css('background-color', '#263238');
+    		$('.paging-button').css('background-color', '#fafafa');
 			
-			$('.paging-button').css('color', '#fafafa');
+			$('.paging-button').css('color', '#263238');
 
     	}; //end of css style
 
