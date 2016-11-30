@@ -239,7 +239,7 @@ function dictionary(){
 
 					// Adding attr. to nav_bar
 					nav_div.attr({
-						"class": "tab-content card"
+						"class": "tab-content"
 					});
 				/**
 				 * Makes the buttons
@@ -254,7 +254,7 @@ function dictionary(){
 					var nav_pane = $("<div>");
 					// Adding attr. to nav_div
 					nav_pane.attr({
-						"class": "tab-pane fade in active",
+						"class": "tab-pane fade in",
 						"id": "panel" + j + o,
 						"role": "tabpanel"
 					});
