@@ -1,3 +1,4 @@
+
 //will expand div when user presses magnifying glass
 
 function expand_category_box() {
@@ -47,7 +48,9 @@ function category_bar() {
 		"class":       "container-fluid",
 		"align":       "center",
 		"data-toggle": "buttons",
-		"id":          "category"
+		"id":          "category",
+		"data-intro": "Click on a category button to display the response on the page.",
+		"data-step": "2"
 	});
 
 	$(div_main).appendTo("#category-div");
@@ -68,6 +71,35 @@ function category_bar() {
 	});
 
 	sub_div.appendTo(div_main);
+
+    if ($("#mode").prop('checked')) {
+
+    	$('.container-fluid').css('background-color', '#263238');
+
+    	$('.category_buttons').css('background-color', '#263238');
+
+    	$('.display_user_word').css('color', '#fafafa');
+
+		$('h6').css('color', '#fafafa');
+
+		$('.paging-button').css('background-color', '#263238');
+
+		$('.paging-button').css('color', '#fafafa');
+
+    	}
+    else {
+    	$('.container-fluid').css('background-color', '#fafafa');
+
+    	$('.category_buttons').css('background-color', '#fafafa');
+
+    	$('.display_user_word').css('color', 'black');
+
+    	$('h6').css('color', 'black');
+
+    	$('.paging-button').css('background-color', '#fafafa');
+			
+			$('.paging-button').css('color', '#263238');
+    	}; //end of css style
 
 	for (var i = 0; i < possible_categories.length; i++) {
 
@@ -102,6 +134,29 @@ function category_bar() {
 
 		category_headers.appendTo(label);
 
+		if ($("#mode").prop('checked')) {
+
+    		$('.category_buttons').css('background-color', '#263238');
+
+    		$('h6').css('color', '#fafafa');
+
+			$('.paging-button').css('background-color', '#263238');
+
+			$('.paging-button').css('color', '#fafafa');
+
+
+    	} else {
+
+    		$('.container-fluid').css('background-color', '#fafafa');
+
+    		$('.category_buttons').css('background-color', '#fafafa');
+
+    		$('.paging-button').css('background-color', '#fafafa');
+			
+			$('.paging-button').css('color', '#263238');
+
+    	}; //end of css style
+
 	} // End of For Loop I
 
 
@@ -111,6 +166,8 @@ function category_bar() {
         var user_category_pick = user_category_click.data("name");
         console.log(user_category_click);
         console.log(user_category_pick);
+
+
         if (user_category_pick == "dictionary") {
 
         	//valid();
@@ -142,5 +199,3 @@ function category_bar() {
     }); // End of category_buttons click event
 
 } //End of category_bar function
-
-

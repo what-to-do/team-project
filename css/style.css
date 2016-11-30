@@ -1,13 +1,16 @@
-body {
- height: 100vh;
+html {
+	background-color: #fafafa
+	height: 100%;
 }
 
+body {
+	height: 100%;
+}
 /*side nav
 search/synonyms buttons and results div*/
 #side-nav {
 	background-color: grey;
 	height: 100vh;
-
 }
 
 #side-nav-button {
@@ -106,6 +109,7 @@ h6 {
 	width: 0px;
 	background: transparent;
 	transition: width .5s ease, background-color .5s ease;
+	background: black;
 }
 .category_buttons:hover:after {
 	width: 100%;
@@ -113,15 +117,10 @@ h6 {
 }
 /*where the api content will show*/
 #main-display {
-	height: 100vh;
+	height: 100%;
 	background-color: #fafafa;
 }
 
-/*div containing #side-nav and #main-display*/
-#main {
-	height: 100vh;
-	width: 100%;
-}
 /*style gifs on main-display*/
 .gifs {
 	height: 200px;
@@ -138,8 +137,8 @@ h6 {
 /*styles the flickr image results*/
 .flickr-photos {
 	padding: 5px;
+	height: 200px;
 }
-
 
 
 
@@ -197,6 +196,7 @@ h6 {
   	-webkit-box-shadow: none !important;
   	-moz-box-shadow: none !important;
   	box-shadow: none !important;
+  	cursor: pointer;
 }
 
 .paging-button:after {
@@ -232,4 +232,35 @@ body.dark-mode {
 	color: white;
 }
 
+#arrow-button{
+	color: black;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+#back-to-top:hover {
+    background: #e9ebec;
+}
+#back-to-top.show {
+    opacity: 1;
+}
+#content {
+    height: 2000px;
+}
 

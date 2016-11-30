@@ -1,6 +1,8 @@
+var search_num = "12"
 function flickr(){
-	var api_key = "5fe01295efad5e61547cd49f8d37f223";
-    var flickr_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&text=" + baton + "&per_page=12&content_type=1&safe_search=1&sort=relevance&&extras=url_o&format=json&nojsoncallback=?&api_key=" + api_key;
+    
+    var api_key = "5fe01295efad5e61547cd49f8d37f223";
+    var flickr_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&text=" + baton + "&per_page=" + search_num + "&content_type=1&safe_search=1&sort=relevance&&extras=url_o&format=json&nojsoncallback=?&api_key=" + api_key;
     
     //empty main display 
     $("#main-display").empty();
@@ -24,6 +26,7 @@ function flickr(){
 
                     $(a).addClass("fancybox")
                     $(a).attr({"id": "big-flickr-photo" + i,
+                                "data-fancybox-group": "gallery",
                                 "href": big_img_url});
 
                     $(img).addClass("flickr-photos")
@@ -35,15 +38,38 @@ function flickr(){
                 //append images to the main display
                 $("#main-display").append(a);
                 $("#big-flickr-photo" + i).append(img);
-                $(".fancybox").fancybox(); //fancybox 
+                $('.fancybox').fancybox();
 
-
-            }
-            $("#main-display").append('<button id="rick-butt">show more</button>');
-
+                }   
+                //append search more button after photo gallery
+                var button_div = $("<div>")
+                var more_button = $("<button>");
+                    more_button.addClass("paging-button");
+                    more_button.attr({"id": "search-more-flickr", });
+                    more_button.text("Show more")
+                if ($("#mode").prop('checked')) {
+                    $('.paging-button').css('background-color', '#263238');
+                    $('.paging-button').css('color', '#fafafa');
+                } else {
+                    $('.paging-button').css('background-color', '#fafafa'); 
+                    $('.paging-button').css('color', '#263238');
+                }; //end of css style
+                $("#main-display").append(button_div);
+                $(button_div).append(more_button);
+                //on click function for search more button to display 12 more photos
+                $("#search-more-flickr").on("click", function(){
+                //search_num from a string to number multiplied by 2
+                var string_to_num = parseInt(search_num) * 2;
+                //revert search_num back to a string
+                search_num = string_to_num.toString();
+                //call the flickr() function to search for more photos
+                flickr();
+                }) //end of search more click function
             }) 
+            
 
 } //end of flickr()
+
 
 
 
