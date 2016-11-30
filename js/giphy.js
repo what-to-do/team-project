@@ -29,6 +29,7 @@
 							   'data-animate': animated,
 							   'data-state': 'still'});
 
+				//add CSS if night-mode toggle switch is on
 				if ($("#mode").prop('checked')) {
                     $('.paging-button').css('background-color', '#263238');
                     $('.paging-button').css('color', '#fafafa');
@@ -61,6 +62,8 @@
                     more_button.addClass("paging-button");
                     more_button.attr({"id": "search-more-giphy", });
                     more_button.text("Show more")
+                
+                //add CSS if night-mode toggle switch is on
                 if ($("#mode").prop('checked')) {
                     $('.paging-button').css('background-color', '#263238');
                     $('.paging-button').css('color', '#fafafa');
@@ -68,8 +71,12 @@
                     $('.paging-button').css('background-color', '#fafafa'); 
                     $('.paging-button').css('color', '#263238');
                 }; //end of css style
+
+
                 $("#main-display").append(button_div);
                 $(button_div).append(more_button);
+                
+
                 //on click function for search more button to display 12 more photos
                 $("#search-more-giphy").on("click", function(){
                 //search_num from a string to number multiplied by 2

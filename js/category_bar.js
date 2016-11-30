@@ -45,12 +45,13 @@ function category_bar() {
 	var div_main = $("<div>");
 
 	div_main.attr({
-		"class":       "container-fluid",
-		"align":       "center",
-		"data-toggle": "buttons",
-		"id":          "category",
-		"data-intro": "Click on a category button to display the response on the page.",
-		"data-step": "2"
+		"class":         "container-fluid",
+		"align":         "center",
+		"data-toggle":   "buttons",
+		"id":            "category",
+		"data-intro":    "Click on a category button to display the response on the page.",
+		"data-step":     "2",
+		"data-position": "auto"
 	});
 
 	$(div_main).appendTo("#category-div");
@@ -107,9 +108,6 @@ function category_bar() {
 
 		label.attr({
 			"class": "category_buttons btn rick",
-			"data-toggle": "tooltip",
-			"data-placement":"bottom",
-			"title": "Click Here For " + possible_categories[i],
 			"data-name": possible_categories[i].toLowerCase()
 		});
 

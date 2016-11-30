@@ -1,6 +1,6 @@
 
 var baton = "";
-
+var instructions = "1. Enter the word you would like to research in the search bar located at the top right of the navigation bar. <br><br>2. Click on any of the buttons to retrieve information on the search topic. <br><br>3. Click the top left button to view your search history."
 var possible_categories = [];
 
 function event_listener(){
@@ -13,7 +13,7 @@ function event_listener(){
 	//when user clicks on help button
 	$("#help-button").on("click", function(){
 		
-				introJs().start();
+		introJs().start();
 
 	});
 

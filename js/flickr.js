@@ -14,8 +14,8 @@ function flickr(){
                 //for loop to create 10 images
                 for(var i = 0; i < response.photos.photo.length; i++) {
                     //variables to set up img tag and full url address
-                    var a = $("<a>")
-                    var img = $("<img>")
+                    var a = $("<a>");
+                    var img = $("<img>");
                     var farm_id = response.photos.photo[i].farm;
                     var server_id = response.photos.photo[i].server;
                     var id = response.photos.photo[i].id;
@@ -24,17 +24,19 @@ function flickr(){
                     var big_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + "_b.jpg";
                     //edit photos with class .flicker-photos
 
-                    $(a).addClass("fancybox")
-                    $(a).attr({"id": "big-flickr-photo" + i,
+                    $(a).addClass("fancybox");
+                    $(a).attr({ 
+                                "id": "big-flickr-photo" + i,
                                 "data-fancybox-group": "gallery",
-                                "href": big_img_url});
+                                "href": big_img_url
+                            });
 
-                    $(img).addClass("flickr-photos")
+                    $(img).addClass("flickr-photos");
                     $(img).attr({
                                 "id": "flickr" + i,
                                 "src": small_img_url,
                                 "alt": " "
-                    })
+                    });
                 //append images to the main display
                 $("#main-display").append(a);
                 $("#big-flickr-photo" + i).append(img);
@@ -42,11 +44,14 @@ function flickr(){
 
                 }   
                 //append search more button after photo gallery
-                var button_div = $("<div>")
+                var button_div = $("<div>");
                 var more_button = $("<button>");
+
                     more_button.addClass("paging-button");
                     more_button.attr({"id": "search-more-flickr", });
                     more_button.text("Show more")
+
+                //add CSS if the dark-mode toggle switch is on
                 if ($("#mode").prop('checked')) {
                     $('.paging-button').css('background-color', '#263238');
                     $('.paging-button').css('color', '#fafafa');
@@ -54,8 +59,10 @@ function flickr(){
                     $('.paging-button').css('background-color', '#fafafa'); 
                     $('.paging-button').css('color', '#263238');
                 }; //end of css style
+
                 $("#main-display").append(button_div);
                 $(button_div).append(more_button);
+
                 //on click function for search more button to display 12 more photos
                 $("#search-more-flickr").on("click", function(){
                 //search_num from a string to number multiplied by 2
