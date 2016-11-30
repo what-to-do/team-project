@@ -167,7 +167,8 @@ function omba (){
 				// Put the value of href
 				// Of the tomotoes website
 				a.attr({
-					"href": response[keys[i]]
+					"href": response[keys[i]],
+					"target": "_blank"
 				})
 
 				// Put the text of the url on it
