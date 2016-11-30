@@ -48,7 +48,9 @@ function category_bar() {
 		"class":       "container-fluid",
 		"align":       "center",
 		"data-toggle": "buttons",
-		"id":          "category"
+		"id":          "category",
+		"data-intro": "Click on a category button to display the response on the page.",
+		"data-step": "2"
 	});
 
 	$(div_main).appendTo("#category-div");

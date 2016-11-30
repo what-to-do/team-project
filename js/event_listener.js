@@ -9,24 +9,12 @@ function event_listener(){
 	/*$(function () {
 	 $('[data-toggle="tooltip"]').tooltip()
 	});*/
-var num = 1
+
 	//when user clicks on help button
 	$("#help-button").on("click", function(){
-		num++
-		if(num % 2 ==0){	
-			$('.rick').tooltip();
-
-			console.log(num + " is even");
-		}
-		//if user click =true activate hover function until click false
-		////Tooltips Initialization
-		else{
-			$('.rick').attr({
-				"data-toggle": ""
-			})	
 		
-		console.log(num + " is odd");
-	}
+				introJs().start();
+
 	});
 
 	$("#mag-glass").on("click" , function(){
