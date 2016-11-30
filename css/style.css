@@ -89,6 +89,7 @@ h6 {
 	color: black;
 }
 
+/*category buttons styling*/
 .category_buttons {
 	margin-top: 10px;
 	background-color: #fafafa;
@@ -115,6 +116,9 @@ h6 {
 	width: 100%;
 	background: black;
 }
+
+
+
 /*where the api content will show*/
 #main-display {
 	height: 100%;
@@ -137,25 +141,9 @@ h6 {
 /*styles the flickr image results*/
 .flickr-photos {
 	padding: 5px;
-	height: 200px;
+	height: 150px;
+	width: 200px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .results {

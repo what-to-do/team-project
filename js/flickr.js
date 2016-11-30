@@ -1,4 +1,4 @@
-var search_num = "12"
+var search_num = "15"
 function flickr(){
     
     var api_key = "5fe01295efad5e61547cd49f8d37f223";
@@ -21,7 +21,7 @@ function flickr(){
                     var id = response.photos.photo[i].id;
                     var secret_id = response.photos.photo[i].secret;
                     var small_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + "_m.jpg";
-                    var big_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + "_b.jpg";
+                    var big_img_url = "https://farm" + farm_id + ".staticflickr.com/" + server_id + "/" + id + "_" + secret_id + "_c.jpg";
                     //edit photos with class .flicker-photos
 
                     $(a).addClass("fancybox");
@@ -40,7 +40,9 @@ function flickr(){
                 //append images to the main display
                 $("#main-display").append(a);
                 $("#big-flickr-photo" + i).append(img);
-                $('.fancybox').fancybox();
+
+                //add fancybox and remove close button in top right corner
+                $('.fancybox').fancybox({closeBtn: false});
 
                 }   
                 //append search more button after photo gallery
