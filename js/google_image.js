@@ -9,9 +9,9 @@ $.ajax({
 	method: 'GET',
 	dataType: 'jsonp',
 }).done(function(result) {
-	console.log(result);
+	/*console.log(result);
 	console.log(url);
-	console.log(result.items[0].link);
+	console.log(result.items[0].link);*/
 
 
 	$('#main-display').empty();
@@ -23,8 +23,8 @@ $.ajax({
 			   "src":    "images.google.com/hosted/life/1da4bcda9a5b8e5d.html"
 	}); 
 
-	console.log(img);
-	console.log(result.items[0].link);
+/*	console.log(img);
+	console.log(result.items[0].link);*/
 	
 	$('#main-display').append(img);
 })
