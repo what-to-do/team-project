@@ -75,10 +75,11 @@ function search_history_add(baton, search_history_record) {
 	search_history();
 }
 
-function search_history_retrieve(search_history_record) {
+function search_history_retrieve() {
 	// this function retrieves the search history record from local storage
 
-	search_history_record = JSON.parse(localStorage["search_history_record"]);
-
+	var temp = localStorage.getItem("search_history_record");
+	console.log("search_history_retrieve");
+	search_history_record = JSON.parse(temp);
 }
 

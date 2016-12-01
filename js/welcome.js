@@ -1,4 +1,5 @@
 function welcome_splash() {
+	$("#main-display").append("<br><br><br>");
 	var welcome1 = $("<h1>");
 	$(welcome1).html("Welcome to Pipeline!");
 	$(welcome1).css("text-align", "center");
