@@ -340,7 +340,7 @@ function omba (){
 
        updated_category_box();
 
-        //event_listener();
+        search_history_add(baton, search_history_record);
 
 
     }); // End of synonyms click event
