@@ -31,6 +31,8 @@ function event_listener(){
 
 		ajax();
 
+		$("#main-display").html("");
+
 		//Clear search field after submit
 		$("#user-input").val("");
 
@@ -53,6 +55,8 @@ function event_listener(){
 			expand_category_box();
 		
 			ajax();
+
+			$("#main-display").html("");
 
 			//Clear search field after submit
 			$("#user-input").val("");
