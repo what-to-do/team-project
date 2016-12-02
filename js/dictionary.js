@@ -324,7 +324,7 @@ function dictionary(){
 
        updated_category_box();
 
-       search_history_add(baton, search_history_record);
+       //search_history_add(baton, search_history_record);
 
         //event_listener();
 
