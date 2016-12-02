@@ -15,7 +15,7 @@ function expand_category_box() {
 
    $(".display_user_word").css("margin-bottom", "0px");
 
-    $("#main-display").html("");
+
 
 };//end of expand_category_box
 
