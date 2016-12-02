@@ -6,8 +6,6 @@ $(document).ready(function() {
 
 	search_history();
 
-	welcome_splash();
-
 	event_listener();
 
 }); // End of document.ready

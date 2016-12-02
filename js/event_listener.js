@@ -33,6 +33,8 @@ function event_listener(){
 
 		ajax();
 
+		$(".welcome_page").hide();
+
 		$("#main-display").html("");
 
 		//Clear search field after submit
@@ -59,6 +61,7 @@ function event_listener(){
 			expand_category_box();
 		
 			ajax();
+			$(".welcome_page").hide();
 
 			$("#main-display").html("");
 

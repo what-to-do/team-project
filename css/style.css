@@ -5,6 +5,7 @@ html {
 
 body {
 	height: 100%;
+	background-color: #fafafa
 }
 /*side nav
 search/synonyms buttons and results div*/
@@ -123,6 +124,20 @@ h6 {
 #main-display {
 	height: 100%;
 	background-color: #fafafa;
+}
+
+.search_bar_instructions {
+	margin-right: 15%;
+}
+
+.history_instructions {
+	margin-left: .5%;
+	position: relative;
+	float: left;
+}
+
+.center_text {
+	margin-top: 5%;
 }
 
 /*style gifs on main-display*/
