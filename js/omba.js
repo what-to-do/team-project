@@ -144,7 +144,21 @@ function omba (){
 
 				// Makes the img src to the poster url
 				img.attr({
-					"src" : response[keys[i]]
+					"src" : response[keys[i]],
+					"style": "width:375px;height:500px"
+				});
+
+				// img -> div_poset
+				img.appendTo(div_poster);
+
+			} else if (keys[i] == "Poster" && response[keys[i]] == "N/A"){
+
+				var img = $("<img>")
+
+				// Makes the img src to the poster url
+				img.attr({
+					"src" : "assets/images/notfound.jpg",
+					"style": "width:375px;height:500px"
 				});
 
 				// img -> div_poset
