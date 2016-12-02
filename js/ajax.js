@@ -1,5 +1,23 @@
 function ajax () {
 
+// Movies ---------------------------------------------------------------------------------------
+
+	var title = baton;
+	var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=full&tomatoes=true&r=json";
+
+	$.ajax({
+		url: queryURL,
+		method: 'GET',
+    	success: function(data) { 
+    		var name = "Movies";
+    		check(data,name);
+    	},
+		error: function(err) { success_omba = false; }
+	});
+
+
+// Movies ---------------------------------------------------------------------------------------
+
 // Dictionary --------------------------------------------------------------------------------
 
 	possible_categories = [];
@@ -112,25 +130,6 @@ function ajax () {
     });
 
 // Flickr ---------------------------------------------------------------------------------------
-
-
-// Movies ---------------------------------------------------------------------------------------
-
-	var title = baton;
-	var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=full&tomatoes=true&r=json";
-
-	$.ajax({
-		url: queryURL,
-		method: 'GET',
-    	success: function(data) { 
-    		var name = "Movies";
-    		check(data,name);
-    	},
-		error: function(err) { success_omba = false; }
-	});
-
-
-// Movies ---------------------------------------------------------------------------------------
 
 } // End of Ajax function
 

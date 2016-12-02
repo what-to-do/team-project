@@ -321,29 +321,29 @@ function omba (){
 
 		} // End of For Loop I
 
-	// On Click Event for the related search
-	$(".related").on("click", function() {
+		// On Click Event for the related search
+		$(".related").on("click", function() {
 
-        console.log("synonym click");
+	        console.log("synonym click");
 
-        var synonym_click = $(this);
+	        var synonym_click = $(this);
 
-        var synonym_pick = synonym_click.data("index");
+	        var synonym_pick = synonym_click.data("index");
 
-        console.log("Synonym pick is " + synonym_pick);
+	        console.log("Synonym pick is " + synonym_pick);
 
-        baton = synonym_pick;
+	        baton = synonym_pick;
 
-        ajax();
+	        ajax();
 
-        console.log('The baton is ' + baton);
+	        console.log('The baton is ' + baton);
 
-       updated_category_box();
+	       updated_category_box();
 
-        //search_history_add(baton, search_history_record);
+	       // search_history_add(baton, search_history_record);
 
 
-    }); // End of synonyms click event
+	    }); // End of synonyms click event
 
 	}); // End of Ajax Request
 

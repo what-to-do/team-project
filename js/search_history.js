@@ -10,25 +10,37 @@ function search_history() {
 
 	for (var j = 0; j < search_history_record.length; j++) {
 
-		var li = $("<li>")
-		var search_result = $("<a>")
+		var li = $("<li>");
 
-		li.attr({"id": "result" + [j]})
-		search_result.attr({"href": "#"})
+		var search_result = $("<a>");
+
+		li.attr({"id": "result" + [j]});
+
+		search_result.attr({"href": "#"});
+
 		search_result.addClass("waves-effect");
+
 		search_result.css("color", "black");
+
 		search_result.text(search_history_record[j]);
+
 		search_result.data("value", search_history_record[j]);
 
 		$("#past-ul").append(li);
+
 		$("#result" + [j]).append(search_result);
 
 		
-	} // End of For Loop
+	} // End of For Loop J
+
 		$("#past-ul li").on("click", function() {
+
 			baton = $(this).text();
+
 			ajax();
+
 			updated_category_box();
+
 		});
 
 } // End of search_history function
@@ -66,20 +78,22 @@ function search_history_add(baton, search_history_record) {
 		search_history_record.push(baton);
 
 		localStorage["search_history_record"] = JSON.stringify(search_history_record);
+		
+	} // End of Else If
 
-
-		
-		
-		
-	}
 	search_history();
-}
+
+} // End of S=search history add function
 
 function search_history_retrieve() {
+
 	// this function retrieves the search history record from local storage
 
 	var temp = localStorage.getItem("search_history_record");
+
 	console.log("search_history_retrieve");
+
 	search_history_record = JSON.parse(temp);
-}
+
+} // End of search history retrieve function
 

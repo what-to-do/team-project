@@ -66,9 +66,11 @@ function event_listener(){
 	$(".searching").on("click" , function(){
 
 		var user_click = $(this);
+
 		var user_pick = user_click.data("index");
 
 		console.log("User click is " + user_click);
+		
 		console.log("User pick is " + user_pick);
 
 		if (user_pick == "synonyms") {
@@ -104,26 +106,45 @@ function event_listener(){
     }); // End of past_searches click event
 
     $("#mode").change(function(){
+
     	if ($(this).prop('checked')) {
+
     		$('body').addClass('dark-mode');
+
     		$('html').addClass('dark-mode');
+
     		$('#main-display').addClass('dark-mode');
+
     		$('.container-fluid').css('background-color', '#263238');
+
     		$('.category_buttons').css('background-color', '#263238');
+
     		$('.display_user_word').css('color', '#fafafa');
+
 			$('h6').css('color', '#fafafa');
+
 			$('.paging-button').css('background-color', '#263238');
+
 			$('.paging-button').css('color', '#fafafa');
     	}
-    	else {
+    	else 
+    	{
     		$('body').removeClass('dark-mode');
+
     		$('html').removeClass('dark-mode');
-    		$('#main-display').removeClass('dark-mode')
+
+    		$('#main-display').removeClass('dark-mode');
+
     		$('.container-fluid').css('background-color', '#fafafa');
+
     		$('.category_buttons').css('background-color', '#fafafa');
+
     		$('.display_user_word').css('color', 'black');
+
     		$('h6').css('color', 'black');
+
     		$('.paging-button').css('background-color', '#fafafa');
+
     		$('.paging-button').css('color', '#263238');
     	}
     }); //end of toggle switch 
@@ -131,48 +152,88 @@ function event_listener(){
 
     //scroll back to top
     if ($('#back-to-top').length) {
+
     	var scrollTrigger = 100; // px
+
         function backToTop() {
+
             var scrollTop = $(window).scrollTop();
+
             if (scrollTop > scrollTrigger) {
+
                 $('#back-to-top').addClass('show');
+
             } else {
+
                 $('#back-to-top').removeClass('show');
-            }
-        };
+
+            } // End of If Else function
+
+        }; // End of backtotop function
+
     	backToTop();
+
     	$(window).on('scroll', function () {
+
         backToTop();
+
         if ($("#mode").prop('checked')) {
+
 			$('#back-to-top').css('background-color', '#263238');
+
 			$('#back-to-top').css('color', '#fafafa');
+
     	} else {
+
     		$('#back-to-top').css('background-color', '#fafafa');	
+
 			$('#back-to-top').css('color', '#263238');
+
     	}; //end of css style
+
     });
+
     $('#back-to-top').on('click', function (e) {
+
         e.preventDefault();
+
         $('html,body').animate({
+
             scrollTop: 0
+
         }, 700);
+
         if ($("#mode").prop('checked')) {
+
 			$('#back-to-top').css('background-color', '#263238');
+
 			$('#back-to-top').css('color', '#fafafa');
+
     	} else {
+
     		$('#back-to-top').css('background-color', '#fafafa');	
+
 			$('#back-to-top').css('color', '#263238');
+
     	}; //end of css style
+
     });
-	}//end of scroll back to top
+
+	} // End of scroll back to top
 
 
 	//if a letter key is pressed it will give the search input focus
+	//
 	$(window).keydown(function(event){
+
 		if(event.keyCode > 64 && event.keyCode < 91) {
+
 			console.log("focus")
+
 			$("#user-input").focus();
-		}
+
+		} // End of if statement
+
 	})//end of keydown event
 	
 
