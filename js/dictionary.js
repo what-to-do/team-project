@@ -316,11 +316,15 @@ function dictionary(){
 
         baton = synonym_pick;
 
+
+
         ajax();
 
         console.log('The baton is ' + baton);
 
        updated_category_box();
+
+       search_history_add(baton, search_history_record);
 
         //event_listener();
 
