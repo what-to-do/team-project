@@ -2,46 +2,50 @@ function search_history() {
 
 //	var search_history_record = new Array();
 
-	$("#past-ul").empty();
+	if (search_history_record != null) {
 
-	// past searches are saved in search_history_record in local storage
-	// open search_history_record, iterate through items
-	// create buttons for each record in search_history_record
+		$("#past-ul").empty();
 
-	for (var j = 0; j < search_history_record.length; j++) {
+		// past searches are saved in search_history_record in local storage
+		// open search_history_record, iterate through items
+		// create buttons for each record in search_history_record
 
-		var li = $("<li>");
+		for (var j = 0; j < search_history_record.length; j++) {
 
-		var search_result = $("<a>");
+			var li = $("<li>");
 
-		li.attr({"id": "result" + [j]});
+			var search_result = $("<a>");
 
-		search_result.attr({"href": "#"});
+			li.attr({"id": "result" + [j]});
 
-		search_result.addClass("waves-effect");
+			search_result.attr({"href": "#"});
 
-		search_result.css("color", "black");
+			search_result.addClass("waves-effect");
 
-		search_result.text(search_history_record[j]);
+			search_result.css("color", "black");
 
-		search_result.data("value", search_history_record[j]);
+			search_result.text(search_history_record[j]);
 
-		$("#past-ul").append(li);
+			search_result.data("value", search_history_record[j]);
 
-		$("#result" + [j]).append(search_result);
+			$("#past-ul").append(li);
 
-		
-	} // End of For Loop J
+			$("#result" + [j]).append(search_result);
 
-		$("#past-ul li").on("click", function() {
+			
+		} // End of For Loop J
 
-			baton = $(this).text();
+			$("#past-ul li").on("click", function() {
 
-			ajax();
+				baton = $(this).text();
 
-			updated_category_box();
+				ajax();
 
-		});
+				updated_category_box();
+
+			});
+
+	}
 
 } // End of search_history function
 
@@ -53,33 +57,39 @@ function search_history_add(baton, search_history_record) {
 	// then the search history is saved in local storage
 	var found = false;
 
-	for (var i = 0; i < search_history_record.length; i++) {
+	if (search_history_record != null) {
 
-		if (baton === search_history_record[i]) {
+		for (var i = 0; i < search_history_record.length; i++) {
 
-			found = true;
+			if (baton === search_history_record[i]) {
 
-		}
+				found = true;
 
-	}
+			} // End of If Statement
 
-	if (found === false && search_history_record.length < 10) {
+		} // End of For Loop I
 
-		search_history_record.push(baton);
 
-		localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
-		
+		if (found === false && search_history_record.length < 10) {
 
-	} else if (found === false && search_history_record.length >= 10) {
+			search_history_record.push(baton);
 
-		search_history_record.shift();
+			localStorage["search_history_record"] = JSON.stringify(search_history_record);
 
-		search_history_record.push(baton);
+			
 
-		localStorage["search_history_record"] = JSON.stringify(search_history_record);
-		
-	} // End of Else If
+		} else if (found === false && search_history_record.length >= 10) {
+
+			search_history_record.shift();
+
+			search_history_record.push(baton);
+
+			localStorage["search_history_record"] = JSON.stringify(search_history_record);
+			
+		} // End of Else If
+
+	} // End of If Statement
 
 	search_history();
 
@@ -89,11 +99,10 @@ function search_history_retrieve() {
 
 	// this function retrieves the search history record from local storage
 
-	var temp = localStorage.getItem("search_history_record");
+		var temp = localStorage.getItem("search_history_record");
 
-	console.log("search_history_retrieve");
+		search_history_record = JSON.parse(temp);
 
-	search_history_record = JSON.parse(temp);
 
 } // End of search history retrieve function
 
