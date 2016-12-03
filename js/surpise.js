@@ -13,19 +13,19 @@ function surpise () {
 	jeff.addClass("card col-xs-4 col-md-3 text-xs-center");
 
 	just.attr({
-		"style": "margin-top:100;"
+		"style": "margin-top:20;"
 	});
 
 	rick.attr({
-		"style": "margin-top:100;"
+		"style": "margin-top:20;"
 	});
 
 	jess.attr({
-		"style": "margin-top:100;"
+		"style": "margin-top:20;"
 	});
 
 	jeff.attr({
-		"style": "margin-top:100;"
+		"style": "margin-top:20;"
 	});
 	var justh3 = $("<h3>");
 	var rickh3 = $("<h3>");
