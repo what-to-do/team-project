@@ -2,6 +2,7 @@
 var baton = "";
 var instructions = "1. Enter the word you would like to research in the search bar located at the top right of the navigation bar. <br><br>2. Click on any of the buttons to retrieve information on the search topic. <br><br>3. Click the top left button to view your search history."
 var possible_categories = [];
+var search_history_record = new Array();
 
 function event_listener(){
 
@@ -25,11 +26,13 @@ function event_listener(){
 		
 		console.log("The baton is " + baton);
 
-				search_history_add(baton, search_history_record);
+		search_history_add();
 		
 		/*$("#main-display").append("<br>" + "Mag click " + baton);*/
 
 		//valid()
+	
+		expand_category_box();
 
 		ajax();
 
@@ -44,6 +47,12 @@ function event_listener(){
 		
 	}); // End of mag-glass click event
 
+	$("#pipeline").on("click" , function(){
+
+		surpise();
+
+	});
+
 	//if user presses enter on search input
 	$("#user-input").keydown(function(event){
 		
@@ -52,7 +61,7 @@ function event_listener(){
 			/*user_search.push(user_input);*/
 			console.log("The baton is: " + baton);
 
-			search_history_add(baton, search_history_record);
+			search_history_add();
 
 			/*$("#main-display").append("<br>" + "By enter: " + baton);*/
 
@@ -67,8 +76,6 @@ function event_listener(){
 
 			//Clear search field after submit
 			$("#user-input").val("");
-
-			
 
 			return false;
 		}
