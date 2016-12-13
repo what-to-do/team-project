@@ -120,7 +120,7 @@ function surpise () {
 	});
 
 	just_img.attr({
-		"src": "assets/images/justin.jpg",
+		"src": "assets/images/justin1.jpg",
 		"class": "rounded",
 		"style": "width:300px;height:300px;margin-bottom:20px;"
 	});
