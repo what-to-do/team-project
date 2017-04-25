@@ -4,4 +4,4 @@ Pipeline is a minified search engine.  It allows the user to do research in a co
 **Technologies Used: Restful APIs, Javascript (jQuery), HTML, CSS, AJAX, Material Design for Bootstrap** 
 
 
-![Alt text] (https://raw.githubusercontent.com/what-to-do/team-project/master/img/PipeLine.gif "PipeLine Gif")
+![Alt text](https://raw.githubusercontent.com/what-to-do/team-project/master/img/PipeLine.gif "PipeLine Gif")
