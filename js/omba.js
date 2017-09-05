@@ -1,7 +1,7 @@
 function omba (){
 
 	var title = baton;
-	var query_url = "https://www.omdbapi.com/?t=" + title + "&y=&plot=full&callback=&tomatoes=true&r=json";
+	var query_url = "https://www.omdbapi.com/?apikey=70a7587d&t=" + title + "&y=&plot=full&callback=&tomatoes=true&r=json";
  
 	console.log(query_url);
 	// Ajax call for the response of omba
